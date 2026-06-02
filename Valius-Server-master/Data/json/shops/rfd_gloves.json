@@ -1,0 +1,33 @@
+[
+  {
+    "id": 14,
+    "items": [
+      {
+        "id": 7458,
+        "defaultAmount": 10
+      },
+      {
+        "id": 7459,
+        "defaultAmount": 10
+      },
+      {
+        "id": 7460,
+        "defaultAmount": 10
+      },
+      {
+        "id": 7461,
+        "defaultAmount": 10
+      },
+      {
+        "id": 7462,
+        "defaultAmount": 10
+      }
+    ],
+    "name": "Culinaromancer\u0027s Chest",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "id": 21,
+    "items": [
+      {
+        "id": 228,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 221,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 235,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 225,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 223,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 239,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 9736,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 231,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 241,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 245,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3138,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 247,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 6693,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 10111,
+        "defaultAmount": 10000
+      }
+    ],
+    "name": "Herblore Shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

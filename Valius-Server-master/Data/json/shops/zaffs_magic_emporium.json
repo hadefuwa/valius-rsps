@@ -1,0 +1,121 @@
+[
+  {
+    "id": 47,
+    "items": [
+      {
+        "id": 4089,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4091,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4093,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4095,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4097,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4099,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4101,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4103,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4105,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4107,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4109,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4111,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4113,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4115,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4117,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6106,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6107,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6108,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6109,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6110,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6111,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1381,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1383,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1385,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1387,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4675,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1391,
+        "defaultAmount": 2500
+      }
+    ],
+    "name": "Zaff\u0027s Magic Emporium",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

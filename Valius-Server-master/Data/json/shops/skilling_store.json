@@ -1,0 +1,125 @@
+[
+  {
+    "id": 7,
+    "items": [
+      {
+        "id": 590,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1755,
+        "defaultAmount": 100
+      },
+      {
+        "id": 2347,
+        "defaultAmount": 100
+      },
+      {
+        "id": 946,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1349,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1359,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1267,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1275,
+        "defaultAmount": 100
+      },
+      {
+        "id": 228,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1437,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 199,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 201,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 203,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 205,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 207,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 209,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 211,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 213,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 215,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 2485,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 217,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 219,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3049,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3051,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 311,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 301,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 303,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 305,
+        "defaultAmount": 1000
+      }
+    ],
+    "name": "Skilling Store",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

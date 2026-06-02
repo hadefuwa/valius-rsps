@@ -1,0 +1,87 @@
+TODO
+find other anims for NPCs (attack, block, specials, death, etc)
+
+- - - MAP COORDS - - -
+Maiden's Room - 3176, 4444
+Bloat's Room - 3286, 4444
+nylocas room - 3295, 4249
+Sotetseg's room - 3281, 4318
+Xarpus Room - 3171 4386 h1
+Verzik's room - 3168, 4298
+Loot room - 3234, 4319
+
+1577, 1602, 1608 - unknown black swirl like olm electric
+
+- - - NPC's - - -
+ 
+- - BOSSES - -
+Maiden: 8360-8365
+-stand anim - 8090
+-casting? 8091 - blood pools
+-spinning 8092 - magic attack
+-death1 8093
+-death2 8094 - main death
+blood pool projectile - 1578
+blood pool end gfx - 1579
+
+Bloat: 8359
+-stand anim 8080
+-walk 8081
+-"charging up" anim - 8082
+-unsure 8083, 8084
+-death 8085
+-flies gfx 1568
+-falling hands 1570
+-falling feet - 1571
+-more falling hand - 1572
+-more falling feet - 1573
+
+Vasilias: 8354-8357
+-stand anim - 8002
+-walking 8003
+-attack 8004
+-death 8005
+-quick death? 8006
+
+- - matomenos 8366, 8385
+- - stand anim 8096
+- - 8094 death
+
+- - ischyros 8263, 8345, 8348, 8351, 8381
+- - stand anim 8002
+
+- - toxobolos 8264, 8343, 8346, 8349, 8352, 8382
+- - stand anim 7993
+
+- - hagios 8342, 8344, 8347, 8350. 8353, 8383
+- - stand anim 7988
+
+- - athanatos 8384
+- - stand 8077
+
+Sotetseg: 8387-8388
+-stand anim: 8136
+-charging? 8137
+-heavy attack 8138
+-attack 8139
+-death 8140
+
+Xarpus: 8338-8341
+-stand anim-8058
+-flying to landing 8059
+-drooling? 8060
+-standing to flying 8061
+-gust of wind? 8062
+-death 8063
+-beginning twisted buckler gfx 1549
+-blood pool projectile - 1535
+
+Verzik Vitur: 8250
+- stand anim: 8051
+-chair crumbles 8052
+-stand, no chair 8053
+
+- - OTHER NPCS - - 
+Vyrewatch: 8251-8259
+- stand anim 4702
+

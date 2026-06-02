@@ -1,0 +1,73 @@
+[
+  {
+    "id": 22,
+    "items": [
+      {
+        "id": 303,
+        "defaultAmount": 100
+      },
+      {
+        "id": 305,
+        "defaultAmount": 100
+      },
+      {
+        "id": 307,
+        "defaultAmount": 100
+      },
+      {
+        "id": 309,
+        "defaultAmount": 100
+      },
+      {
+        "id": 311,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3157,
+        "defaultAmount": 100
+      },
+      {
+        "id": 20853,
+        "defaultAmount": 100
+      },
+      {
+        "id": 11940,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 301,
+        "defaultAmount": 100
+      },
+      {
+        "id": 313,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 13431,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 314,
+        "defaultAmount": 50000
+      },
+      {
+        "id": 317,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 335,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 377,
+        "defaultAmount": 1000
+      }
+    ],
+    "name": "Fishing Store",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

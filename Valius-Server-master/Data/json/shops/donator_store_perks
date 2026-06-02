@@ -1,0 +1,98 @@
+[
+  {
+    "id": 131,
+    "items": [
+      {
+        "id": 33515,
+        "defaultAmount": 10,
+        "cost": 20
+      },
+      {
+        "id": 33566,
+        "defaultAmount": 10,
+        "cost": 150
+      },
+      {
+        "id": 33899,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 33570,
+        "defaultAmount": 10,
+        "cost": 100
+      },
+      {
+        "id": 33947,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 33948,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 33949,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 33950,
+        "defaultAmount": 10,
+        "cost": 30
+      },
+      {
+        "id": 33951,
+        "defaultAmount": 10,
+        "cost": 40
+      },
+      {
+        "id": 33952,
+        "defaultAmount": 10,
+        "cost": 25
+      },
+      {
+        "id": 33455,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 33456,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 33457,
+        "defaultAmount": 10,
+        "cost": 7
+      },
+      {
+        "id": 33459,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 33460,
+        "defaultAmount": 10,
+        "cost": 6
+      },
+      {
+        "id": 33461,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 33462,
+        "defaultAmount": 10,
+        "cost": 2
+      }
+          ],
+    "name": "Perk Items",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "DONATOR_TOKENS",
+    "generalStore": false
+  }
+]

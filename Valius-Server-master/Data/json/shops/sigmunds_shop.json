@@ -1,0 +1,49 @@
+[
+  {
+    "id": 26,
+    "items": [
+      {
+        "id": 1893,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1894,
+        "defaultAmount": 100
+      },
+      {
+        "id": 712,
+        "defaultAmount": 70
+      },
+      {
+        "id": 2961,
+        "defaultAmount": 45
+      },
+      {
+        "id": 2962,
+        "defaultAmount": 45
+      },
+      {
+        "id": 1613,
+        "defaultAmount": 20
+      },
+      {
+        "id": 1614,
+        "defaultAmount": 20
+      },
+      {
+        "id": 1993,
+        "defaultAmount": 15
+      },
+      {
+        "id": 1994,
+        "defaultAmount": 15
+      }
+    ],
+    "name": "Sigmunds shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "id": 18,
+    "items": [
+      {
+        "id": 11850,
+        "defaultAmount": 1,
+        "cost": 35
+      },
+      {
+        "id": 11852,
+        "defaultAmount": 1,
+        "cost": 40
+      },
+      {
+        "id": 11854,
+        "defaultAmount": 1,
+        "cost": 55
+      },
+      {
+        "id": 11856,
+        "defaultAmount": 1,
+        "cost": 60
+      },
+      {
+        "id": 11858,
+        "defaultAmount": 1,
+        "cost": 30
+      },
+      {
+        "id": 11860,
+        "defaultAmount": 1,
+        "cost": 40
+      },
+      {
+        "id": 12792,
+        "defaultAmount": 50,
+        "cost": 15
+      },
+      {
+        "id": 12641,
+        "defaultAmount": 10,
+        "cost": 10
+      }
+    ],
+    "name": "Grace\u0027s Points",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "MARKS_OF_GRACE",
+    "generalStore": false
+  }
+]

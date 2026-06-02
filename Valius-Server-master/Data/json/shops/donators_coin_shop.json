@@ -1,0 +1,113 @@
+[
+  {
+    "id": 112,
+    "items": [
+      {
+        "id": 12211,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12205,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12207,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12213,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12241,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12235,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12237,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12243,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12283,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12277,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12279,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12281,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12309,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12311,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12313,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12514,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12299,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12301,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12303,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12305,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12307,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12321,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12323,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12325,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 12516,
+        "defaultAmount": 10000
+      }
+    ],
+    "name": "Donator Items",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 75,
+    "items": [
+      {
+        "id": 8839,
+        "defaultAmount": 100
+      },
+      {
+        "id": 8840,
+        "defaultAmount": 100
+      },
+      {
+        "id": 8842,
+        "defaultAmount": 100
+      },
+      {
+        "id": 11663,
+        "defaultAmount": 100
+      },
+      {
+        "id": 11664,
+        "defaultAmount": 100
+      },
+      {
+        "id": 11665,
+        "defaultAmount": 100
+      }
+    ],
+    "name": "Pest Control Shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

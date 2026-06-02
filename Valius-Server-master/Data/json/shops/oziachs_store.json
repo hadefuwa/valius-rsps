@@ -1,0 +1,17 @@
+[
+  {
+    "id": 81,
+    "items": [
+      {
+        "id": 2368,
+        "defaultAmount": 10
+      }
+    ],
+    "name": "Oziachs store",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

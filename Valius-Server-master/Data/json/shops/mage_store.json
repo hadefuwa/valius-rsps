@@ -1,0 +1,161 @@
+[
+  {
+    "id": 5,
+    "items": [
+      {
+        "id": 556,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 554,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 558,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 557,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 555,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 560,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 565,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 566,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 9075,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 562,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 561,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 563,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 566,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 1381,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 1387,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 1385,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 1383,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4675,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 2890,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4089,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4091,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4093,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4099,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4101,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4103,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4109,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4111,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4113,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 2579,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 1712,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 2552,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 2412,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 2413,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 2414,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 6107,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 6108,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 6109,
+        "defaultAmount": 1000000
+      }
+    ],
+    "name": "Mage Shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

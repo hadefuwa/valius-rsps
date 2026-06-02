@@ -1,0 +1,85 @@
+[
+  {
+    "id": 16,
+    "items": [
+      {
+        "id": 1925,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5341,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5343,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5340,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5291,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5292,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5293,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5294,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5295,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5296,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5297,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5298,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5299,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5300,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5301,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5302,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5303,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5304,
+        "defaultAmount": 1000
+      }
+    ],
+    "name": "Farming Shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

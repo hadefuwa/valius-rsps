@@ -1,0 +1,870 @@
+[
+  {
+    "id": 8,
+    "items": [
+      {
+        "id": 1155,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1153,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1157,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1165,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1159,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1161,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1163,
+        "defaultAmount": 100
+      },
+      {
+        "id": 5574,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3751,
+        "defaultAmount": 100
+      },
+      {
+        "id": 10828,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1117,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1115,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1119,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1125,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1121,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1123,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1127,
+        "defaultAmount": 100
+      },
+      {
+        "id": 5575,
+        "defaultAmount": 100
+      },
+      {
+        "id": 10564,
+        "defaultAmount": 100
+      },
+      {
+        "id": 544,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1075,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1067,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1069,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1077,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1071,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1073,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1079,
+        "defaultAmount": 100
+      },
+      {
+        "id": 5576,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6809,
+        "defaultAmount": 100
+      },
+      {
+        "id": 542,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1189,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1191,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1193,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1195,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1197,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1199,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1201,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1725,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1712,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1731,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3105,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4119,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4121,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4123,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4125,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4127,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4129,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4131,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6568,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1205,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1203,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1207,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1217,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1209,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1211,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1213,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1321,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1323,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1325,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1327,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1329,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1331,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1333,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1307,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1309,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1311,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1313,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1315,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1317,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1319,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1215,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4587,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1305,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1377,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2550,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4333,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4353,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4373,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4393,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9672,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9674,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9676,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2366,
+        "defaultAmount": 10
+      },
+      {
+        "id": 2368,
+        "defaultAmount": 10
+      },
+      {
+        "id": 7003,
+        "defaultAmount": 100
+      },
+      {
+        "id": 4502,
+        "defaultAmount": 100
+      }
+    ],
+    "name": "Combat Supplies",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  },
+  {
+    "id": 4,
+    "items": [
+      {
+        "id": 884,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 886,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 888,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 890,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 892,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 841,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 839,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 845,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 849,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 847,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 853,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 851,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 861,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 859,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9185,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9142,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9143,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9144,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1129,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1095,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1133,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1097,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1135,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1099,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1065,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2499,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2493,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2487,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2501,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2495,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2489,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 863,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 866,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 867,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 868,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 811,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3749,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 10499,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6326,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6322,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6324,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6330,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6328,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2497,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2491,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2503,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 22275,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 22278,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 22281,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 22284,
+        "defaultAmount": 1000
+      }
+    ],
+    "name": "Range Supplies",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  },
+  {
+    "id": 6,
+    "items": [
+      {
+        "id": 12728,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 12730,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 12732,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 12734,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 12738,
+        "defaultAmount": 100
+      },
+      {
+        "id": 554,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 555,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 556,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 557,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 558,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 559,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 562,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 9075,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 21880,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 565,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 560,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 561,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 564,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 563,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 566,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 8017,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 8018,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 8019,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 8020,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 8021,
+        "defaultAmount": 1000000
+      },
+      {
+        "id": 4089,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4091,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4093,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4095,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4097,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4099,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4101,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4103,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4105,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4107,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4109,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4111,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4113,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4115,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4117,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6106,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6107,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6108,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6109,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6110,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6111,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1833,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1835,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1837,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1381,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1383,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1385,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1387,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 4675,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1391,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2417,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2416,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2415,
+        "defaultAmount": 1000
+      }
+    ],
+    "name": "Magic Supplies",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  },
+  {
+    "id": 113,
+    "items": [
+      {
+        "id": 146,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 158,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 164,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3043,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 170,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3025,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 6686,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3017,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 2453,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 2447,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 374,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 380,
+        "defaultAmount": 10000
+      }
+    ],
+    "name": "Consumables",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

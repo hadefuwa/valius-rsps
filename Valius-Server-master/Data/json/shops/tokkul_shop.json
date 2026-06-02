@@ -1,0 +1,58 @@
+[
+  {
+    "id": 29,
+    "items": [
+      {
+        "id": 6571,
+        "defaultAmount": 10,
+        "cost": 200000
+      },
+      {
+        "id": 6528,
+        "defaultAmount": 10,
+        "cost": 50000
+      },
+      {
+        "id": 11128,
+        "defaultAmount": 10,
+        "cost": 96000
+      },
+      {
+        "id": 6522,
+        "defaultAmount": 50000,
+        "cost": 250
+      },
+      {
+        "id": 6523,
+        "defaultAmount": 1000,
+        "cost": 40000
+      },
+      {
+        "id": 6524,
+        "defaultAmount": 1000,
+        "cost": 45000
+      },
+      {
+        "id": 6525,
+        "defaultAmount": 1000,
+        "cost": 25000
+      },
+      {
+        "id": 6526,
+        "defaultAmount": 1000,
+        "cost": 35000
+      },
+      {
+        "id": 6527,
+        "defaultAmount": 1000,
+        "cost": 30000
+      }
+    ],
+    "name": "Tokkul",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "TOKKUL",
+    "generalStore": false
+  }
+]

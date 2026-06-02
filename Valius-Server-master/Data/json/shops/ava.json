@@ -1,0 +1,17 @@
+[
+  {
+    "id": 124,
+    "items": [
+      {
+        "id": 10498,
+        "defaultAmount": 10000
+      }
+    ],
+    "name": "Ava's Devices",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

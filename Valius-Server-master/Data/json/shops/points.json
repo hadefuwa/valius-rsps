@@ -1,0 +1,571 @@
+[
+  {
+    "id": 125,
+    "items": [
+      {
+        "id": 2572,
+        "defaultAmount": 1,
+        "cost": 400
+      },
+      {
+        "id": 12938,
+        "defaultAmount": 100,
+        "cost": 2
+      },
+      {
+        "id": 22231,
+        "defaultAmount": 1,
+        "cost": 200
+      },
+      {
+        "id": 536,
+        "defaultAmount": 100,
+        "cost": 10
+      },
+      {
+        "id": 989,
+        "defaultAmount": 100,
+        "cost": 25
+      },
+      {
+        "id": 11937,
+        "defaultAmount": 1000,
+        "cost": 3
+      },
+      {
+        "id": 11730,
+        "defaultAmount": 100,
+        "cost": 40
+      },
+      {
+        "id": 12746,
+        "defaultAmount": 100,
+        "cost": 50
+      },
+      {
+        "id": 2,
+        "defaultAmount": 1000,
+        "cost": 2
+      },
+      {
+        "id": 11212,
+        "defaultAmount": 1000,
+        "cost": 2
+      },
+      {
+        "id": 11232,
+        "defaultAmount": 1000,
+        "cost": 2
+      },
+      {
+        "id": 9340,
+        "defaultAmount": 1000,
+        "cost": 2
+      },
+      {
+        "id": 9341,
+        "defaultAmount": 1000,
+        "cost": 2
+      },
+      {
+        "id": 1052,
+        "defaultAmount": 1,
+        "cost": 150
+      },
+      {
+        "id": 6585,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 11235,
+        "defaultAmount": 1,
+        "cost": 150
+      },
+      {
+        "id": 3839,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 3841,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 3843,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 12607,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 12609,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 12611,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 6724,
+        "defaultAmount": 1,
+        "cost": 650
+      },
+      {
+        "id": 11037,
+        "defaultAmount": 1,
+        "cost": 275
+      },
+      {
+        "id": 8878,
+        "defaultAmount": 1,
+        "cost": 200
+      },
+      {
+        "id": 11942,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 11200,
+        "defaultAmount": 1,
+        "cost": 35
+      },
+      {
+        "id": 12017,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 10548,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 10549,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 10550,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 10551,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 10552,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 10553,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 10555,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 1409,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 6918,
+        "defaultAmount": 1,
+        "cost": 150
+      },
+      {
+        "id": 6916,
+        "defaultAmount": 1,
+        "cost": 300
+      },
+      {
+        "id": 6924,
+        "defaultAmount": 1,
+        "cost": 200
+      },
+      {
+        "id": 6920,
+        "defaultAmount": 1,
+        "cost": 200
+      },
+      {
+        "id": 6922,
+        "defaultAmount": 1,
+        "cost": 100
+      }   
+    ],
+    "name": "PvM Points",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "PVM_POINTS",
+    "generalStore": false
+  },
+  {
+    "id": 126,
+    "items": [
+      {
+        "id": 8015,
+        "defaultAmount": 100,
+        "cost": 10
+      },
+      {
+        "id": 20062,
+        "defaultAmount": 1,
+        "cost": 250
+      },
+      {
+        "id": 22246,
+        "defaultAmount": 1,
+        "cost": 250
+      },
+      {
+        "id": 12022,
+        "defaultAmount": 1,
+        "cost": 500
+      },
+      {
+        "id": 12024,
+        "defaultAmount": 1,
+        "cost": 500
+      },
+      {
+        "id": 12026,
+        "defaultAmount": 1,
+        "cost": 500
+      },
+      {
+        "id": 12028,
+        "defaultAmount": 1,
+        "cost": 500
+      },
+      {
+        "id": 13307,
+        "defaultAmount": 1,
+        "cost": 1
+      },
+      {
+        "id": 11663,
+        "defaultAmount": 1,
+        "cost": 150
+      },
+      {
+        "id": 11664,
+        "defaultAmount": 1,
+        "cost": 150
+      },
+      {
+        "id": 11665,
+        "defaultAmount": 1,
+        "cost": 150
+      },
+      {
+        "id": 8839,
+        "defaultAmount": 1,
+        "cost": 200
+      },
+      {
+        "id": 8840,
+        "defaultAmount": 1,
+        "cost": 200
+      },
+      {
+        "id": 8842,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 33168,
+        "defaultAmount": 1,
+        "cost": 2000
+      },
+      {
+        "id": 33273,
+        "defaultAmount": 1,
+        "cost": 1000
+      },
+      {
+        "id": 33359,
+        "defaultAmount": 1,
+        "cost": 500
+      },
+      {
+        "id": 33360,
+        "defaultAmount": 1,
+        "cost": 500
+      },
+      {
+        "id": 33361,
+        "defaultAmount": 1,
+        "cost": 500
+      }
+    ],
+    "name": "Boss Points",
+    "sellModifier": 0.6,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "BOSS_POINTS",
+    "generalStore": false
+  },
+  {
+    "id": 123,
+    "items": [
+      {
+        "id": 536,
+        "defaultAmount": 100,
+        "cost": 3
+      },
+      {
+        "id": 4,
+        "defaultAmount": 100,
+        "cost": 100
+      },
+      {
+        "id": 989,
+        "defaultAmount": 100,
+        "cost": 40
+      },
+      {
+        "id": 11968,
+        "defaultAmount": 10,
+        "cost": 250
+      },
+      {
+        "id": 13233,
+        "defaultAmount": 1,
+        "cost": 1250
+      },
+      {
+        "id": 22838,
+        "defaultAmount": 1,
+        "cost": 500
+      },
+      {
+        "id": 12637,
+        "defaultAmount": 1,
+        "cost": 2000
+      },
+      {
+        "id": 12638,
+        "defaultAmount": 1,
+        "cost": 2000
+      },
+      {
+        "id": 12639,
+        "defaultAmount": 1,
+        "cost": 2000
+      },
+      {
+        "id": 21028,
+        "defaultAmount": 1,
+        "cost": 1000
+      },
+      {
+        "id": 6739,
+        "defaultAmount": 1,
+        "cost": 350
+      },
+      {
+        "id": 11920,
+        "defaultAmount": 1,
+        "cost": 750
+      },
+      {
+        "id": 20011,
+        "defaultAmount": 1,
+        "cost": 1850
+      },
+      {
+        "id": 20014,
+        "defaultAmount": 1,
+        "cost": 1850
+      },
+      {
+        "id": 20056,
+        "defaultAmount": 1,
+        "cost": 5000
+      },
+      {
+        "id": 32286,
+        "defaultAmount": 1,
+        "cost": 10
+      },
+      {
+        "id": 32287,
+        "defaultAmount": 1,
+        "cost": 20
+      },
+      {
+        "id": 32288,
+        "defaultAmount": 1,
+        "cost": 30
+      },
+      {
+        "id": 32289,
+        "defaultAmount": 1,
+        "cost": 45
+      },
+      {
+        "id": 32290,
+        "defaultAmount": 1,
+        "cost": 60
+      },
+      {
+        "id": 32291,
+        "defaultAmount": 1,
+        "cost": 80
+      },
+      {
+        "id": 32292,
+        "defaultAmount": 1,
+        "cost": 110
+      }
+    ],
+    "name": "Skill Points",
+    "sellModifier": 0.8,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "SKILL_POINTS",
+    "generalStore": false
+  },
+  {
+    "id": 119,
+    "items": [
+      {
+        "id": 2,
+        "defaultAmount": 1000,
+        "cost": 10
+      },
+      {
+        "id": 33668,
+        "defaultAmount": 1,
+        "cost": 30000
+      },
+      {
+        "id": 12783,
+        "defaultAmount": 1,
+        "cost": 25000
+      },
+      {
+        "id": 12771,
+        "defaultAmount": 1,
+        "cost": 5000
+      },
+      {
+        "id": 12769,
+        "defaultAmount": 1,
+        "cost": 5000
+      },
+      {
+        "id": 33090,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33091,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33092,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33093,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33250,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33251,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33252,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33253,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33254,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33255,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33256,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33257,
+        "defaultAmount": 1,
+        "cost": 50000
+      },
+      {
+        "id": 33329,
+        "defaultAmount": 1,
+        "cost": 15000
+      },
+      {
+        "id": 33327,
+        "defaultAmount": 1,
+        "cost": 20000
+      },
+      {
+        "id": 33328,
+        "defaultAmount": 1,
+        "cost": 20000
+      },
+      {
+        "id": 33326,
+        "defaultAmount": 1,
+        "cost": 15000
+      },
+      {
+        "id": 20849,
+        "defaultAmount": 100,
+        "cost": 250
+      },
+      {
+        "id": 13078,
+        "defaultAmount": 1,
+        "cost": 15000
+      }
+    ],
+    "name": "Blood Money",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "BLOOD_MONEY",
+    "generalStore": false
+  }
+]

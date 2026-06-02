@@ -1,0 +1,89 @@
+[
+  {
+    "id": 20,
+    "items": [
+      {
+        "id": 1755,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1597,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1592,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1595,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1623,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1621,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1619,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1617,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1631,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1607,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1605,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1603,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1601,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1615,
+        "defaultAmount": 1
+      },
+      {
+        "id": 1734,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1733,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1739,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1775,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1785,
+        "defaultAmount": 1000
+      }
+    ],
+    "name": "Crafting Shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

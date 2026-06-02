@@ -1,0 +1,34 @@
+# Compiled class file
+*.class
+.project.xml
+
+/.gradle/
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.nar
+*.ear
+*.zip
+*.rar
+.DS_Store
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/bin/
+/Data/clan/
+/Data/logs/
+/Data/punishments/
+/Data/saves/
+/Data/tradingpost/
+/Data/stucklog.txt
+/Data/wogw.txt
+/Data/Server/

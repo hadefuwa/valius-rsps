@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox stylesheets="@../css/modena_dark.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <HBox id="HBox" alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+      <children>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <TextField fx:id="itemIdText" promptText="Item ID">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="loadBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Load">
+                     <font>
+                        <Font size="10.0" />
+                     </font></Button>
+                  <TextArea fx:id="srcOutText" editable="false" prefHeight="200.0" prefWidth="300.0" wrapText="true">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="generateBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Generate">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="itemImageView" fitHeight="335.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <GridPane hgap="5.0" vgap="5.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Slider fx:id="zoomSlider" majorTickUnit="1.0" max="2048.0" minorTickCount="0" snapToTicks="true" GridPane.columnIndex="2" />
+                        <Slider fx:id="modelXOffsetSlider" majorTickUnit="1.0" max="2048.0" min="-2048.0" minorTickCount="0" snapToTicks="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Slider fx:id="modelYOffsetSlider" majorTickUnit="1.0" max="2048.0" min="-2048.0" minorTickCount="0" snapToTicks="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Slider fx:id="modelXAngleSlider" blockIncrement="4.0" majorTickUnit="1.0" max="2047.0" minorTickCount="0" snapToTicks="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Slider fx:id="modelYAngleSlider" majorTickUnit="1.0" max="2047.0" minorTickCount="0" snapToTicks="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Slider fx:id="modelZAngleSlider" majorTickUnit="1.0" max="2047.0" minorTickCount="0" snapToTicks="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <TextField fx:id="modelZoomText" text="0" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="modelXOffsetText" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="modelYOffsetText" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="modelXAngleText" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="modelYAngleText" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="modelZAngleText" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Model Zoom">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Model X offset" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Model Y offset" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Model X angle" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Model Y angle" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Model Z angle" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER" spacing="5.0" VBox.vgrow="NEVER" />
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="268.0" spacing="5.0" />
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="279.0" spacing="5.0" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

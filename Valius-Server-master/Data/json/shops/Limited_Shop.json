@@ -1,0 +1,13 @@
+[
+  {
+    "id": 138,
+    "items": [
+    ],
+    "name": "Gold Shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

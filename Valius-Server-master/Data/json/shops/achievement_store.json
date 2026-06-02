@@ -1,0 +1,81 @@
+[
+  {
+    "id": 78,
+    "items": [
+      {
+        "id": 2572,
+        "defaultAmount": 100
+      },
+      {
+        "id": 7582,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1052,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3481,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3483,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3485,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3486,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3488,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6856,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6857,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6858,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6859,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6860,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6861,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6862,
+        "defaultAmount": 100
+      },
+      {
+        "id": 6863,
+        "defaultAmount": 100
+      },
+      {
+        "id": 2722,
+        "defaultAmount": 100
+      }
+    ],
+    "name": "Achievement Points",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "ACHIEVEMENT_POINTS",
+    "generalStore": false
+  }
+]

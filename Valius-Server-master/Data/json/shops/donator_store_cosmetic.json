@@ -1,0 +1,438 @@
+[
+  {
+    "id": 134,
+    "items": [
+        {
+        "id": 33478,
+        "defaultAmount": 1,
+        "cost": 120
+      },
+      {
+        "id": 33508,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 33405,
+        "defaultAmount": 10,
+        "cost": 60
+      },
+      {
+        "id": 33406,
+        "defaultAmount": 10,
+        "cost": 60
+      },
+      {
+        "id": 33407,
+        "defaultAmount": 10,
+        "cost": 60
+      },
+      {
+        "id": 33408,
+        "defaultAmount": 10,
+        "cost": 60
+      },
+      {
+        "id": 33409,
+        "defaultAmount": 10,
+        "cost": 100
+      },
+      {
+        "id": 33410,
+        "defaultAmount": 10,
+        "cost": 100
+      },
+      {
+        "id": 33411,
+        "defaultAmount": 10,
+        "cost": 100
+      },
+      {
+        "id": 33412,
+        "defaultAmount": 10,
+        "cost": 250
+      },
+      {
+        "id": 32992,
+        "defaultAmount": 10,
+        "cost": 40
+      },
+      {
+        "id": 33499,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 33503,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 13173,
+        "defaultAmount": 10,
+        "cost": 250
+      },
+      {
+        "id": 12399,
+        "defaultAmount": 10,
+        "cost": 45
+      },
+      {
+        "id": 22001,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 1042,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 1048,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 1038,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 1046,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 1044,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 1040,
+        "defaultAmount": 10,
+        "cost": 50
+      },
+      {
+        "id": 11862,
+        "defaultAmount": 10,
+        "cost": 100
+      },
+      {
+        "id": 11863,
+        "defaultAmount": 10,
+        "cost": 200
+      },
+      {
+        "id": 1050,
+        "defaultAmount": 10,
+        "cost": 15
+      },
+      {
+        "id": 13343,
+        "defaultAmount": 10,
+        "cost": 40
+      },
+      {
+        "id": 13344,
+        "defaultAmount": 10,
+        "cost": 40
+      },
+      {
+        "id": 20017,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 20005,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+            {
+        "id": 33264,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 10836,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 10837,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 10838,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 10839,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 9096,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 9097,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 9098,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 9099,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 9100,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 9101,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 9102,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 9084,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 4068,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 4069,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 4070,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 4071,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 4072,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 4503,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 4504,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 4505,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 4506,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 4507,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 4508,
+        "defaultAmount": 10,
+        "cost": 8
+      },
+      {
+        "id": 4509,
+        "defaultAmount": 10,
+        "cost": 8
+      },
+      {
+        "id": 4510,
+        "defaultAmount": 10,
+        "cost": 8
+      },
+      {
+        "id": 4511,
+        "defaultAmount": 10,
+        "cost": 8
+      },
+      {
+        "id": 4512,
+        "defaultAmount": 10,
+        "cost": 8
+      },
+      {
+        "id": 20251,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 20254,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 20257,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 20260,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 20263,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 4037,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 4039,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 8672,
+        "defaultAmount": 10,
+        "cost": 20
+      },
+      {
+        "id": 8652,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 8654,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 8656,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 8658,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 8660,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 8662,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 8664,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 8666,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 8668,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 8670,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 8674,
+        "defaultAmount": 10,
+        "cost": 4
+      },
+      {
+        "id": 8676,
+        "defaultAmount": 10,
+        "cost": 10
+      },
+      {
+        "id": 8678,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 8680,
+        "defaultAmount": 10,
+        "cost": 5
+      },
+      {
+        "id": 12351,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 12441,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 12443,
+        "defaultAmount": 10,
+        "cost": 1
+      },
+      {
+        "id": 12319,
+        "defaultAmount": 10,
+        "cost": 2
+      },
+      {
+        "id": 20240,
+        "defaultAmount": 10,
+        "cost": 3
+      },
+      {
+        "id": 33472,
+        "defaultAmount": 10,
+        "cost": 20
+      }
+          ],
+    "name": "Cosmetics",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "DONATOR_TOKENS",
+    "generalStore": false
+  }
+]

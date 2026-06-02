@@ -1,0 +1,43 @@
+[
+  {
+    "id": 120,
+    "items": [
+      {
+        "id": 13317,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 13318,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 13319,
+        "defaultAmount": 1,
+        "cost": 100
+      },
+      {
+        "id": 13188,
+        "defaultAmount": 1,
+        "cost": 10
+      },
+      {
+        "id": 4079,
+        "defaultAmount": 1,
+        "cost": 25
+      },
+      {
+        "id": 1037,
+        "defaultAmount": 1,
+        "cost": 500
+      }
+    ],
+    "name": "Prestige Points",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "PRESTIGE_POINTS",
+    "generalStore": false
+  }
+]

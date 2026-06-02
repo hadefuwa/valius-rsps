@@ -1,0 +1,225 @@
+[
+  {
+    "id": 41,
+    "items": [
+      {
+        "id": 8013,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 4155,
+        "defaultAmount": 100
+      },
+      {
+        "id": 590,
+        "defaultAmount": 100
+      },
+      {
+        "id": 2347,
+        "defaultAmount": 100
+      },
+      {
+        "id": 952,
+        "defaultAmount": 100
+      },
+      {
+        "id": 946,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1540,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1265,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1351,
+        "defaultAmount": 100
+      },
+      {
+        "id": 10499,
+        "defaultAmount": 100
+      },
+      {
+        "id": 228,
+        "defaultAmount": 500000
+      },
+      {
+        "id": 9470,
+        "defaultAmount": 100
+      },
+      {
+        "id": 430,
+        "defaultAmount": 100
+      },
+      {
+        "id": 10394,
+        "defaultAmount": 100
+      },
+      {
+        "id": 662,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1833,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1835,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1837,
+        "defaultAmount": 100
+      },
+      {
+        "id": 3105,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1925,
+        "defaultAmount": 2000
+      },
+      {
+        "id": 9437,
+        "defaultAmount": 2000
+      },
+      {
+        "id": 3188,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1755,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 1785,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1776,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 233,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6651,
+        "defaultAmount": 1
+      },
+      {
+        "id": 2398,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2890,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5341,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5343,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5340,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 5291,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 952,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 314,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 222,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 236,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1526,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 224,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 9737,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 232,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 226,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 240,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 244,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 6050,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 6052,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 3139,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 6694,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 246,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 1976,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 2971,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 248,
+        "defaultAmount": 100000
+      },
+      {
+        "id": 6017,
+        "defaultAmount": 100000
+      }
+    ],
+    "name": "Ironman Items",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": true
+  }
+]

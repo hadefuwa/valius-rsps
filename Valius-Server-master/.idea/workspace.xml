@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0f80898-cf46-4bee-936c-595a03d74fdf" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/model/players/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="808">
+              <caret line="1315" column="26" selection-start-line="1315" selection-start-column="24" selection-end-line="1315" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="183" column="50" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global_objects.cfg" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Data/cfg/global_objects.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Skotizo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/model/npcs/bosses/skotizo/Skotizo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="284" column="14" selection-start-line="284" selection-start-column="14" selection-end-line="284" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Friends.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/model/players/Friends.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="34" column="29" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Clan.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/world/Clan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3400">
+              <caret line="182" column="59" selection-start-line="182" selection-start-column="59" selection-end-line="182" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Home.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Commands.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/Commands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1425">
+              <caret line="122" selection-start-line="122" selection-end-line="122" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjectOptionOne.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="1353" column="140" selection-start-line="1353" selection-start-column="140" selection-end-line="1353" selection-end-column="140" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerSave.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ethos/model/players/PlayerSave.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="1299" column="36" selection-start-line="1299" selection-start-column="36" selection-end-line="1299" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>1560</find>
+      <find>5314</find>
+      <find>prayerpot</find>
+      <find>12</find>
+      <find>additem</find>
+      <find>runepouch</find>
+      <find>hometeleport</find>
+      <find>additemtorune</find>
+      <find>elder maul</find>
+      <find>7544</find>
+      <find>slayer_helmet</find>
+      <find>75</find>
+      <find>slayer helmet</find>
+      <find>reward</find>
+      <find>ulti</find>
+      <find>cape</find>
+      <find>89061</find>
+      <find>7554</find>
+      <find>distance</find>
+      <find>distancerequ</find>
+      <find>crystal</find>
+      <find>raidCount</find>
+      <find>maround</find>
+      <find>ignore</find>
+      <find>ignores</find>
+      <find>home</find>
+      <find>Gaetor</find>
+      <find>17385</find>
+      <find>logout</find>
+      <find>23566</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Droprate.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/content/Tutorial.java" />
+        <option value="$PROJECT_DIR$/Data/cfg/npc_config.cfg" />
+        <option value="$PROJECT_DIR$/Data/cfg/spawn_config.cfg" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/Hunter.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/npcs/animations/AttackAnimation.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/npcs/animations/BlockAnimation.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/npcs/animations/DeathAnimation.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/minigames/inferno/InfernoWave.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/Boundary.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/minigames/inferno/Inferno.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/Potion.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Highrisk.java" />
+        <option value="$PROJECT_DIR$/Data/cfg/shop_config.cfg" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/combat/AttackNPC.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/npcs/pets/PetHandler.java" />
+        <option value="$PROJECT_DIR$/Data/json/npc_droptable.json" />
+        <option value="$PROJECT_DIR$/src/ethos/model/shops/ShopAssistant.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/npcs/drops/DropManager.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/combat/magic/MagicRequirements.java" />
+        <option value="$PROJECT_DIR$/Data/json/item_definitions.json" />
+        <option value="$PROJECT_DIR$/src/ethos/model/items/Item.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/content/MysteryBox.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/combat/AttackPlayer.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Bluep.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Plant.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Npc.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/combat/CombatAssistant.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionTwo.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/skills/prayer/Prayer.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/content/SkillcapePerks.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionTwo.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/PlayerAssistant.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/minigames/raids/Raids.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionOne.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/content/RunePouch.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/items/ItemAssistant.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/BankAll.java" />
+        <option value="$PROJECT_DIR$/Data/cfg/item_config.cfg" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/Player.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/items/UseItem.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/commands/moderator/Jail.java" />
+        <option value="$PROJECT_DIR$/src/ethos/world/ItemHandler.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/ClickingButtons.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/PlayerSave.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/Commands.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/npcs/bosses/skotizo/Skotizo.java" />
+        <option value="$PROJECT_DIR$/src/ethos/Config.java" />
+        <option value="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java" />
+        <option value="$PROJECT_DIR$/Data/cfg/global_objects.cfg" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="2" />
+    <option name="y" value="1" />
+    <option name="width" value="1022" />
+    <option name="height" value="726" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+              <item name="cfg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="npcs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+              <item name="donator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+              <item name="owner" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ascendrsps-ascend-server-acf8760237bf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ethos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="itemoptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="objecto&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java&#10;config&#9;PSI&#9;JAVA://ethos.Config&#10;player&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/Player.java&#10;objectop&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java&#10;Command&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/packets/Commands.java&#10;home&#9;PSI&#9;JAVA://ethos.model.players.packets.commands.all.Home&#10;clan&#9;PSI&#9;JAVA://ethos.world.Clan&#10;playersave&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/PlayerSave.java&#10;crystal&#9;PSI&#9;JAVA://ethos.model.players.combat.specials.CrystalHalberd&#10;maxhit&#9;PSI&#9;JAVA://ethos.model.players.combat.range.RangeMaxHit&#10;npchandler&#9;PSI&#9;JAVA://ethos.model.npcs.NPCHandler&#10;clickin&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/packets/ClickingButtons.java&#10;dropmana&#9;PSI&#9;JAVA://ethos.model.npcs.drops.DropManager&#10;mage&#9;PSI&#9;JAVA://ethos.model.miniquests.MageArena&#10;ach&#9;PSI&#9;JAVA://ethos.model.content.achievement.Achievements.Achievement&#10;item&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/world/ItemHandler.java&#10;jail&#9;PSI&#9;JAVA://ethos.model.players.packets.commands.moderator.Jail&#10;melee&#9;PSI&#9;JAVA://ethos.model.players.combat.melee.MeleeMaxHit&#10;itemass&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/items/ItemAssistant.java&#10;usei&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/items/UseItem.java&#10;bank&#9;PSI&#9;JAVA://ethos.model.players.packets.BankAll&#10;itemassi&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/items/ItemAssistant.java&#10;npcoption&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/packets/npcoptions/NpcOptionTwo.java&#10;removei&#9;PSI&#9;JAVA://ethos.model.players.packets.RemoveItem&#10;itemoption&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/packets/itemoptions/ItemOptionOne.java&#10;raids&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/minigames/raids/Raids.java&#10;runepouch&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/content/RunePouch.java&#10;playerassi&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/PlayerAssistant.java&#10;npcopti&#9;PSI&#9;JAVA://ethos.model.players.packets.npcoptions.NpcOptionTwo&#10;clicking&#9;PSI&#9;JAVA://ethos.model.players.packets.ClickingButtons&#10;rune&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/content/RunePouch.java&#10;skillcape&#9;PSI&#9;JAVA://ethos.model.content.SkillcapePerks&#10;prayer&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/skills/prayer/Prayer.java&#10;potions&#9;PSI&#9;JAVA://ethos.model.players.Potions&#10;potion&#9;PSI&#9;JAVA://ethos.model.content.PotionMixing&#10;itemoptitwo&#9;PSI&#9;JAVA://ethos.model.players.packets.itemoptions.ItemOptionTwo&#10;combatass&#9;PSI&#9;JAVA://ethos.model.players.combat.CombatAssistant&#10;attackpl&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/packets/AttackPlayer.java&#10;npc&#9;PSI&#9;JAVA://ethos.model.players.packets.commands.owner.Npc&#10;trading&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/Data/tradingpost&#10;attackplayer&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/combat/AttackPlayer.java&#10;mystery&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/content/MysteryBox.java&#10;Item&#9;PSI&#9;JAVA://ethos.model.items.Item&#10;playerass&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/players/PlayerAssistant.java&#10;magicre&#9;PSI&#9;JAVA://ethos.model.players.combat.magic.MagicRequirements&#10;Runepouch&#9;PSI&#9;JAVA://ethos.model.content.RunePouch&#10;dropm&#9;FILE&#9;file://C:/Users/Administrator/Desktop/ascendrsps-ascend-server-acf8760237bf/src/ethos/model/npcs/drops/DropManager.java&#10;shopassis&#9;PSI&#9;JAVA://ethos.model.shops.ShopAssistant&#10;fletching&#9;PSI&#9;JAVA://ethos.model.players.skills.fletching.Fletching&#10;pets&#9;PSI&#9;JAVA://ethos.model.npcs.pets.PetHandler.Pets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ascend Backup" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ethos.model.players.packets.commands.donator" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\ascendrsps-ascend-server-acf8760237bf\src\ethos\model\players\packets\commands\all" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ethos.Server" />
+      <module name="Server" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0f80898-cf46-4bee-936c-595a03d74fdf" name="Default" comment="" />
+      <created>1529695662620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529695662620</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2" y="1" width="1022" height="726" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49685535" weight="0.32827735" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.51590455" side_tool="true" visible="true" weight="0.39443535" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48409542" visible="true" weight="0.39443535" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49934125" weight="0.3280543" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21570577" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java</url>
+          <line>2942</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Addxp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Red.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/combat/AttackPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="1134" column="60" selection-start-line="1134" selection-start-column="52" selection-end-line="1134" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/AttackPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="251" column="40" selection-start-line="251" selection-start-column="40" selection-end-line="251" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/skills/prayer/Bone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="6" column="110" selection-start-line="6" selection-start-column="110" selection-end-line="6" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/skills/herblore/PotionData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1921">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/content/PotionMixing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/combat/CombatAssistant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="427" column="51" selection-start-line="427" selection-start-column="51" selection-end-line="427" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/content/SkillcapePerks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="102" column="25" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/skills/prayer/Prayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="77" column="51" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="51" />
+          <folding>
+            <element signature="e#5178#5179#0" expanded="true" />
+            <element signature="e#5201#5202#0" expanded="true" />
+            <element signature="e#5376#5377#0" expanded="true" />
+            <element signature="e#5409#5410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/skills/herblore/Potion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/Potions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="553" column="45" selection-start-line="557" selection-start-column="8" selection-end-line="560" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Droptable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Debug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Reload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionOne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="169" column="36" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/PlayerAssistant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40188">
+          <caret line="2458" column="48" selection-start-line="2458" selection-start-column="48" selection-end-line="2458" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/RemoveItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/content/RunePouch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="107" column="30" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/combat/melee/MeleeMaxHit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="39" column="70" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/items/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2176">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/moderator/Jail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/minigames/raids/Raids.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8068">
+          <caret line="794" selection-start-line="794" selection-end-line="794" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/BankAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/items/UseItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="956">
+          <caret line="1031" column="49" selection-start-line="1031" selection-start-column="49" selection-end-line="1031" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/world/ItemHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="405" selection-start-line="405" selection-end-line="405" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/cfg/item_config.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="13585" selection-start-line="13585" selection-end-line="13585" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/content/achievement/Achievements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="196" column="57" selection-start-line="196" selection-start-column="54" selection-end-line="196" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/items/ItemAssistant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1279">
+          <caret line="95" column="50" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/miniquests/MageArena.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/npcs/drops/DropManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8163">
+          <caret line="126" column="55" selection-start-line="126" selection-start-column="55" selection-end-line="126" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/ClickingButtons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="1629" column="23" selection-start-line="1629" selection-start-column="18" selection-end-line="1629" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="5013" column="18" lean-forward="true" selection-start-line="5013" selection-start-column="18" selection-end-line="5013" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/combat/range/RangeMaxHit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="114" column="24" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/combat/specials/CrystalHalberd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/combat/AttackNPC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="1375" column="69" selection-start-line="1375" selection-start-column="62" selection-end-line="1375" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/PlayerSave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="1299" column="36" selection-start-line="1299" selection-start-column="36" selection-end-line="1299" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/Friends.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/world/Clan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3400">
+          <caret line="182" column="59" selection-start-line="182" selection-start-column="59" selection-end-line="182" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/Commands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/npcs/bosses/skotizo/Skotizo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="284" column="14" selection-start-line="284" selection-start-column="14" selection-end-line="284" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="808">
+          <caret line="1315" column="26" selection-start-line="1315" selection-start-column="24" selection-end-line="1315" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="183" column="50" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="1353" column="140" selection-start-line="1353" selection-start-column="140" selection-end-line="1353" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/cfg/global_objects.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Server</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>deps</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

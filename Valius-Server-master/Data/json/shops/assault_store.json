@@ -1,0 +1,53 @@
+[
+  {
+    "id": 82,
+    "items": [
+      {
+        "id": 10548,
+        "defaultAmount": 10,
+        "cost": 30
+      },
+      {
+        "id": 10551,
+        "defaultAmount": 10,
+        "cost": 100
+      },
+      {
+        "id": 11898,
+        "defaultAmount": 10,
+        "cost": 25
+      },
+      {
+        "id": 11897,
+        "defaultAmount": 10,
+        "cost": 25
+      },
+      {
+        "id": 11896,
+        "defaultAmount": 10,
+        "cost": 25
+      },
+      {
+        "id": 11899,
+        "defaultAmount": 10,
+        "cost": 25
+      },
+      {
+        "id": 11900,
+        "defaultAmount": 10,
+        "cost": 25
+      },
+      {
+        "id": 11937,
+        "defaultAmount": 1000,
+        "cost": 10
+      }
+    ],
+    "name": "Assault Points",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "ASSAULT_POINTS",
+    "generalStore": false
+  }
+]

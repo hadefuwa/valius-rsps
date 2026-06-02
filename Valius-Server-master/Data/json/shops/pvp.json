@@ -1,0 +1,309 @@
+[
+  {
+    "id": 80,
+    "items": [
+      {
+        "id": 12855,
+        "defaultAmount": 1,
+        "cost": 2500000
+      },
+      {
+        "id": 12856,
+        "defaultAmount": 1,
+        "cost": 2500000
+      },
+      {
+        "id": 12804,
+        "defaultAmount": 1,
+        "cost": 25000000
+      },
+      {
+        "id": 12851,
+        "defaultAmount": 1,
+        "cost": 10000000
+      },
+      {
+        "id": 12526,
+        "defaultAmount": 1,
+        "cost": 1500000
+      },
+      {
+        "id": 12849,
+        "defaultAmount": 1,
+        "cost": 250000
+      },
+      {
+        "id": 12608,
+        "defaultAmount": 1,
+        "cost": 350000
+      },
+      {
+        "id": 12610,
+        "defaultAmount": 1,
+        "cost": 350000
+      },
+      {
+        "id": 12612,
+        "defaultAmount": 1,
+        "cost": 350000
+      },
+      {
+        "id": 12757,
+        "defaultAmount": 1,
+        "cost": 500000
+      },
+      {
+        "id": 12759,
+        "defaultAmount": 1,
+        "cost": 500000
+      },
+      {
+        "id": 12761,
+        "defaultAmount": 1,
+        "cost": 500000
+      },
+      {
+        "id": 12763,
+        "defaultAmount": 1,
+        "cost": 500000
+      },
+      {
+        "id": 12769,
+        "defaultAmount": 1,
+        "cost": 500000
+      },
+      {
+        "id": 12771,
+        "defaultAmount": 1,
+        "cost": 500000
+      },
+      {
+        "id": 12457,
+        "defaultAmount": 1,
+        "cost": 10000000
+      },
+      {
+        "id": 12458,
+        "defaultAmount": 1,
+        "cost": 10000000
+      },
+      {
+        "id": 12459,
+        "defaultAmount": 1,
+        "cost": 10000000
+      },
+      {
+        "id": 12419,
+        "defaultAmount": 1,
+        "cost": 10000000
+      },
+      {
+        "id": 12420,
+        "defaultAmount": 1,
+        "cost": 10000000
+      },
+      {
+        "id": 12421,
+        "defaultAmount": 1,
+        "cost": 10000000
+      },
+      {
+        "id": 12798,
+        "defaultAmount": 1,
+        "cost": 250000
+      },
+      {
+        "id": 12800,
+        "defaultAmount": 1,
+        "cost": 350000
+      },
+      {
+        "id": 12802,
+        "defaultAmount": 1,
+        "cost": 350000
+      },
+      {
+        "id": 12846,
+        "defaultAmount": 1,
+        "cost": 8000000
+      },
+      {
+        "id": 12786,
+        "defaultAmount": 100,
+        "cost": 100000
+      },
+      {
+        "id": 12783,
+        "defaultAmount": 100,
+        "cost": 2500000
+      },
+      {
+        "id": 12791,
+        "defaultAmount": 1,
+        "cost": 1200000
+      },
+      {
+        "id": 11941,
+        "defaultAmount": 1,
+        "cost": 150000
+      },
+      {
+        "id": 12775,
+        "defaultAmount": 100,
+        "cost": 5000
+      },
+      {
+        "id": 12776,
+        "defaultAmount": 100,
+        "cost": 5000
+      },
+      {
+        "id": 12777,
+        "defaultAmount": 100,
+        "cost": 5000
+      },
+      {
+        "id": 12778,
+        "defaultAmount": 100,
+        "cost": 5000
+      },
+      {
+        "id": 12779,
+        "defaultAmount": 100,
+        "cost": 5000
+      },
+      {
+        "id": 12780,
+        "defaultAmount": 100,
+        "cost": 5000
+      },
+      {
+        "id": 12781,
+        "defaultAmount": 100,
+        "cost": 5000
+      },
+      {
+        "id": 12782,
+        "defaultAmount": 100,
+        "cost": 5000
+      }
+    ],
+    "name": "Bounty Hunter Points",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "BOUNTIES",
+    "generalStore": false
+  },
+  {
+    "id": 12,
+    "items": [
+      {
+        "id": 2996,
+        "defaultAmount": 10000,
+        "cost": 1
+      },
+      {
+        "id": 13066,
+        "defaultAmount": 500,
+        "cost": 1
+      },
+      {
+        "id": 12004,
+        "defaultAmount": 500,
+        "cost": 400
+      },
+      {
+        "id": 11802,
+        "defaultAmount": 500,
+        "cost": 600
+      },
+      {
+        "id": 11804,
+        "defaultAmount": 500,
+        "cost": 350
+      },
+      {
+        "id": 11806,
+        "defaultAmount": 500,
+        "cost": 350
+      },
+      {
+        "id": 11808,
+        "defaultAmount": 500,
+        "cost": 350
+      },
+      {
+        "id": 13576,
+        "defaultAmount": 500,
+        "cost": 750
+      },
+      {
+        "id": 13263,
+        "defaultAmount": 500,
+        "cost": 550
+      },
+      {
+        "id": 13267,
+        "defaultAmount": 500,
+        "cost": 450
+      },
+      {
+        "id": 12765,
+        "defaultAmount": 500,
+        "cost": 250
+      },
+      {
+        "id": 12766,
+        "defaultAmount": 500,
+        "cost": 250
+      },
+      {
+        "id": 12767,
+        "defaultAmount": 500,
+        "cost": 250
+      },
+      {
+        "id": 12768,
+        "defaultAmount": 500,
+        "cost": 250
+      },
+      {
+        "id": 21012,
+        "defaultAmount": 500,
+        "cost": 750
+      },
+      {
+        "id": 11785,
+        "defaultAmount": 500,
+        "cost": 500
+      },
+      {
+        "id": 19481,
+        "defaultAmount": 500,
+        "cost": 500
+      },
+      {
+        "id": 12924,
+        "defaultAmount": 500,
+        "cost": 500
+      },
+      {
+        "id": 12806,
+        "defaultAmount": 500,
+        "cost": 450
+      },
+      {
+        "id": 12807,
+        "defaultAmount": 500,
+        "cost": 450
+      }
+    ],
+    "name": "PK Points",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "PK_POINTS",
+    "generalStore": false
+  }
+]

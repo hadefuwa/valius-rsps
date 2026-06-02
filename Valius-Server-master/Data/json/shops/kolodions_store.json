@@ -1,0 +1,65 @@
+[
+  {
+    "id": 40,
+    "items": [
+      {
+        "id": 6918,
+        "defaultAmount": 50
+      },
+      {
+        "id": 6916,
+        "defaultAmount": 50
+      },
+      {
+        "id": 6924,
+        "defaultAmount": 50
+      },
+      {
+        "id": 6922,
+        "defaultAmount": 50
+      },
+      {
+        "id": 6920,
+        "defaultAmount": 50
+      },
+      {
+        "id": 3839,
+        "defaultAmount": 50
+      },
+      {
+        "id": 3841,
+        "defaultAmount": 50
+      },
+      {
+        "id": 3843,
+        "defaultAmount": 50
+      },
+      {
+        "id": 2415,
+        "defaultAmount": 100
+      },
+      {
+        "id": 2416,
+        "defaultAmount": 100
+      },
+      {
+        "id": 2417,
+        "defaultAmount": 100
+      },
+      {
+        "id": 1409,
+        "defaultAmount": 150
+      },
+      {
+        "id": 6914,
+        "defaultAmount": 100
+      }
+    ],
+    "name": "Kolodions Store",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

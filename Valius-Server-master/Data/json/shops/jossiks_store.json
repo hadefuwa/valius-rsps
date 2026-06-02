@@ -1,0 +1,37 @@
+[
+  {
+    "id": 122,
+    "items": [
+      {
+        "id": 3839,
+        "defaultAmount": 50
+      },
+      {
+        "id": 3841,
+        "defaultAmount": 50
+      },
+      {
+        "id": 3843,
+        "defaultAmount": 50
+      },
+      {
+        "id": 12607,
+        "defaultAmount": 50
+      },
+      {
+        "id": 12609,
+        "defaultAmount": 50
+      },
+      {
+        "id": 12611,
+        "defaultAmount": 50
+      }
+    ],
+    "name": "Jossiks Store",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

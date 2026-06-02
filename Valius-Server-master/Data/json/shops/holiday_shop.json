@@ -1,0 +1,28 @@
+[
+  {
+    "id": 79,
+    "items": [
+      {
+        "id": 964,
+        "defaultAmount": 10,
+        "cost": 1000
+      },
+      {
+        "id": 9920,
+        "defaultAmount": 10,
+        "cost": 100
+      },
+      {
+        "id": 33756,
+        "defaultAmount": 10,
+        "cost": 150
+      }
+          ],
+    "name": "Halloween shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "PUMPKINS",
+    "generalStore": false
+  }
+]

@@ -1,0 +1,41 @@
+Justiciar Zachariah - 7858
+Shock gfx - 1515
+Normal attack - 1518
+special attack - 7853
+death anim - 7854
+
+
+Derwen - 7859
+shooting healing orb - 1513
+bigger hp orb shooting? - 1512
+normal attack - 1511
+throwing healers - 7848
+basic magic attack - 7849
+death anim - 7850
+possible attack anim? - 7846
+spawn anim - 7844
+
+
+Porazdir - 7860
+powered up attack gfx - 1514
+special attack anim? - 7838
+attack anim 2 - 7840
+end of special attack? - 7841
+spawning anim - 7842
+death anim - 7843
+
+
+
+public int attack(NPC npc, Entity target) {
+        int chance = Misc.random(1,5);
+        if (chance > 3) {
+            int damage = getRandomMaxHit(npc, target, CombatType.MELEE, 5);
+            npc.startAnimation(5849);
+            handleHit(npc, target, CombatType.MELEE, null, new Hit(Hitmark.HIT, damage, 2));
+        } else {
+            int damage = getRandomMaxHit(npc, target, CombatType.MAGE, 5);
+            npc.startAnimation(5849);
+            handleHit(npc, target, CombatType.MELEE, null, new Hit(Hitmark.HIT, damage, 2));            
+        }
+        return 4;
+    }

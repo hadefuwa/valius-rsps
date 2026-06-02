@@ -1,0 +1,18 @@
+[
+  {
+    "id": 137,
+    "items": [
+      {
+        "id": 33719,
+        "defaultAmount": 10,
+        "cost": 50
+      }
+          ],
+    "name": "Donator Shop",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "DONATOR_TOKENS",
+    "generalStore": false
+  }
+]

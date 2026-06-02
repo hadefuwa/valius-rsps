@@ -1,0 +1,41 @@
+[
+  {
+    "id": 23,
+    "items": [
+      {
+        "id": 10006,
+        "defaultAmount": 300
+      },
+      {
+        "id": 10008,
+        "defaultAmount": 300
+      },
+      {
+        "id": 10010,
+        "defaultAmount": 300
+      },
+      {
+        "id": 11260,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 10041,
+        "defaultAmount": 10
+      },
+      {
+        "id": 10043,
+        "defaultAmount": 10
+      },
+      {
+        "id": 10045,
+        "defaultAmount": 10
+      }
+    ],
+    "name": "Hunter Items",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

@@ -1,0 +1,181 @@
+[
+  {
+    "id": 48,
+    "items": [
+      {
+        "id": 884,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 886,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 888,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 890,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 892,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 841,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 839,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 845,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 849,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 847,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 853,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 851,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 861,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 859,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9185,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9142,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9143,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 9144,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1129,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1095,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1133,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1097,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1135,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1099,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 1065,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2499,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2493,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2487,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2501,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2495,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2489,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 863,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 866,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 867,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 868,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 811,
+        "defaultAmount": 10000
+      },
+      {
+        "id": 3749,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 10499,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 6328,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2497,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2491,
+        "defaultAmount": 1000
+      },
+      {
+        "id": 2503,
+        "defaultAmount": 1000
+      }
+    ],
+    "name": "Range Supplies",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": true,
+    "currency": "COINS",
+    "generalStore": false
+  }
+]

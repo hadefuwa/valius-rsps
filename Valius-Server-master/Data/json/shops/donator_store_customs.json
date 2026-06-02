@@ -1,0 +1,53 @@
+[
+  {
+    "id": 130,
+    "items": [
+    {
+        "id": 33953,
+        "defaultAmount": 1,
+        "cost": 25
+      },
+      {
+        "id": 33954,
+        "defaultAmount": 1,
+        "cost": 25
+      },
+      {
+        "id": 33955,
+        "defaultAmount": 1,
+        "cost": 25
+      },
+      {
+        "id": 33924,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 33925,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 33926,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 33927,
+        "defaultAmount": 1,
+        "cost": 50
+      },
+      {
+        "id": 33928,
+        "defaultAmount": 1,
+        "cost": 50
+      }
+          ],
+    "name": "Item Skins",
+    "sellModifier": 0.7,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "currency": "DONATOR_TOKENS",
+    "generalStore": false
+  }
+]
