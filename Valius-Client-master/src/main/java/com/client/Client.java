@@ -3956,7 +3956,7 @@ public class Client extends JPanel implements Runnable {
 			instance = new Client();
 			clientUI = new ClientUI();
 			clientUI.open(instance);
-			RPC.init(); //discord rich presence
+			//RPC.init(); //discord rich presence - disabled for local dev
 		} catch (Exception exception) {
 		}
 	}

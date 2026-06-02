@@ -56,7 +56,7 @@ public class Configuration {
 	public static final String SHORT_CLIENT_TITLE = "Valius";
 	public static final int CLIENT_VERSION = 5;
     public static Boolean LIVE_SERVER = false;
-    public static String IP = "192.99.145.49";
+    public static String IP = "127.0.0.1";
 	public static final int PORT = 43594;
 	
 	public static final boolean THREADED_RENDERING = false;

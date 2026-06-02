@@ -194,10 +194,11 @@ public class DiscordBot {
 	
 	
 	public static void sendMessage(String channelName, String message) {
+		if (cli == null) return; // bot not initialised - skip silently
 		Optional<IChannel> channelOpt = getChannelByName(channelName);
-		channelOpt.ifPresent(channel -> { 
+		channelOpt.ifPresent(channel -> {
 			if(channel.getModifiedPermissions(cli.getOurUser()).contains(Permissions.SEND_MESSAGES))//stops permission error spam
-				DiscordManager.sendMessage(channel, message); 
+				DiscordManager.sendMessage(channel, message);
 			});
 	}
 	

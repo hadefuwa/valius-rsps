@@ -13,9 +13,10 @@ targetCompatibility = 1.8
 mainClassName = 'valius.Server'
 
 repositories {
-    jcenter()
     mavenCentral()
     maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.maven.apache.org/maven2/' }
+    maven { url 'https://oss.sonatype.org/content/repositories/releases/' }
 }
 
 sourceSets {
@@ -41,7 +42,11 @@ dependencies {
    	compile group: 'io.netty', name: 'netty', version: '3.10.6.Final'
    	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.7'
 	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-   	compile group: 'com.discord4j', name: 'Discord4J', version: '2.10.1'
+   	compile(group: 'com.discord4j', name: 'Discord4J', version: '2.10.1') {
+   	    exclude group: 'org.tritonus', module: 'tritonus-dsp'
+   	    exclude group: 'org.tritonus', module: 'tritonus-share'
+   	    exclude group: 'javazoom', module: 'jlayer'
+   	}
    	compile group: 'com.github.Discord4J-Addons', name: 'Commands4J', version: '2.1'
    	compile group: 'com.mchange', name: 'mchange-commons-java', version: '0.2.15'
    	compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.7'

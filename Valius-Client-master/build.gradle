@@ -9,7 +9,7 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-        jcenter()
+        mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
     dependencies {
@@ -29,9 +29,10 @@ targetCompatibility = 1.8
 repositories {
     // Use 'jcenter' for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
     mavenCentral()
-	maven { url 'http://repo.runelite.net' }
+    mavenCentral()
+	maven { url 'https://jitpack.io' }
+    maven { url 'https://oss.sonatype.org/content/repositories/releases/' }
 }
 
 
@@ -58,13 +59,14 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
     
     compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
-    compile group: 'net.runelite.pushingpixels', name: 'trident', version: '1.5.00'
-    compile group: 'net.runelite.pushingpixels', name: 'substance', version: '8.0.02'
+    compile files('C:/Program Files/Java/jre-1.8/lib/ext/jfxrt.jar')
+    compile files('libs/trident-1.5.00.jar')
+    compile files('libs/substance-8.0.02.jar')
+
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     // https://mvnrepository.com/artifact/com.google.inject/guice
 	compile group: 'com.google.inject', name: 'guice', version: '4.2.2'
 	compile group: 'com.jcabi', name: 'jcabi-manifests', version: '1.1'
-	compile 'club.minnced:java-discord-rpc:2.0.2'
     
 	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
@@ -128,7 +130,7 @@ task myProguardTask(type: proguard.gradle.ProGuardTask) {
 }
 
 
-jar.finalizedBy(myProguardTask)
+// jar.finalizedBy(myProguardTask) // disabled for local dev
 
 
 betaJar.dependsOn(compileJava)
