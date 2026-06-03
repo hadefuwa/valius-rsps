@@ -2,6 +2,9 @@
 
 A feature-rich 317 RuneScape Private Server loading **#181 OSRS data**, developed over 16 months. Released as open source in 2020. Thousands of hours and dollars of development — fully playable out of the box.
 
+<img width="777" height="530" alt="image" src="https://github.com/user-attachments/assets/51db09d8-b089-4e57-9a4a-6b265edcfe7b" />
+
+
 ---
 
 ## Quick Start
