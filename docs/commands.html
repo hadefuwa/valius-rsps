@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Player Commands — Valius Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #f2e8d0;
+    --parchment-shadow: #d4c49a;
+    --ink: #1c1208;
+    --ink-light: #3d2e0f;
+    --gold: #b8860b;
+    --gold-bright: #d4a017;
+    --gold-light: #f0c040;
+    --header-bg: #1a0f00;
+    --sidebar-bg: #ede0c4;
+    --sidebar-border: #c8a96e;
+    --link: #5c3d11;
+    --link-hover: #b8860b;
+    --table-head: #c8a96e;
+    --table-stripe: #ede0c4;
+    --dev-accent: #1a3a5c;
+    --dev-accent-bright: #2a5f96;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.65;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--header-bg);
+    border-bottom: 3px solid var(--gold);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 62px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .header-crest { font-size: 28px; line-height: 1; }
+  header h1 { font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700; color: var(--gold-light); letter-spacing: 2px; text-shadow: 0 0 18px rgba(212,160,23,0.4); }
+  header h1 a { color: inherit; text-decoration: none; }
+  .header-tagline { font-family: 'Crimson Text', serif; font-size: 13px; color: #9a7a3a; font-style: italic; padding-left: 14px; border-left: 1px solid #4a3000; }
+  .header-nav { margin-left: auto; display: flex; gap: 20px; }
+  .header-nav a { font-family: 'Cinzel', serif; font-size: 12px; color: #c8a040; text-decoration: none; letter-spacing: 1px; opacity: 0.8; transition: opacity 0.2s; }
+  .header-nav a:hover { opacity: 1; color: var(--gold-light); }
+
+  /* ── LAYOUT ── */
+  .layout { display: flex; min-height: calc(100vh - 62px); max-width: 1280px; margin: 0 auto; }
+
+  /* ── SIDEBAR ── */
+  aside {
+    width: 220px;
+    min-width: 220px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    position: sticky;
+    top: 62px;
+    height: calc(100vh - 62px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-switcher { display: flex; border-bottom: 2px solid var(--sidebar-border); flex-shrink: 0; }
+  .section-btn {
+    flex: 1; padding: 12px 6px; border: none; background: transparent; cursor: pointer;
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #a0906a; border-bottom: 3px solid transparent;
+    margin-bottom: -2px; transition: all 0.18s;
+  }
+  .section-btn:hover { color: var(--gold); background: rgba(184,134,11,0.06); }
+  .section-btn.active-users { color: var(--gold); border-bottom-color: var(--gold-bright); background: rgba(184,134,11,0.08); }
+  .section-btn.active-dev   { color: var(--dev-accent-bright); border-bottom-color: var(--dev-accent-bright); background: rgba(26,58,92,0.07); }
+
+  .sidebar-nav { flex: 1; padding: 16px 0 24px; }
+  .sidebar-section { margin-bottom: 4px; }
+  .sidebar-section-title {
+    font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 8px 18px 4px; border-bottom: 1px solid var(--parchment-shadow); margin-bottom: 4px;
+  }
+  .sidebar-section-title.users-title { color: var(--gold); }
+  .sidebar-section-title.dev-title   { color: var(--dev-accent-bright); }
+
+  .sidebar-section a {
+    display: block; padding: 5px 18px 5px 22px; font-family: 'Crimson Text', serif; font-size: 15px;
+    color: var(--link); text-decoration: none; border-left: 3px solid transparent; transition: all 0.15s;
+  }
+  .sidebar-section a:hover { color: var(--link-hover); border-left-color: var(--gold); background: rgba(184,134,11,0.07); padding-left: 24px; }
+  .sidebar-section a.active { color: var(--gold); border-left-color: var(--gold-bright); background: rgba(184,134,11,0.1); font-weight: 600; }
+  .sidebar-section a.dim { color: #a0906a; font-style: italic; cursor: default; pointer-events: none; }
+
+  .dev-nav .sidebar-section a:hover { color: var(--dev-accent-bright); border-left-color: var(--dev-accent-bright); background: rgba(26,58,92,0.07); }
+
+  .nav-panel { display: none; }
+  .nav-panel.visible { display: block; }
+
+  .toc { margin: 6px 0 0; padding: 0; list-style: none; }
+  .toc li a { display: block; padding: 3px 18px 3px 28px; font-size: 13px; color: #7a5a2a; text-decoration: none; border-left: 3px solid transparent; transition: all 0.15s; }
+  .toc li a:hover { color: var(--gold); border-left-color: var(--gold); background: rgba(184,134,11,0.06); }
+
+  /* ── MAIN ── */
+  main { flex: 1; padding: 36px 48px 60px; min-width: 0; }
+
+  .breadcrumb { font-size: 13px; color: #8a7050; margin-bottom: 16px; }
+  .breadcrumb a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb span { margin: 0 6px; color: #b0906a; }
+
+  .page-title { font-family: 'Cinzel', serif; font-size: 30px; font-weight: 700; color: var(--ink); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 22px; letter-spacing: 1px; }
+
+  h2 { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 600; color: var(--ink-light); padding-bottom: 6px; margin: 36px 0 14px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 10px; }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--parchment-shadow); }
+
+  p { margin-bottom: 14px; }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+  a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
+
+  /* ── SEARCH BAR ── */
+  .search-wrap { margin-bottom: 28px; position: relative; }
+  .search-wrap input {
+    width: 100%;
+    padding: 11px 16px 11px 42px;
+    font-family: 'Crimson Text', serif;
+    font-size: 16px;
+    background: #fdf8ef;
+    border: 1px solid var(--parchment-shadow);
+    border-radius: 6px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-wrap input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,134,11,0.12); }
+  .search-wrap input::placeholder { color: #b0906a; font-style: italic; }
+  .search-wrap .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; pointer-events: none; }
+  .search-count { margin-top: 6px; font-size: 13px; color: #8a7050; font-style: italic; }
+
+  /* ── RANK BADGE ── */
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .rank-all      { background: #e8f4e8; color: #2a6b2a; border: 1px solid #8fba8f; }
+  .rank-donor    { background: #fdf0cc; color: #8a6000; border: 1px solid #d4a017; }
+  .rank-helper   { background: #e8f0f8; color: #1a3a5c; border: 1px solid #8ab0d0; }
+  .rank-mod      { background: #f0e8f8; color: #4a1a7c; border: 1px solid #b08ad0; }
+  .rank-admin    { background: #f8e8e8; color: #7c1a1a; border: 1px solid #d08a8a; }
+  .rank-owner    { background: #1a0f00; color: var(--gold-light); border: 1px solid var(--gold); }
+
+  /* ── COMMANDS TABLE ── */
+  .cmd-section { margin-bottom: 8px; }
+
+  .cmd-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid var(--parchment-shadow);
+    border-bottom: none;
+    transition: background 0.15s;
+  }
+  .cmd-section-header:hover { filter: brightness(0.97); }
+  .cmd-section-header .chevron { margin-left: auto; font-size: 12px; transition: transform 0.2s; }
+  .cmd-section-header.collapsed .chevron { transform: rotate(-90deg); }
+  .cmd-section-header .section-count { font-size: 12px; opacity: 0.7; font-family: 'Cinzel', serif; }
+
+  .bg-all    { background: #f0faf0; }
+  .bg-donor  { background: #fdf8e8; }
+  .bg-helper { background: #edf4fc; }
+  .bg-mod    { background: #f5eeff; }
+  .bg-admin  { background: #fff0f0; }
+  .bg-owner  { background: #1a0f00; color: var(--gold-light); }
+  .bg-owner .section-count { color: #c8a040; }
+
+  .cmd-table-wrap { border: 1px solid var(--parchment-shadow); border-top: none; border-radius: 0 0 6px 6px; overflow: hidden; margin-bottom: 16px; }
+  .cmd-table-wrap.hidden { display: none; }
+
+  table.cmd-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fdf8ef; }
+  .bg-owner + .cmd-table-wrap table.cmd-table { background: #1f140a; color: #e0c878; }
+
+  table.cmd-table th {
+    background: var(--table-head); color: var(--ink);
+    font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 8px 14px; text-align: left;
+  }
+  .bg-owner + .cmd-table-wrap table.cmd-table th { background: #3a2800; color: var(--gold-light); }
+
+  table.cmd-table td { padding: 8px 14px; border-top: 1px solid var(--parchment-shadow); vertical-align: top; }
+  .bg-owner + .cmd-table-wrap table.cmd-table td { border-top-color: #3a2800; }
+  table.cmd-table tr:nth-child(even) td { background: var(--table-stripe); }
+  .bg-owner + .cmd-table-wrap table.cmd-table tr:nth-child(even) td { background: #241608; }
+  table.cmd-table tr:hover td { background: #f5e8c0; }
+  .bg-owner + .cmd-table-wrap table.cmd-table tr:hover td { background: #2e1c08; }
+
+  .cmd-name {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2a1a00;
+    white-space: nowrap;
+  }
+  .cmd-name::before { content: '::'; color: var(--gold); }
+  .bg-owner + .cmd-table-wrap .cmd-name { color: var(--gold-light); }
+
+  .cmd-args {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #7a5a00;
+    font-style: italic;
+    display: block;
+    margin-top: 2px;
+  }
+  .bg-owner + .cmd-table-wrap .cmd-args { color: #c8a040; }
+
+  .cmd-desc { font-size: 15px; color: #3d2e0f; }
+  .bg-owner + .cmd-table-wrap .cmd-desc { color: #d4b870; }
+
+  /* hidden by search */
+  tr.cmd-row.hidden { display: none; }
+
+  /* ── NOTICE ── */
+  .notice {
+    border-radius: 4px; padding: 14px 18px; margin-bottom: 24px; font-size: 15px;
+    background: #fdf6e3; border: 1px solid var(--gold); border-left: 4px solid var(--gold-bright);
+  }
+
+  /* ── FOOTER ── */
+  footer { background: var(--header-bg); border-top: 2px solid #3a2800; color: #6a5020; text-align: center; padding: 18px; font-size: 13px; font-family: 'Crimson Text', serif; font-style: italic; }
+  footer a { color: #9a7030; border-bottom: none; }
+
+  @media (max-width: 700px) { aside { display: none; } main { padding: 20px 18px 40px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="header-crest">⚔</span>
+  <h1><a href="index.html">Valius Wiki</a></h1>
+  <span class="header-tagline">The Valius RSPS community reference</span>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="commands.html">Commands</a>
+    <a href="blood-money.html">Blood Money</a>
+    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub ↗</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="section-switcher">
+      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">👤 Players</button>
+      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">⚙ Developers</button>
+    </div>
+    <div class="sidebar-nav">
+      <div class="nav-panel users-nav visible" id="nav-users">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Navigation</div>
+          <a href="index.html">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Game Systems</div>
+          <a href="commands.html" class="active">📜 Commands</a>
+          <a href="blood-money.html">💀 Blood Money</a>
+          <a class="dim">🗡 PvP Guide</a>
+          <a class="dim">🧪 Skilling</a>
+          <a class="dim">👹 Bosses</a>
+          <a class="dim">🏆 Achievements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Shops &amp; Items</div>
+          <a class="dim">🛒 Point Shops</a>
+          <a class="dim">💎 Donator Store</a>
+          <a class="dim">🪙 Vote Shop</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">On This Page</div>
+          <ul class="toc">
+            <li><a href="#all-players">All Players</a></li>
+            <li><a href="#donator">Donator</a></li>
+            <li><a href="#helper">Helper</a></li>
+            <li><a href="#moderator">Moderator</a></li>
+            <li><a href="#admin">Admin</a></li>
+            <li><a href="#owner">Owner</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-panel dev-nav" id="nav-dev">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Navigation</div>
+          <a href="index.html">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Setup</div>
+          <a class="dim">🖥 Server Setup</a>
+          <a class="dim">🎮 Client Setup</a>
+          <a class="dim">☕ Java Versions</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Codebase</div>
+          <a class="dim">📦 Project Structure</a>
+          <a class="dim">🛒 Shop System</a>
+          <a class="dim">🧑‍💻 NPC Spawns</a>
+          <a class="dim">🔧 Commands</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Reference</div>
+          <a class="dim">📋 Config Keys</a>
+          <a class="dim">🐛 Known Issues</a>
+          <a class="dim">📝 Changelog</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      Game Systems
+      <span>›</span>
+      Commands
+    </div>
+
+    <h1 class="page-title">Player Commands</h1>
+
+    <div class="notice">
+      All commands are prefixed with <strong>::</strong> — type them in the in-game chat (e.g. <code>::home</code>). Commands are grouped by the minimum rank required to use them.
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="cmd-search" placeholder="Search commands…" oninput="filterCommands(this.value)">
+      <div class="search-count" id="search-count"></div>
+    </div>
+
+    <!-- ─────────────────────── ALL PLAYERS ─────────────────────── -->
+    <div id="all-players">
+      <div class="cmd-section-header bg-all" onclick="toggleSection(this)">
+        <span class="rank-badge rank-all">👤 All Players</span>
+        <span class="section-count" id="count-all"></span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="cmd-table-wrap">
+        <table class="cmd-table">
+          <tr><th>Command</th><th>Description</th></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">home</span></td><td class="cmd-desc">Teleport to the home area.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">duel</span></td><td class="cmd-desc">Teleport to the Duel Arena.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">dice</span></td><td class="cmd-desc">Teleport to the dice area (Mage Bank).</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">easts</span></td><td class="cmd-desc">Teleport to east wilderness PK hotspot.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">wests</span></td><td class="cmd-desc">Teleport to west wilderness PK hotspot.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">mb</span></td><td class="cmd-desc">Teleport to Mage Bank.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">highrisk</span></td><td class="cmd-desc">Teleport to an instanced high-risk Edgeville wilderness area.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">stuck</span></td><td class="cmd-desc">Emergency teleport if stuck in the wilderness (5-minute delay).</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">unjail</span></td><td class="cmd-desc">Release yourself from jail once your sentence has expired.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">wildyboss</span></td><td class="cmd-desc">Teleport to the current active wilderness boss.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">telepursuit</span></td><td class="cmd-desc">Teleport to the current monster hunt / wilderness pursuit location.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">checkpursuit</span></td><td class="cmd-desc">Check if a wilderness pursuit or monster hunt is currently active.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">leaveraid</span></td><td class="cmd-desc">Leave your current raid instance.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">stuckraids</span></td><td class="cmd-desc">Return to the starting room if you are stuck inside a raid.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">help</span></td><td class="cmd-desc">Create a help ticket to contact online staff.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">bug</span></td><td class="cmd-desc">Submit a bug report ticket to staff.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">staff</span></td><td class="cmd-desc">List all currently online staff members.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">commands</span></td><td class="cmd-desc">Show the in-game command list interface.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">droprate</span></td><td class="cmd-desc">Display your current drop rate bonus percentage.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">dailytask</span></td><td class="cmd-desc">Check your current active daily task.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">hosts</span></td><td class="cmd-desc">List all dice bag hosts currently online.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">changepass</span><span class="cmd-args">[newpassword]</span></td><td class="cmd-desc">Change your account password.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">changepassword</span><span class="cmd-args">[newpassword]</span></td><td class="cmd-desc">Alias for <code>::changepass</code>.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">explock</span></td><td class="cmd-desc">Open the experience lock interface to stop XP gains on chosen skills.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">toggledrop</span></td><td class="cmd-desc">Toggle the item drop confirmation warning on or off.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">vote</span></td><td class="cmd-desc">Open the voting page in your browser.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">claimvotes</span></td><td class="cmd-desc">Claim your pending vote rewards.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">reward</span></td><td class="cmd-desc">Claim all pending vote rewards at once.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">donate</span></td><td class="cmd-desc">Open the donation store page.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">store</span></td><td class="cmd-desc">Alias for <code>::donate</code>.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">claim</span></td><td class="cmd-desc">Check for and claim pending donation rewards.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">dperks</span></td><td class="cmd-desc">Open the donation perks and ranks information page.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">forums</span></td><td class="cmd-desc">Open the Valius forums in your browser.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">discord</span></td><td class="cmd-desc">Open the Valius Discord invite link.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">highscores</span></td><td class="cmd-desc">Open the Valius hiscores page in your browser.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">rules</span></td><td class="cmd-desc">Open the server rules page.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">starterguide</span></td><td class="cmd-desc">Open the starter guide for new players.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">mobile</span></td><td class="cmd-desc">View the guide for playing Valius on a mobile device.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">referral</span><span class="cmd-args">[referral-id]</span></td><td class="cmd-desc">Claim rewards from a referral code.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ─────────────────────── DONATOR ─────────────────────── -->
+    <div id="donator">
+      <div class="cmd-section-header bg-donor" onclick="toggleSection(this)">
+        <span class="rank-badge rank-donor">💎 Donator</span>
+        <span class="section-count" id="count-donor"></span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="cmd-table-wrap">
+        <table class="cmd-table">
+          <tr><th>Command</th><th>Description</th></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">donatorzone</span></td><td class="cmd-desc">Teleport to the exclusive donator zone.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">dz</span></td><td class="cmd-desc">Shortcut for <code>::donatorzone</code>.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">edz</span></td><td class="cmd-desc">Teleport to the extended donator zone (higher rank required).</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">bank</span></td><td class="cmd-desc">Open your bank from anywhere (requires $100+ total donation).</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">tp</span></td><td class="cmd-desc">Open the teleport interface from anywhere (requires $25+ donation).</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">yell</span><span class="cmd-args">[message]</span></td><td class="cmd-desc">Send a global message to all players. Cooldown varies by donor rank: Sapphire–Diamond: 60 s, Dragonstone: 30 s, Onyx+: 1 s.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">donatortitle</span></td><td class="cmd-desc">Reset your chat title to your default donator title.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">killtitle</span></td><td class="cmd-desc">Set a custom kill-count based title.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ─────────────────────── HELPER ─────────────────────── -->
+    <div id="helper">
+      <div class="cmd-section-header bg-helper" onclick="toggleSection(this)">
+        <span class="rank-badge rank-helper">🤝 Helper</span>
+        <span class="section-count" id="count-helper"></span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="cmd-table-wrap">
+        <table class="cmd-table">
+          <tr><th>Command</th><th>Description</th></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">helpdb</span></td><td class="cmd-desc">Open the help ticket database interface.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">sz</span></td><td class="cmd-desc">Teleport to the staff zone.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">kick</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Force a player to log out.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">mute</span><span class="cmd-args">[player] [minutes] [reason]</span></td><td class="cmd-desc">Mute a player. Use 0 for a permanent mute.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">unmute</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Remove a mute from a player.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">unjail</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Release a player from jail early.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ─────────────────────── MODERATOR ─────────────────────── -->
+    <div id="moderator">
+      <div class="cmd-section-header bg-mod" onclick="toggleSection(this)">
+        <span class="rank-badge rank-mod">🛡 Moderator</span>
+        <span class="section-count" id="count-mod"></span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="cmd-table-wrap">
+        <table class="cmd-table">
+          <tr><th>Command</th><th>Description</th></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">ban</span><span class="cmd-args">[player] [minutes] [reason]</span></td><td class="cmd-desc">Ban a player. Use 0 for a permanent ban.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">banip</span><span class="cmd-args">[ip] [reason]</span></td><td class="cmd-desc">Ban an IP address.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">info</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">View a player's IP and MAC address.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">online</span><span class="cmd-args">[ip or mac]</span></td><td class="cmd-desc">Find all players online matching a given IP or MAC.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">jail</span><span class="cmd-args">[player] [minutes] [reason]</span></td><td class="cmd-desc">Jail a player. Use 0 for a permanent jail.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">netmute</span><span class="cmd-args">[ip] [minutes] [reason]</span></td><td class="cmd-desc">Mute all players from a given IP address.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">unnetmute</span><span class="cmd-args">[ip]</span></td><td class="cmd-desc">Remove an IP-wide mute.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">find</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Show a player's current map coordinates.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">checkinventory</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Inspect a player's current inventory.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">move</span><span class="cmd-args">[player] [x] [y] [z]</span></td><td class="cmd-desc">Teleport a player to specific coordinates.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">teletome</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Bring a player to your current location.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">xteleto</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Teleport yourself to a player's location.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">note</span><span class="cmd-args">[player] [note]</span></td><td class="cmd-desc">Add a staff note to a player's account.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">ks</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Check a player's current kill streak.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">marketmute</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Mute a player from the trading post.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">marketunmute</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Unmute a player from the trading post.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">staffzone</span></td><td class="cmd-desc">Teleport to the moderator staff zone.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">stafftitle</span></td><td class="cmd-desc">Set your moderator display title.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ─────────────────────── ADMIN ─────────────────────── -->
+    <div id="admin">
+      <div class="cmd-section-header bg-admin" onclick="toggleSection(this)">
+        <span class="rank-badge rank-admin">⚙ Admin</span>
+        <span class="section-count" id="count-admin"></span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="cmd-table-wrap">
+        <table class="cmd-table">
+          <tr><th>Command</th><th>Description</th></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">tele</span><span class="cmd-args">[x] [y] [z]</span></td><td class="cmd-desc">Teleport to any coordinates on the map.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">coords</span></td><td class="cmd-desc">Display your current tile coordinates.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">giveitem</span><span class="cmd-args">[player] [item-id] [amount]</span></td><td class="cmd-desc">Give items to a player.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">takeitem</span><span class="cmd-args">[player] [item-id] [amount]</span></td><td class="cmd-desc">Remove items from a player's inventory.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">checkbank</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">View the contents of a player's bank.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">hpray</span></td><td class="cmd-desc">Toggle godmode — 9999 HP, full prayer, and special attack.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">killnpc</span><span class="cmd-args">[id or "all"]</span></td><td class="cmd-desc">Kill nearby NPC(s) by ID, or all NPCs in the area.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">givedonor</span></td><td class="cmd-desc">Grant all online players Sapphire donor rank ($20 tier).</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">givemod</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Promote a player to Moderator rank.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">givesupport</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Promote a player to Helper/Support rank.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">removerights</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Strip a player of their staff rank.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">smessage</span><span class="cmd-args">[message]</span></td><td class="cmd-desc">Broadcast a server-wide message to all players.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">pnpc</span><span class="cmd-args">[npc-id]</span></td><td class="cmd-desc">Change your appearance to look like an NPC.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">setanim</span><span class="cmd-args">[anim-id]</span></td><td class="cmd-desc">Play a specific animation on your character.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">macban</span><span class="cmd-args">[player or mac] [reason]</span></td><td class="cmd-desc">MAC-address ban a player.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">unipban</span><span class="cmd-args">[ip]</span></td><td class="cmd-desc">Remove an IP ban.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">unmacban</span><span class="cmd-args">[mac or player]</span></td><td class="cmd-desc">Remove a MAC ban.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">starteventboss</span></td><td class="cmd-desc">Spawn and start the event boss.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">startshootingstar</span></td><td class="cmd-desc">Start the shooting star skilling event.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">reload</span><span class="cmd-args">[admin]</span></td><td class="cmd-desc">Reload admin-level server data.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">safemode</span></td><td class="cmd-desc">Toggle server safe mode.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">togglehiscore</span></td><td class="cmd-desc">Toggle a player's visibility on the hiscores.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">toggletob</span></td><td class="cmd-desc">Toggle Theatre of Blood access on or off.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">toggletp</span></td><td class="cmd-desc">Toggle the trading post on or off.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">visible</span></td><td class="cmd-desc">Toggle your visibility to other players.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">fixpet</span></td><td class="cmd-desc">Fix a broken or stuck pet.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">reset</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Reset a player's data.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ─────────────────────── OWNER ─────────────────────── -->
+    <div id="owner">
+      <div class="cmd-section-header bg-owner" onclick="toggleSection(this)">
+        <span class="rank-badge rank-owner">👑 Owner</span>
+        <span class="section-count" id="count-owner"></span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="cmd-table-wrap">
+        <table class="cmd-table">
+          <tr><th>Command</th><th>Description</th></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">spawn</span><span class="cmd-args">[item-id] [amount]</span></td><td class="cmd-desc">Spawn items into your inventory.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">npc</span><span class="cmd-args">[npc-id]</span></td><td class="cmd-desc">Spawn an NPC at your location.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">max</span><span class="cmd-args">[maxed]</span></td><td class="cmd-desc">Set all skills to 99. Add <code>maxed</code> for 200M XP in all skills.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">setlevel</span><span class="cmd-args">[skill] [level]</span></td><td class="cmd-desc">Set a specific skill to any level.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">addxp</span><span class="cmd-args">[skill] [amount]</span></td><td class="cmd-desc">Add a specified amount of XP to a skill.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">addrights</span><span class="cmd-args">[player] [rank]</span></td><td class="cmd-desc">Grant a player any rank/rights level.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">invincible</span></td><td class="cmd-desc">Toggle invincibility for yourself.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">kill</span></td><td class="cmd-desc">Kill your own character instantly.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">object</span><span class="cmd-args">[id] [rotation] [type]</span></td><td class="cmd-desc">Spawn a map object at your location.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">interface</span><span class="cmd-args">[id]</span></td><td class="cmd-desc">Force-open any game interface by ID.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">shop</span><span class="cmd-args">[id]</span></td><td class="cmd-desc">Open any shop by ID.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">announce</span><span class="cmd-args">[message] [type]</span></td><td class="cmd-desc">Send a styled server announcement (NEWS / LOOT / EVENT / DONATION).</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">saveall</span></td><td class="cmd-desc">Force-save all online players to disk.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">reload</span><span class="cmd-args">[doors/drops/items/shops/npcs/commands…]</span></td><td class="cmd-desc">Hot-reload specific server data without restarting.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">updateshops</span></td><td class="cmd-desc">Force-refresh all shop inventories.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">getpass</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Retrieve a player's password hash.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">getid</span></td><td class="cmd-desc">Display the ID of any item, object, or NPC you click on.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">anim</span><span class="cmd-args">[id]</span></td><td class="cmd-desc">Play any animation by ID.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">gfx</span><span class="cmd-args">[id]</span></td><td class="cmd-desc">Play any graphics/spell effect by ID.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">pos</span></td><td class="cmd-desc">Print your exact current position to chat.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">wildybossspawn</span></td><td class="cmd-desc">Force-spawn the wilderness boss.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">wildypursuit</span></td><td class="cmd-desc">Start the wilderness pursuit event.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">startcerberus</span></td><td class="cmd-desc">Start the Cerberus boss encounter.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">infernoboss</span></td><td class="cmd-desc">Spawn the Inferno boss.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">raidtest</span></td><td class="cmd-desc">Test raid mechanics.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">raidkill</span></td><td class="cmd-desc">Kill all raid bosses in the current instance.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">resetdaily</span></td><td class="cmd-desc">Reset a player's daily task.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">resetstats</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Reset a player's statistics.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">serverstatus</span></td><td class="cmd-desc">Display current server status and player count.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">debug</span></td><td class="cmd-desc">Toggle debug mode for verbose server logging.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">unpc</span></td><td class="cmd-desc">Remove NPC appearance and return to normal player model.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">tob</span></td><td class="cmd-desc">Theatre of Blood control commands.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">setvotepoints</span><span class="cmd-args">[amount]</span></td><td class="cmd-desc">Set a player's vote points to a specific value.</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  Valius Wiki — fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
+  <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
+</footer>
+
+<script>
+  var STORAGE_KEY = 'valius-wiki-section';
+
+  function switchSection(section) {
+    document.getElementById('btn-users').className = 'section-btn' + (section === 'users' ? ' active-users' : '');
+    document.getElementById('btn-dev').className   = 'section-btn' + (section === 'dev'   ? ' active-dev'   : '');
+    document.getElementById('nav-users').className = 'nav-panel users-nav' + (section === 'users' ? ' visible' : '');
+    document.getElementById('nav-dev').className   = 'nav-panel dev-nav'   + (section === 'dev'   ? ' visible' : '');
+    try { localStorage.setItem(STORAGE_KEY, section); } catch(e) {}
+  }
+
+  (function() {
+    var saved = 'users';
+    try { saved = localStorage.getItem(STORAGE_KEY) || 'users'; } catch(e) {}
+    switchSection(saved);
+  })();
+
+  // ── SECTION COLLAPSE ──
+  function toggleSection(header) {
+    header.classList.toggle('collapsed');
+    var wrap = header.nextElementSibling;
+    wrap.classList.toggle('hidden');
+  }
+
+  // ── COUNT BADGES ──
+  function updateCounts() {
+    var sections = [
+      { id: 'count-all',    rows: document.querySelectorAll('#all-players .cmd-row') },
+      { id: 'count-donor',  rows: document.querySelectorAll('#donator .cmd-row') },
+      { id: 'count-helper', rows: document.querySelectorAll('#helper .cmd-row') },
+      { id: 'count-mod',    rows: document.querySelectorAll('#moderator .cmd-row') },
+      { id: 'count-admin',  rows: document.querySelectorAll('#admin .cmd-row') },
+      { id: 'count-owner',  rows: document.querySelectorAll('#owner .cmd-row') },
+    ];
+    var total = 0;
+    sections.forEach(function(s) {
+      var visible = Array.from(s.rows).filter(function(r){ return !r.classList.contains('hidden'); }).length;
+      var el = document.getElementById(s.id);
+      if (el) el.textContent = visible + ' command' + (visible !== 1 ? 's' : '');
+      total += visible;
+    });
+    var sc = document.getElementById('search-count');
+    var q = document.getElementById('cmd-search').value.trim();
+    if (sc) sc.textContent = q ? 'Showing ' + total + ' matching command' + (total !== 1 ? 's' : '') : '';
+  }
+
+  // ── SEARCH ──
+  function filterCommands(query) {
+    query = query.toLowerCase().trim();
+    var rows = document.querySelectorAll('.cmd-row');
+    rows.forEach(function(row) {
+      var text = row.textContent.toLowerCase();
+      row.classList.toggle('hidden', query.length > 0 && text.indexOf(query) === -1);
+    });
+    // Expand sections that have visible matches, collapse empty ones
+    var sections = document.querySelectorAll('.cmd-section-header');
+    sections.forEach(function(header) {
+      var wrap = header.nextElementSibling;
+      if (!wrap) return;
+      var hasVisible = wrap.querySelectorAll('.cmd-row:not(.hidden)').length > 0;
+      if (query.length > 0) {
+        if (hasVisible) {
+          header.classList.remove('collapsed');
+          wrap.classList.remove('hidden');
+        } else {
+          header.classList.add('collapsed');
+          wrap.classList.add('hidden');
+        }
+      } else {
+        header.classList.remove('collapsed');
+        wrap.classList.remove('hidden');
+      }
+    });
+    updateCounts();
+  }
+
+  // Initial count
+  updateCounts();
+</script>
+
+</body>
+</html>
