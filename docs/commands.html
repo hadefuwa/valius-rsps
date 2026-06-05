@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Player Commands — Valius Wiki</title>
+<title>Player Commands â€” Valius Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -37,7 +37,7 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   }
 
-  /* ── HEADER ── */
+  /* â”€â”€ HEADER â”€â”€ */
   header {
     background: var(--header-bg);
     border-bottom: 3px solid var(--gold);
@@ -59,10 +59,10 @@
   .header-nav a { font-family: 'Cinzel', serif; font-size: 12px; color: #c8a040; text-decoration: none; letter-spacing: 1px; opacity: 0.8; transition: opacity 0.2s; }
   .header-nav a:hover { opacity: 1; color: var(--gold-light); }
 
-  /* ── LAYOUT ── */
+  /* â”€â”€ LAYOUT â”€â”€ */
   .layout { display: flex; min-height: calc(100vh - 62px); max-width: 1280px; margin: 0 auto; }
 
-  /* ── SIDEBAR ── */
+  /* â”€â”€ SIDEBAR â”€â”€ */
   aside {
     width: 220px;
     min-width: 220px;
@@ -113,7 +113,7 @@
   .toc li a { display: block; padding: 3px 18px 3px 28px; font-size: 13px; color: #7a5a2a; text-decoration: none; border-left: 3px solid transparent; transition: all 0.15s; }
   .toc li a:hover { color: var(--gold); border-left-color: var(--gold); background: rgba(184,134,11,0.06); }
 
-  /* ── MAIN ── */
+  /* â”€â”€ MAIN â”€â”€ */
   main { flex: 1; padding: 36px 48px 60px; min-width: 0; }
 
   .breadcrumb { font-size: 13px; color: #8a7050; margin-bottom: 16px; }
@@ -130,7 +130,7 @@
   a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
   a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
 
-  /* ── SEARCH BAR ── */
+  /* â”€â”€ SEARCH BAR â”€â”€ */
   .search-wrap { margin-bottom: 28px; position: relative; }
   .search-wrap input {
     width: 100%;
@@ -149,7 +149,7 @@
   .search-wrap .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; pointer-events: none; }
   .search-count { margin-top: 6px; font-size: 13px; color: #8a7050; font-style: italic; }
 
-  /* ── RANK BADGE ── */
+  /* â”€â”€ RANK BADGE â”€â”€ */
   .rank-badge {
     display: inline-flex;
     align-items: center;
@@ -169,7 +169,7 @@
   .rank-admin    { background: #f8e8e8; color: #7c1a1a; border: 1px solid #d08a8a; }
   .rank-owner    { background: #1a0f00; color: var(--gold-light); border: 1px solid var(--gold); }
 
-  /* ── COMMANDS TABLE ── */
+  /* â”€â”€ COMMANDS TABLE â”€â”€ */
   .cmd-section { margin-bottom: 8px; }
 
   .cmd-section-header {
@@ -243,13 +243,13 @@
   /* hidden by search */
   tr.cmd-row.hidden { display: none; }
 
-  /* ── NOTICE ── */
+  /* â”€â”€ NOTICE â”€â”€ */
   .notice {
     border-radius: 4px; padding: 14px 18px; margin-bottom: 24px; font-size: 15px;
     background: #fdf6e3; border: 1px solid var(--gold); border-left: 4px solid var(--gold-bright);
   }
 
-  /* ── FOOTER ── */
+  /* â”€â”€ FOOTER â”€â”€ */
   footer { background: var(--header-bg); border-top: 2px solid #3a2800; color: #6a5020; text-align: center; padding: 18px; font-size: 13px; font-family: 'Crimson Text', serif; font-style: italic; }
   footer a { color: #9a7030; border-bottom: none; }
 
@@ -259,43 +259,44 @@
 <body>
 
 <header>
-  <span class="header-crest">⚔</span>
+  <span class="header-crest">âš”</span>
   <h1><a href="index.html">Valius Wiki</a></h1>
   <span class="header-tagline">The Valius RSPS community reference</span>
   <nav class="header-nav">
     <a href="index.html">Home</a>
     <a href="commands.html">Commands</a>
-    <a href="blood-money.html">Blood Money</a>
-    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub ↗</a>
+    <a href="https://github.com/hadefuwa/valius-rsps/releases/download/v1.0.0/client.jar" style="background:var(--gold);color:#1a0f00;padding:4px 12px;border-radius:3px;font-weight:700;opacity:1;">&#x2B07; Download Client</a>
+    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub â†—</a>
   </nav>
 </header>
 
 <div class="layout">
   <aside>
     <div class="section-switcher">
-      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">👤 Players</button>
-      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">⚙ Developers</button>
+      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">ðŸ‘¤ Players</button>
+      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">âš™ Developers</button>
     </div>
     <div class="sidebar-nav">
       <div class="nav-panel users-nav visible" id="nav-users">
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">Navigation</div>
-          <a href="index.html">🏠 Home</a>
+          <a href="index.html">ðŸ  Home</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">Game Systems</div>
-          <a href="commands.html" class="active">📜 Commands</a>
-          <a href="blood-money.html">💀 Blood Money</a>
-          <a class="dim">🗡 PvP Guide</a>
-          <a href="exp-rates.html">⚡ Exp Rates</a>
-          <a class="dim">👹 Bosses</a>
-          <a class="dim">🏆 Achievements</a>
+          <a href="commands.html" class="active">ðŸ“œ Commands</a>
+          <a href="blood-money.html">ðŸ’€ Blood Money</a>
+          <a class="dim">ðŸ—¡ PvP Guide</a>
+          <a href="exp-rates.html">âš¡ Exp Rates</a>
+          <a href="wilderness-teleports.html">&#128205; Wilderness Teleports</a>
+          <a class="dim">ðŸ‘¹ Bosses</a>
+          <a class="dim">ðŸ† Achievements</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">Shops &amp; Items</div>
-          <a class="dim">🛒 Point Shops</a>
-          <a class="dim">💎 Donator Store</a>
-          <a class="dim">🪙 Vote Shop</a>
+          <a class="dim">ðŸ›’ Point Shops</a>
+          <a class="dim">ðŸ’Ž Donator Store</a>
+          <a class="dim">ðŸª™ Vote Shop</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">On This Page</div>
@@ -312,26 +313,26 @@
       <div class="nav-panel dev-nav" id="nav-dev">
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Navigation</div>
-          <a href="index.html">🏠 Home</a>
+          <a href="index.html">ðŸ  Home</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Setup</div>
-          <a class="dim">🖥 Server Setup</a>
-          <a class="dim">🎮 Client Setup</a>
-          <a class="dim">☕ Java Versions</a>
+          <a class="dim">ðŸ–¥ Server Setup</a>
+          <a class="dim">ðŸŽ® Client Setup</a>
+          <a class="dim">â˜• Java Versions</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Codebase</div>
-          <a href="dev-commands.html">🔧 Dev Commands</a>
-          <a class="dim">📦 Project Structure</a>
-          <a class="dim">🛒 Shop System</a>
-          <a class="dim">🧑‍💻 NPC Spawns</a>
+          <a href="dev-commands.html">ðŸ”§ Dev Commands</a>
+          <a class="dim">ðŸ“¦ Project Structure</a>
+          <a class="dim">ðŸ›’ Shop System</a>
+          <a class="dim">ðŸ§‘â€ðŸ’» NPC Spawns</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Reference</div>
-          <a class="dim">📋 Config Keys</a>
-          <a class="dim">🐛 Known Issues</a>
-          <a class="dim">📝 Changelog</a>
+          <a class="dim">ðŸ“‹ Config Keys</a>
+          <a class="dim">ðŸ› Known Issues</a>
+          <a class="dim">ðŸ“ Changelog</a>
         </div>
       </div>
     </div>
@@ -340,31 +341,31 @@
   <main>
     <div class="breadcrumb">
       <a href="index.html">Home</a>
-      <span>›</span>
+      <span>â€º</span>
       Game Systems
-      <span>›</span>
+      <span>â€º</span>
       Commands
     </div>
 
     <h1 class="page-title">Player Commands</h1>
 
     <div class="notice">
-      All commands are prefixed with <strong>::</strong> — type them in the in-game chat (e.g. <code>::home</code>). Commands are grouped by the minimum rank required to use them.
+      All commands are prefixed with <strong>::</strong> â€” type them in the in-game chat (e.g. <code>::home</code>). Commands are grouped by the minimum rank required to use them.
     </div>
 
     <!-- SEARCH -->
     <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="cmd-search" placeholder="Search commands…" oninput="filterCommands(this.value)">
+      <span class="search-icon">ðŸ”</span>
+      <input type="text" id="cmd-search" placeholder="Search commandsâ€¦" oninput="filterCommands(this.value)">
       <div class="search-count" id="search-count"></div>
     </div>
 
-    <!-- ─────────────────────── ALL PLAYERS ─────────────────────── -->
+    <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ ALL PLAYERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="all-players">
       <div class="cmd-section-header bg-all" onclick="toggleSection(this)">
-        <span class="rank-badge rank-all">👤 All Players</span>
+        <span class="rank-badge rank-all">ðŸ‘¤ All Players</span>
         <span class="section-count" id="count-all"></span>
-        <span class="chevron">▼</span>
+        <span class="chevron">â–¼</span>
       </div>
       <div class="cmd-table-wrap">
         <table class="cmd-table">
@@ -393,7 +394,7 @@
           <tr class="cmd-row"><td><span class="cmd-name">changepass</span><span class="cmd-args">[newpassword]</span></td><td class="cmd-desc">Change your account password.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">changepassword</span><span class="cmd-args">[newpassword]</span></td><td class="cmd-desc">Alias for <code>::changepass</code>.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">explock</span></td><td class="cmd-desc">Open the experience lock interface to stop XP gains on chosen skills.</td></tr>
-          <tr class="cmd-row"><td><span class="cmd-name">xptiers</span></td><td class="cmd-desc">Opens the XP tier scaling interface — shows each total level milestone and its XP multiplier.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">xptiers</span></td><td class="cmd-desc">Opens the XP tier scaling interface â€” shows each total level milestone and its XP multiplier.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">toggledrop</span></td><td class="cmd-desc">Toggle the item drop confirmation warning on or off.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">vote</span></td><td class="cmd-desc">Open the voting page in your browser.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">claimvotes</span></td><td class="cmd-desc">Claim your pending vote rewards.</td></tr>
@@ -413,12 +414,12 @@
       </div>
     </div>
 
-    <!-- ─────────────────────── DONATOR ─────────────────────── -->
+    <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ DONATOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="donator">
       <div class="cmd-section-header bg-donor" onclick="toggleSection(this)">
-        <span class="rank-badge rank-donor">💎 Donator</span>
+        <span class="rank-badge rank-donor">ðŸ’Ž Donator</span>
         <span class="section-count" id="count-donor"></span>
-        <span class="chevron">▼</span>
+        <span class="chevron">â–¼</span>
       </div>
       <div class="cmd-table-wrap">
         <table class="cmd-table">
@@ -428,19 +429,19 @@
           <tr class="cmd-row"><td><span class="cmd-name">edz</span></td><td class="cmd-desc">Teleport to the extended donator zone (higher rank required).</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">bank</span></td><td class="cmd-desc">Open your bank from anywhere (requires $100+ total donation).</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">tp</span></td><td class="cmd-desc">Open the teleport interface from anywhere (requires $25+ donation).</td></tr>
-          <tr class="cmd-row"><td><span class="cmd-name">yell</span><span class="cmd-args">[message]</span></td><td class="cmd-desc">Send a global message to all players. Cooldown varies by donor rank: Sapphire–Diamond: 60 s, Dragonstone: 30 s, Onyx+: 1 s.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">yell</span><span class="cmd-args">[message]</span></td><td class="cmd-desc">Send a global message to all players. Cooldown varies by donor rank: Sapphireâ€“Diamond: 60 s, Dragonstone: 30 s, Onyx+: 1 s.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">donatortitle</span></td><td class="cmd-desc">Reset your chat title to your default donator title.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">killtitle</span></td><td class="cmd-desc">Set a custom kill-count based title.</td></tr>
         </table>
       </div>
     </div>
 
-    <!-- ─────────────────────── HELPER ─────────────────────── -->
+    <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ HELPER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="helper">
       <div class="cmd-section-header bg-helper" onclick="toggleSection(this)">
-        <span class="rank-badge rank-helper">🤝 Helper</span>
+        <span class="rank-badge rank-helper">ðŸ¤ Helper</span>
         <span class="section-count" id="count-helper"></span>
-        <span class="chevron">▼</span>
+        <span class="chevron">â–¼</span>
       </div>
       <div class="cmd-table-wrap">
         <table class="cmd-table">
@@ -455,12 +456,12 @@
       </div>
     </div>
 
-    <!-- ─────────────────────── MODERATOR ─────────────────────── -->
+    <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ MODERATOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="moderator">
       <div class="cmd-section-header bg-mod" onclick="toggleSection(this)">
-        <span class="rank-badge rank-mod">🛡 Moderator</span>
+        <span class="rank-badge rank-mod">ðŸ›¡ Moderator</span>
         <span class="section-count" id="count-mod"></span>
-        <span class="chevron">▼</span>
+        <span class="chevron">â–¼</span>
       </div>
       <div class="cmd-table-wrap">
         <table class="cmd-table">
@@ -487,12 +488,12 @@
       </div>
     </div>
 
-    <!-- ─────────────────────── ADMIN ─────────────────────── -->
+    <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ ADMIN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="admin">
       <div class="cmd-section-header bg-admin" onclick="toggleSection(this)">
-        <span class="rank-badge rank-admin">⚙ Admin</span>
+        <span class="rank-badge rank-admin">âš™ Admin</span>
         <span class="section-count" id="count-admin"></span>
-        <span class="chevron">▼</span>
+        <span class="chevron">â–¼</span>
       </div>
       <div class="cmd-table-wrap">
         <table class="cmd-table">
@@ -502,7 +503,7 @@
           <tr class="cmd-row"><td><span class="cmd-name">giveitem</span><span class="cmd-args">[player] [item-id] [amount]</span></td><td class="cmd-desc">Give items to a player.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">takeitem</span><span class="cmd-args">[player] [item-id] [amount]</span></td><td class="cmd-desc">Remove items from a player's inventory.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">checkbank</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">View the contents of a player's bank.</td></tr>
-          <tr class="cmd-row"><td><span class="cmd-name">hpray</span></td><td class="cmd-desc">Toggle godmode — 9999 HP, full prayer, and special attack.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">hpray</span></td><td class="cmd-desc">Toggle godmode â€” 9999 HP, full prayer, and special attack.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">killnpc</span><span class="cmd-args">[id or "all"]</span></td><td class="cmd-desc">Kill nearby NPC(s) by ID, or all NPCs in the area.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">givedonor</span></td><td class="cmd-desc">Grant all online players Sapphire donor rank ($20 tier).</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">givemod</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Promote a player to Moderator rank.</td></tr>
@@ -528,12 +529,12 @@
       </div>
     </div>
 
-    <!-- ─────────────────────── OWNER ─────────────────────── -->
+    <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ OWNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="owner">
       <div class="cmd-section-header bg-owner" onclick="toggleSection(this)">
-        <span class="rank-badge rank-owner">👑 Owner</span>
+        <span class="rank-badge rank-owner">ðŸ‘‘ Owner</span>
         <span class="section-count" id="count-owner"></span>
-        <span class="chevron">▼</span>
+        <span class="chevron">â–¼</span>
       </div>
       <div class="cmd-table-wrap">
         <table class="cmd-table">
@@ -551,7 +552,7 @@
           <tr class="cmd-row"><td><span class="cmd-name">shop</span><span class="cmd-args">[id]</span></td><td class="cmd-desc">Open any shop by ID.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">announce</span><span class="cmd-args">[message] [type]</span></td><td class="cmd-desc">Send a styled server announcement (NEWS / LOOT / EVENT / DONATION).</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">saveall</span></td><td class="cmd-desc">Force-save all online players to disk.</td></tr>
-          <tr class="cmd-row"><td><span class="cmd-name">reload</span><span class="cmd-args">[doors/drops/items/shops/npcs/commands…]</span></td><td class="cmd-desc">Hot-reload specific server data without restarting.</td></tr>
+          <tr class="cmd-row"><td><span class="cmd-name">reload</span><span class="cmd-args">[doors/drops/items/shops/npcs/commandsâ€¦]</span></td><td class="cmd-desc">Hot-reload specific server data without restarting.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">updateshops</span></td><td class="cmd-desc">Force-refresh all shop inventories.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">getpass</span><span class="cmd-args">[player]</span></td><td class="cmd-desc">Retrieve a player's password hash.</td></tr>
           <tr class="cmd-row"><td><span class="cmd-name">getid</span></td><td class="cmd-desc">Display the ID of any item, object, or NPC you click on.</td></tr>
@@ -579,7 +580,7 @@
 </div>
 
 <footer>
-  Valius Wiki — fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
+  Valius Wiki â€” fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
   <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
 </footer>
 
@@ -600,14 +601,14 @@
     switchSection(saved);
   })();
 
-  // ── SECTION COLLAPSE ──
+  // â”€â”€ SECTION COLLAPSE â”€â”€
   function toggleSection(header) {
     header.classList.toggle('collapsed');
     var wrap = header.nextElementSibling;
     wrap.classList.toggle('hidden');
   }
 
-  // ── COUNT BADGES ──
+  // â”€â”€ COUNT BADGES â”€â”€
   function updateCounts() {
     var sections = [
       { id: 'count-all',    rows: document.querySelectorAll('#all-players .cmd-row') },
@@ -629,7 +630,7 @@
     if (sc) sc.textContent = q ? 'Showing ' + total + ' matching command' + (total !== 1 ? 's' : '') : '';
   }
 
-  // ── SEARCH ──
+  // â”€â”€ SEARCH â”€â”€
   function filterCommands(query) {
     query = query.toLowerCase().trim();
     var rows = document.querySelectorAll('.cmd-row');
@@ -665,3 +666,4 @@
 
 </body>
 </html>
+

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blood Money â€” Valius Wiki</title>
+<title>Wilderness Teleports â€” Valius Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -23,6 +23,7 @@
     --table-head: #c8a96e;
     --table-stripe: #ede0c4;
     --red: #8b1a1a;
+    --green: #1a5c1a;
     --dev-accent: #1a3a5c;
     --dev-accent-bright: #2a5f96;
   }
@@ -38,7 +39,7 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   }
 
-  /* â”€â”€ HEADER â”€â”€ */
+  /* HEADER */
   header {
     background: var(--header-bg);
     border-bottom: 3px solid var(--gold);
@@ -82,7 +83,7 @@
   }
   .header-nav a:hover { opacity: 1; color: var(--gold-light); }
 
-  /* â”€â”€ LAYOUT â”€â”€ */
+  /* LAYOUT */
   .layout {
     display: flex;
     min-height: calc(100vh - 62px);
@@ -90,7 +91,7 @@
     margin: 0 auto;
   }
 
-  /* â”€â”€ SIDEBAR â”€â”€ */
+  /* SIDEBAR */
   aside {
     width: 220px;
     min-width: 220px;
@@ -104,7 +105,6 @@
     flex-direction: column;
   }
 
-  /* â”€â”€ SECTION SWITCHER â”€â”€ */
   .section-switcher {
     display: flex;
     border-bottom: 2px solid var(--sidebar-border);
@@ -187,11 +187,9 @@
     background: rgba(26,58,92,0.07);
   }
 
-  /* Hide/show nav panels */
   .nav-panel { display: none; }
   .nav-panel.visible { display: block; }
 
-  /* TOC */
   .toc { margin: 6px 0 0; padding: 0; list-style: none; }
   .toc li a {
     display: block;
@@ -208,16 +206,14 @@
     background: rgba(184,134,11,0.06);
   }
 
-  /* â”€â”€ MAIN â”€â”€ */
+  /* MAIN */
   main { flex: 1; padding: 36px 48px 60px; min-width: 0; }
 
-  /* â”€â”€ BREADCRUMB â”€â”€ */
   .breadcrumb { font-size: 13px; color: #8a7050; margin-bottom: 16px; }
   .breadcrumb a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
   .breadcrumb a:hover { color: var(--gold); }
   .breadcrumb span { margin: 0 6px; color: #b0906a; }
 
-  /* â”€â”€ PAGE TITLE â”€â”€ */
   .page-title {
     font-family: 'Cinzel', serif;
     font-size: 30px;
@@ -229,7 +225,7 @@
     letter-spacing: 1px;
   }
 
-  /* â”€â”€ INFOBOX â”€â”€ */
+  /* INFOBOX */
   .infobox {
     float: right;
     clear: right;
@@ -280,7 +276,6 @@
   }
   .infobox tr:nth-child(even) td { background: #fdf0cc; }
 
-  /* â”€â”€ HEADINGS â”€â”€ */
   h2 {
     font-family: 'Cinzel', serif;
     font-size: 18px;
@@ -292,13 +287,21 @@
     letter-spacing: 0.5px;
     clear: both;
   }
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 22px 0 10px;
+    letter-spacing: 0.5px;
+  }
 
   p { margin-bottom: 14px; }
   a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
   a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
 
-  /* â”€â”€ SHOP TABLE â”€â”€ */
-  .shop-table {
+  /* DATA TABLE */
+  .data-table {
     width: 100%;
     border-collapse: collapse;
     margin: 16px 0 24px;
@@ -308,7 +311,7 @@
     border-radius: 6px;
     overflow: hidden;
   }
-  .shop-table th {
+  .data-table th {
     background: var(--table-head);
     color: var(--ink);
     font-family: 'Cinzel', serif;
@@ -318,30 +321,19 @@
     padding: 10px 14px;
     text-align: left;
   }
-  .shop-table td {
+  .data-table td {
     padding: 8px 14px;
     border-top: 1px solid var(--parchment-shadow);
     vertical-align: middle;
   }
-  .shop-table tr:nth-child(even) td { background: var(--table-stripe); }
-  .shop-table tr:hover td { background: #f5e8c0; }
+  .data-table tr:nth-child(even) td { background: var(--table-stripe); }
+  .data-table tr:hover td { background: #f5e8c0; }
 
-  .cost { font-weight: 600; color: var(--red); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .cost::before { content: 'ðŸ’€ '; font-size: 12px; }
+  .val-old { font-weight: 600; color: var(--red); font-variant-numeric: tabular-nums; }
+  .val-new { font-weight: 600; color: var(--green); font-variant-numeric: tabular-nums; }
 
-  .item-cat {
-    font-size: 11px;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.5px;
-    background: rgba(184,134,11,0.12);
-    color: var(--gold);
-    padding: 1px 7px;
-    border-radius: 10px;
-    border: 1px solid rgba(184,134,11,0.25);
-  }
-
-  /* â”€â”€ LOCATION BOX â”€â”€ */
-  .location-box {
+  /* CALLOUT */
+  .callout {
     background: #fdf8ef;
     border: 1px solid var(--parchment-shadow);
     border-left: 4px solid var(--gold-bright);
@@ -350,48 +342,11 @@
     margin: 14px 0 24px;
     font-size: 15px;
   }
-  .coord {
-    display: inline-block;
-    font-family: 'Courier New', monospace;
-    font-size: 13px;
-    background: rgba(0,0,0,0.07);
-    padding: 2px 7px;
-    border-radius: 3px;
-    color: #4a3000;
-    margin-left: 4px;
-  }
+  .callout.callout-info  { border-left-color: #2a5f96; background: #f0f5fc; }
+  .callout.callout-warn  { border-left-color: var(--red); background: #fdf0f0; }
+  .callout.callout-green { border-left-color: var(--green); background: #f0fdf0; }
 
-  /* â”€â”€ STEPS â”€â”€ */
-  .steps { margin: 14px 0 24px; padding-left: 0; list-style: none; counter-reset: step; }
-  .steps li {
-    counter-increment: step;
-    padding: 10px 14px 10px 46px;
-    position: relative;
-    margin-bottom: 6px;
-    background: #fdf8ef;
-    border: 1px solid var(--parchment-shadow);
-    border-radius: 4px;
-    font-size: 15px;
-  }
-  .steps li::before {
-    content: counter(step);
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 22px;
-    background: var(--gold);
-    color: #fff8e0;
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 50%;
-    line-height: 22px;
-    text-align: center;
-  }
-
-  /* â”€â”€ NOTES LIST â”€â”€ */
+  /* NOTES LIST */
   .notes-list { padding-left: 0; list-style: none; margin: 14px 0; }
   .notes-list li {
     padding: 6px 0 6px 24px;
@@ -402,12 +357,15 @@
   .notes-list li:last-child { border-bottom: none; }
   .notes-list li::before { content: 'â—†'; position: absolute; left: 4px; color: var(--gold); font-size: 10px; top: 10px; }
 
-  /* â”€â”€ TAGS â”€â”€ */
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
-  .tag-warning { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
-  .tag-pvp     { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+  code {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    background: rgba(0,0,0,0.07);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #4a3000;
+  }
 
-  /* â”€â”€ FOOTER â”€â”€ */
   footer {
     background: var(--header-bg);
     border-top: 2px solid #3a2800;
@@ -430,21 +388,21 @@
 <body>
 
 <header>
-  <span class="header-crest">âš”</span>
+  <span class="header-crest">&#9876;</span>
   <h1><a href="index.html">Valius Wiki</a></h1>
   <span class="header-tagline">The Valius RSPS community reference</span>
   <nav class="header-nav">
     <a href="index.html">Home</a>
     <a href="https://github.com/hadefuwa/valius-rsps/releases/download/v1.0.0/client.jar" style="background:var(--gold);color:#1a0f00;padding:4px 12px;border-radius:3px;font-weight:700;opacity:1;">&#x2B07; Download Client</a>
-    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub â†—</a>
+    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub &#8599;</a>
   </nav>
 </header>
 
 <div class="layout">
   <aside>
     <div class="section-switcher">
-      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">ðŸ‘¤ Players</button>
-      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">âš™ Developers</button>
+      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">&#128100; Players</button>
+      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">&#9881; Developers</button>
     </div>
 
     <div class="sidebar-nav">
@@ -452,31 +410,33 @@
       <div class="nav-panel users-nav visible" id="nav-users">
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">Navigation</div>
-          <a href="index.html">ðŸ  Home</a>
+          <a href="index.html">&#127968; Home</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">Game Systems</div>
-          <a href="commands.html">ðŸ“œ Commands</a>
-          <a href="blood-money.html" class="active">ðŸ’€ Blood Money</a>
-          <a class="dim">ðŸ—¡ PvP Guide</a>
-          <a href="exp-rates.html">âš¡ Exp Rates</a>
-          <a href="wilderness-teleports.html">&#128205; Wilderness Teleports</a>
-          <a class="dim">ðŸ‘¹ Bosses</a>
-          <a class="dim">ðŸ† Achievements</a>
+          <a href="commands.html">&#128220; Commands</a>
+          <a href="blood-money.html">&#128128; Blood Money</a>
+          <a class="dim">&#128481; PvP Guide</a>
+          <a href="exp-rates.html">&#9889; Exp Rates</a>
+          <a href="wilderness-teleports.html" class="active">&#128205; Wilderness Teleports</a>
+          <a class="dim">&#128121; Bosses</a>
+          <a class="dim">&#127942; Achievements</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">Shops &amp; Items</div>
-          <a class="dim">ðŸ›’ Point Shops</a>
-          <a class="dim">ðŸ’Ž Donator Store</a>
-          <a class="dim">ðŸª™ Vote Shop</a>
+          <a class="dim">&#128722; Point Shops</a>
+          <a class="dim">&#128142; Donator Store</a>
+          <a class="dim">&#129683; Vote Shop</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">On This Page</div>
           <ul class="toc">
             <li><a href="#overview">Overview</a></li>
-            <li><a href="#npc-location">NPC Location</a></li>
-            <li><a href="#shop-items">Shop Items</a></li>
-            <li><a href="#notes">Notes</a></li>
+            <li><a href="#vanilla">Vanilla Behaviour</a></li>
+            <li><a href="#current">Current Config</a></li>
+            <li><a href="#teleblock">Teleblock</a></li>
+            <li><a href="#files">Files Changed</a></li>
+            <li><a href="#revert">Reverting</a></li>
           </ul>
         </div>
       </div>
@@ -485,26 +445,26 @@
       <div class="nav-panel dev-nav" id="nav-dev">
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Navigation</div>
-          <a href="index.html">ðŸ  Home</a>
+          <a href="index.html">&#127968; Home</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Setup</div>
-          <a class="dim">ðŸ–¥ Server Setup</a>
-          <a class="dim">ðŸŽ® Client Setup</a>
-          <a class="dim">â˜• Java Versions</a>
+          <a class="dim">&#128421; Server Setup</a>
+          <a class="dim">&#127918; Client Setup</a>
+          <a class="dim">&#9749; Java Versions</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Codebase</div>
-          <a href="dev-commands.html">ðŸ”§ Dev Commands</a>
-          <a class="dim">ðŸ“¦ Project Structure</a>
-          <a class="dim">ðŸ›’ Shop System</a>
-          <a class="dim">ðŸ§‘â€ðŸ’» NPC Spawns</a>
+          <a href="dev-commands.html">&#128295; Dev Commands</a>
+          <a class="dim">&#128230; Project Structure</a>
+          <a class="dim">&#128722; Shop System</a>
+          <a class="dim">&#129489; NPC Spawns</a>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Reference</div>
-          <a class="dim">ðŸ“‹ Config Keys</a>
-          <a class="dim">ðŸ› Known Issues</a>
-          <a class="dim">ðŸ“ Changelog</a>
+          <a class="dim">&#128203; Config Keys</a>
+          <a class="dim">&#128027; Known Issues</a>
+          <a class="dim">&#128221; Changelog</a>
         </div>
       </div>
     </div>
@@ -513,108 +473,168 @@
   <main>
     <div class="breadcrumb">
       <a href="index.html">Home</a>
-      <span>â€º</span>
+      <span>&#8250;</span>
       Game Systems
-      <span>â€º</span>
-      Blood Money
+      <span>&#8250;</span>
+      Wilderness Teleports
     </div>
 
-    <h1 class="page-title">Blood Money</h1>
+    <h1 class="page-title">Wilderness Teleports</h1>
 
     <!-- INFOBOX -->
     <div class="infobox">
-      <div class="infobox-title">Blood Money</div>
-      <div class="infobox-icon">ðŸ’€</div>
+      <div class="infobox-title">Quick Reference</div>
+      <div class="infobox-icon">&#128205;</div>
       <table>
-        <tr><td>Item ID</td><td>13307</td></tr>
-        <tr><td>Type</td><td>Currency</td></tr>
-        <tr><td>Use</td><td>PvP reward currency</td></tr>
-        <tr><td>Tradeable</td><td>Yes</td></tr>
-        <tr><td>Stackable</td><td>Yes</td></tr>
-        <tr><td>Shop</td><td>Shop ID 119</td></tr>
-        <tr><td>NPC</td><td>Renegade Knight (4321)</td></tr>
+        <tr><td>Status</td><td><strong>Unrestricted</strong></td></tr>
+        <tr><td>Any method</td><td>All levels</td></tr>
+        <tr><td>Teleblock</td><td>Still active</td></tr>
+        <tr><td>Config key</td><td><code>NO_TELEPORT_WILD_LEVEL</code></td></tr>
+        <tr><td>Config value</td><td><code>99</code></td></tr>
       </table>
     </div>
 
     <h2 id="overview">Overview</h2>
     <p>
-      <strong>Blood Money</strong> is the primary Player-vs-Player reward currency in Valius. It is earned
-      by defeating other players â€” primarily in the Wilderness and the PK District â€” and can be
-      exchanged at a dedicated shop for powerful custom equipment unavailable elsewhere.
+      By default, RuneScape private servers block teleports above a set wilderness depth to enforce
+      risk-vs-reward in the wilderness. On Valius this restriction has been removed â€” players can
+      teleport freely from any wilderness level using any method.
     </p>
     <p>
-      Blood Money is carried as a stackable item (ID: <strong>13307</strong>) in your inventory. It can
-      also be stored in the <strong>Safe Box</strong> â€” it is the only item withdrawable from the Safe Box
-      outside of clan wars safe mode, making it safe to transport out of dangerous zones.
+      <strong>Teleblock</strong> is a separate mechanic and remains fully functional. A player hit by a
+      Teleblock spell cannot teleport until the block expires, regardless of wilderness level.
     </p>
 
-    <h2 id="npc-location">NPC Location</h2>
-    <div class="location-box">
-      <strong>NPC:</strong> Renegade Knight &nbsp;<span class="tag tag-pvp">NPC ID 4321</span><br><br>
-      <strong>Location:</strong> Home teleport area <span class="coord">~3090, 3500</span><br><br>
-      <strong>Shop tab:</strong> 4th tab of the <em>Point Reward Shops</em> interface
+    <h2 id="vanilla">Vanilla Behaviour</h2>
+    <p>
+      The original Valius source enforced the following level caps. Above these depths, the server
+      rejected the teleport and sent an error message to the player.
+    </p>
+    <table class="data-table">
+      <tr>
+        <th>Teleport Type</th>
+        <th>Cap (vanilla)</th>
+        <th>Error Message</th>
+      </tr>
+      <tr>
+        <td>All standard teleports (spell, tablet, interface)</td>
+        <td><span class="val-old">Level 20</span></td>
+        <td><em>"You can't teleport above level 20 in the wilderness."</em></td>
+      </tr>
+      <tr>
+        <td>Amulet of Glory</td>
+        <td><span class="val-old">Level 30</span></td>
+        <td><em>"You can't teleport above level 30 in the wilderness."</em></td>
+      </tr>
+      <tr>
+        <td>Wilderness Obelisk</td>
+        <td><span class="val-old">Level 30</span></td>
+        <td>N/A â€” destination-only, no block on use</td>
+      </tr>
+      <tr>
+        <td>Portal teleports (teleport interface)</td>
+        <td><span class="val-old">Level 20</span></td>
+        <td><em>"You must be below lvl 20 wilderness to teleport"</em></td>
+      </tr>
+    </table>
+
+    <p>Two exceptions existed in the vanilla code:</p>
+    <ul class="notes-list">
+      <li>Players with the <strong>Owner</strong> rank could teleport from any depth with no restriction.</li>
+      <li>Players with the <strong>Mini Porazdir</strong> pet summoned bypassed the standard level&#8209;20 cap.</li>
+    </ul>
+
+    <h2 id="current">Current Config â€” Unrestricted</h2>
+
+    <div class="callout callout-green">
+      Wilderness teleport restrictions are <strong>disabled</strong>. All players can teleport from
+      any wilderness level using any teleport method.
     </div>
 
-    <ol class="steps">
-      <li>Teleport <strong>Home</strong> using the spellbook or <code>::home</code> command.</li>
-      <li>Locate the <strong>Point Reward Shops</strong> NPC cluster near the bank.</li>
-      <li>Click the <strong>Renegade Knight</strong> (or right-click â†’ <em>Shop</em>).</li>
-      <li>Navigate to the <strong>4th tab</strong> â€” "Blood Money" â€” in the tabbed shop interface.</li>
-    </ol>
+    <p>
+      The threshold constant <code>NO_TELEPORT_WILD_LEVEL</code> in <code>Config.java</code> has been
+      raised to <code>99</code>. Because the wilderness never exceeds approximately level 56, this value
+      is never reached and all level-based checks are effectively bypassed.
+    </p>
+    <p>
+      In addition, the explicit <code>inWild()</code> check blocks in <code>canTeleport()</code> and
+      <code>startTeleport()</code> have been removed, and the hardcoded <code>wildLevel &gt; 20</code>
+      guard in <code>PortalTeleports.canTeleport()</code> has been removed.
+    </p>
 
-    <p>The Point Reward Shops NPC opens a tabbed interface with four reward shops:</p>
+    <h2 id="teleblock">Teleblock</h2>
+    <p>
+      Teleblock is enforced separately and is <strong>not</strong> affected by these changes. The
+      Teleblock check reads <code>System.currentTimeMillis() - c.teleBlockDelay &lt; c.teleBlockLength</code>
+      and lives in both <code>canTeleport()</code> and <code>startTeleport()</code> â€” it was left
+      intact when the wilderness checks were removed.
+    </p>
+    <div class="callout">
+      A teleblocked player cannot teleport regardless of wilderness depth or teleport method. Only the
+      wilderness <em>level</em> restriction has been lifted.
+    </div>
 
-    <table class="shop-table" style="margin-bottom:28px;">
-      <tr><th>Tab</th><th>Shop Name</th><th>Currency</th></tr>
-      <tr><td>1</td><td>PVM Points</td><td>PVM Points</td></tr>
-      <tr><td>2</td><td>Boss Points</td><td>Boss Points</td></tr>
-      <tr><td>3</td><td>Skill Points</td><td>Skill Points</td></tr>
-      <tr><td><strong>4</strong></td><td><strong>Blood Money</strong></td><td><strong>Blood Money (item 13307)</strong></td></tr>
+    <h2 id="files">Files Changed</h2>
+    <table class="data-table">
+      <tr>
+        <th>File</th>
+        <th>Change</th>
+      </tr>
+      <tr>
+        <td><code>src/valius/Config.java</code></td>
+        <td><code>NO_TELEPORT_WILD_LEVEL</code> changed from <span class="val-old">20</span> to <span class="val-new">99</span></td>
+      </tr>
+      <tr>
+        <td><code>src/valius/model/entity/player/PlayerAssistant.java</code> â€” <code>canTeleport()</code></td>
+        <td>Removed the <code>inWild()</code> block that returned <code>false</code> above the level cap (covered glory &amp; standard teleports)</td>
+      </tr>
+      <tr>
+        <td><code>src/valius/model/entity/player/PlayerAssistant.java</code> â€” <code>startTeleport()</code></td>
+        <td>Removed the <code>inWild()</code> block that returned early above the level cap (covered glory, obelisk &amp; standard teleports)</td>
+      </tr>
+      <tr>
+        <td><code>src/valius/content/teleportation/PortalTeleports.java</code> â€” <code>canTeleport()</code></td>
+        <td>Removed hardcoded <code>wildLevel &gt; 20</code> guard</td>
+      </tr>
     </table>
 
-    <h2 id="shop-items">Shop Items</h2>
-    <p>The Blood Money shop (Shop ID: 119) stocks 23 items. All prices are in Blood Money. Players cannot sell items back to this shop.</p>
+    <p>
+      The remaining references to <code>NO_TELEPORT_WILD_LEVEL</code> in
+      <code>ItemOptionTwo.java</code>, <code>OperateItem.java</code>, and
+      <code>ClickingButtons.java</code> use the constant from <code>Config.java</code>
+      and are covered by the value change to <code>99</code>.
+    </p>
 
-    <table class="shop-table">
-      <tr><th>Item</th><th>Cost</th><th>Category</th></tr>
-      <tr><td>Cannonball</td><td><span class="cost">10</span></td><td><span class="item-cat">Ammo</span></td></tr>
-      <tr><td>Dragon thrownaxe</td><td><span class="cost">250</span></td><td><span class="item-cat">Ammo</span></td></tr>
-      <tr><td>Volcanic whip mix</td><td><span class="cost">5,000</span></td><td><span class="item-cat">Cosmetic</span></td></tr>
-      <tr><td>Frozen whip mix</td><td><span class="cost">5,000</span></td><td><span class="item-cat">Cosmetic</span></td></tr>
-      <tr><td>Ring of wealth scroll</td><td><span class="cost">25,000</span></td><td><span class="item-cat">Upgrade</span></td></tr>
-      <tr><td>Pharaoh's sceptre (4)</td><td><span class="cost">15,000</span></td><td><span class="item-cat">Weapon</span></td></tr>
-      <tr><td>Katagon helmet</td><td><span class="cost">15,000</span></td><td><span class="item-cat">Armour</span></td></tr>
-      <tr><td>Katagon platebody</td><td><span class="cost">20,000</span></td><td><span class="item-cat">Armour</span></td></tr>
-      <tr><td>Katagon platelegs</td><td><span class="cost">20,000</span></td><td><span class="item-cat">Armour</span></td></tr>
-      <tr><td>Stunning hammer</td><td><span class="cost">15,000</span></td><td><span class="item-cat">Weapon</span></td></tr>
-      <tr><td>Goliath Gloves</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Goliath Gloves (variant 2)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Goliath Gloves (variant 3)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Goliath Gloves (variant 4)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Swift Gloves</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Swift Gloves (variant 2)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Swift Gloves (variant 3)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Swift Gloves (variant 4)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Spellcaster Gloves</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Spellcaster Gloves (variant 2)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Spellcaster Gloves (variant 3)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td>Spellcaster Gloves (variant 4)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
-      <tr><td><em>Unknown item (ID 33668)</em></td><td><span class="cost">30,000</span></td><td><span class="item-cat">Unknown</span></td></tr>
-    </table>
-
-    <h2 id="notes">Notes</h2>
+    <h2 id="revert">Reverting</h2>
+    <p>To restore the original vanilla restrictions:</p>
     <ul class="notes-list">
-      <li>Blood Money can be stored in the <strong>Safe Box</strong> â€” it is the only item withdrawable outside of clan wars safe mode, making it useful for safely moving earnings out of dangerous zones.</li>
-      <li>Purchasing additional <strong>Safe Deposit Box</strong> slots costs <strong>15 Blood Money</strong> per extra slot.</li>
-      <li>Talking to the Renegade Knight shows your current Blood Money balance in the chat.</li>
-      <li>The shop does not allow selling items back (the <em>Can Sell To</em> flag is disabled in the shop definition).</li>
-      <li>Blood Money stacks in your inventory as item ID <strong>13307</strong>.</li>
+      <li>In <code>Config.java</code>, set <code>NO_TELEPORT_WILD_LEVEL = 20</code>.</li>
+      <li>
+        In <code>PlayerAssistant.canTeleport()</code>, re-add the <code>inWild()</code> block before
+        the Teleblock check â€” blocking standard teleports above level 20 and glory above level 30.
+      </li>
+      <li>
+        In <code>PlayerAssistant.startTeleport()</code>, re-add the <code>inWild()</code> block before
+        the Teleblock check â€” same logic as above, with the Owner rank and Mini Porazdir pet exemptions.
+      </li>
+      <li>
+        In <code>PortalTeleports.canTeleport()</code>, re-add the <code>wildLevel &gt; 20</code> guard
+        at the top of the method.
+      </li>
     </ul>
+
+    <div class="callout callout-info">
+      <strong>Developer note:</strong> The level threshold is entirely controlled by
+      <code>NO_TELEPORT_WILD_LEVEL</code> in <code>Config.java</code> for most teleport paths.
+      Only <code>PortalTeleports.java</code> used a hardcoded value and required a direct code edit.
+      The glory/obelisk cap of level 30 was also hardcoded in <code>PlayerAssistant.java</code>
+      rather than reading from Config.
+    </div>
   </main>
 </div>
 
 <footer>
-  Valius Wiki â€” fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
+  Valius Wiki &mdash; fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
   <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
 </footer>
 
@@ -629,11 +649,8 @@
     try { localStorage.setItem(STORAGE_KEY, section); } catch(e) {}
   }
 
-  // Restore saved section â€” but this is a player page so always open in users nav
   (function() {
-    var saved = 'users';
-    try { saved = localStorage.getItem(STORAGE_KEY) || 'users'; } catch(e) {}
-    switchSection(saved);
+    switchSection('users');
   })();
 </script>
 
