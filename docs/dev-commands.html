@@ -809,7 +809,7 @@
         <div class="cmd-summary">Spawn items directly into your inventory. Supports single items, quantities, or ranges.</div>
         <div class="cmd-body">
           <table class="detail-table">
-            <tr><td>Syntax</td><td><code>::spawn &lt;item-id&gt; &lt;amount&gt;</code><br><code>::spawn &lt;start-id&gt;-&lt;end-id&gt; &lt;amount&gt;</code></td></tr>
+            <tr><td>Syntax</td><td><code>::spawn &lt;item-id&gt;</code><br><code>::spawn &lt;item-id&gt; &lt;amount&gt;</code><br><code>::spawn &lt;start-id&gt; &lt;end-id&gt; &lt;amount&gt;</code></td></tr>
             <tr><td>Source</td><td><code>commands/owner/Spawn.java</code></td></tr>
           </table>
           <div class="example-block">
@@ -821,7 +821,7 @@
               <div class="ex-comment">Spawn 10M coins</div>
               <div class="ex-input">spawn 13307 500</div>
               <div class="ex-comment">Spawn 500 Blood Money for testing</div>
-              <div class="ex-input">spawn 4151-4160 1</div>
+              <div class="ex-input">spawn 4151 4160 1</div>
               <div class="ex-comment">Spawn one of every item with IDs 4151 through 4160</div>
             </div>
           </div>
@@ -831,44 +831,46 @@
       <div class="cmd-card" onclick="toggleCard(this)">
         <div class="cmd-card-header">
           <span class="cmd-keyword">giveitem</span>
-          <span class="cmd-syntax">[player] [item-id] [amount]</span>
+          <span class="cmd-syntax">[player]-[item-id]-[amount]</span>
           <span class="cmd-rank rank-admin">⚙ Admin</span>
         </div>
-        <div class="cmd-summary">Give items to another online player. Logged to <code>giveitem</code> logs and posted to Discord.</div>
+        <div class="cmd-summary">Give items to another online player. All transfers are automatically logged.</div>
         <div class="cmd-body">
           <table class="detail-table">
-            <tr><td>Syntax</td><td><code>::giveitem &lt;player&gt; &lt;item-id&gt; &lt;amount&gt;</code></td></tr>
+            <tr><td>Syntax</td><td><code>::giveitem-&lt;player&gt;-&lt;item-id&gt;-&lt;amount&gt;</code></td></tr>
+            <tr><td>Note</td><td>Arguments are hyphen-separated (no spaces). Cannot give to other admins.</td></tr>
             <tr><td>Source</td><td><code>commands/admin/Giveitem.java</code></td></tr>
           </table>
           <div class="example-block">
             <div class="example-label">Examples</div>
             <div class="example-lines">
-              <div class="ex-input">giveitem testplayer 4151 1</div>
+              <div class="ex-input">giveitem-testplayer-4151-1</div>
               <div class="ex-comment">Give testplayer 1 Abyssal whip</div>
-              <div class="ex-input">giveitem testplayer 995 500000</div>
+              <div class="ex-input">giveitem-testplayer-995-500000</div>
               <div class="ex-comment">Give testplayer 500k coins</div>
             </div>
           </div>
-          <div class="tip">All give actions are automatically logged — <code>GiveItemLogger</code> writes to <code>C:/xampp/htdocs/logs/giveitem/</code> and posts to the Discord <em>#giveitem-logs</em> channel.</div>
+          <div class="tip">All give actions are logged by <code>GiveItemLogger</code>. Target receives a message; if their inventory is full the item goes to their bank.</div>
         </div>
       </div>
 
       <div class="cmd-card" onclick="toggleCard(this)">
         <div class="cmd-card-header">
           <span class="cmd-keyword">takeitem</span>
-          <span class="cmd-syntax">[player] [item-id] [amount]</span>
+          <span class="cmd-syntax">[player]-[item-id]-[amount]</span>
           <span class="cmd-rank rank-admin">⚙ Admin</span>
         </div>
         <div class="cmd-summary">Remove items from another online player's inventory.</div>
         <div class="cmd-body">
           <table class="detail-table">
-            <tr><td>Syntax</td><td><code>::takeitem &lt;player&gt; &lt;item-id&gt; &lt;amount&gt;</code></td></tr>
+            <tr><td>Syntax</td><td><code>::takeitem-&lt;player&gt;-&lt;item-id&gt;-&lt;amount&gt;</code></td></tr>
+            <tr><td>Note</td><td>Arguments are hyphen-separated (no spaces).</td></tr>
             <tr><td>Source</td><td><code>commands/admin/Takeitem.java</code></td></tr>
           </table>
           <div class="example-block">
             <div class="example-label">Example</div>
             <div class="example-lines">
-              <div class="ex-input">takeitem testplayer 13307 1000</div>
+              <div class="ex-input">takeitem-testplayer-13307-1000</div>
               <div class="ex-comment">Remove 1000 Blood Money from testplayer</div>
             </div>
           </div>
@@ -963,19 +965,20 @@
       <div class="cmd-card" onclick="toggleCard(this)">
         <div class="cmd-card-header">
           <span class="cmd-keyword">droptable</span>
-          <span class="cmd-syntax">[npc-id] [trials]</span>
+          <span class="cmd-syntax">[npc-id]-[trials]</span>
           <span class="cmd-rank rank-owner">👑 Owner</span>
         </div>
         <div class="cmd-summary">Simulate an NPC's drop table and fill your bank with the results — useful for verifying drop rates.</div>
         <div class="cmd-body">
           <table class="detail-table">
-            <tr><td>Syntax</td><td><code>::droptable &lt;npc-id&gt; &lt;trials&gt;</code></td></tr>
-            <tr><td>Source</td><td>Inline in <code>Commands.java</code></td></tr>
+            <tr><td>Syntax</td><td><code>::droptable-&lt;npc-id&gt;-&lt;trials&gt;</code></td></tr>
+            <tr><td>Note</td><td>Arguments are hyphen-separated (no spaces).</td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Droptable.java</code></td></tr>
           </table>
           <div class="example-block">
             <div class="example-label">Examples</div>
             <div class="example-lines">
-              <div class="ex-input">droptable 239 1000</div>
+              <div class="ex-input">droptable-239-1000</div>
               <div class="ex-comment">Simulate 1000 kills of NPC 239, fill bank with results</div>
               <div class="ex-warn">This clears your bank before filling it with results</div>
             </div>
@@ -1046,9 +1049,9 @@
             <div class="example-label">Example</div>
             <div class="example-lines">
               <div class="ex-input">hpray</div>
-              <div class="ex-output">Godmode enabled. HP: 9999, Prayer full, Special: 100%</div>
+              <div class="ex-output">Mode is now: On</div>
               <div class="ex-input">hpray</div>
-              <div class="ex-output">Godmode disabled.</div>
+              <div class="ex-output">Mode is now: Off</div>
             </div>
           </div>
           <div class="tip">Essential when testing boss mechanics or new content — prevents dying mid-test.</div>
