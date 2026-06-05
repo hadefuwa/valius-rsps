@@ -1762,9 +1762,9 @@ public class Client extends JPanel implements Runnable {
 
 						if (childInterface.type == RSInterface.TYPE_KEYBINDS_DROPDOWN && childInterface.dropdown.doesSplit()) {
 							if (mouseX > positionInParentX + (childInterface.dropdown.getWidth() / 2)) {
-								childInterface.dropdownHover = ((optionIndex / 15) * 2) + 1;
+								childInterface.dropdownHover = ((optionIndex / 14) * 2) + 1;
 							} else {
-								childInterface.dropdownHover = (optionIndex / 15) * 2;
+								childInterface.dropdownHover = (optionIndex / 14) * 2;
 							}
 						} else {
 							childInterface.dropdownHover = optionIndex / 14; // Regular dropdown hover
@@ -3946,6 +3946,12 @@ public class Client extends JPanel implements Runnable {
 
 	public static void main(String args[]) {
 		try {
+			java.io.File logFile = new java.io.File(System.getProperty("user.home") + "/valius-client.log");
+			java.io.PrintStream log = new java.io.PrintStream(new java.io.FileOutputStream(logFile, false));
+			System.setErr(log);
+			System.setOut(log);
+		} catch (Exception ignored) {}
+		try {
 			Configuration.checkMode();
 			nodeID = 1;
 			portOff = 0;
@@ -3958,6 +3964,7 @@ public class Client extends JPanel implements Runnable {
 			clientUI.open(instance);
 			//RPC.init(); //discord rich presence - disabled for local dev
 		} catch (Exception exception) {
+			exception.printStackTrace();
 		}
 	}
 
@@ -4443,8 +4450,8 @@ public class Client extends JPanel implements Runnable {
 								: (centerInterface() ? (currentGameWidth / 2) - 256 : 0);
 						int yOffset = currentScreenMode == ScreenMode.FIXED ? 0
 								: (centerInterface() ? (currentGameHeight / 2) - 167 : 0);
-						southWest = new Point(68 + xOffset, 75 + yOffset);
-						northEast = new Point(457 + xOffset, 41 + yOffset);
+						southWest = new Point(68 + xOffset, 76 + yOffset);
+						northEast = new Point(457 + xOffset, 34 + yOffset);
 						int[] slots = new int[9];
 						for (int i = 0; i < slots.length; i++)
 							slots[i] = i == 0 ? (int) southWest.getX() : (41 * i) + (int) southWest.getX();
@@ -4955,8 +4962,9 @@ public class Client extends JPanel implements Runnable {
 			stream.writeInt(-1);
 			experienceCounter = 0L;
 		}
-		if(l==852){//goon
-			launchURL("http://valius.net");
+		if(l==851 || l==852){
+			stream.createFrame(185);
+			stream.writeInt(99851);
 		}
 		if (l == 1850) {
 			stream.createFrame(185);
