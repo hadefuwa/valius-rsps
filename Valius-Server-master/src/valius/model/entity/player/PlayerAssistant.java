@@ -1439,6 +1439,7 @@ public class PlayerAssistant {
 			return;
 		}
 		c.getPA().sendChangeSprite(58014, c.placeHolders ? (byte) 1 : (byte) 0);
+		c.getPA().sendChangeSprite(58065, c.depositAll ? (byte) 1 : (byte) 0);
 		if (c.viewingLootBag || c.addingItemsToLootBag || c.viewingRunePouch) {
 			c.sendMessage("You should stop what you are doing before opening the bank.");
 			return;
@@ -4627,6 +4628,9 @@ public class PlayerAssistant {
 			World.getWorld().getServerData().addStarter(c.getMacAddress());
 			c.bonusXpTime50 = 3000;
 			c.sendMessage("@blu@You now have " + c.bonusXpTime50 / 100 + " Minutes of 50% BONUS XP! ::Vote to receive 30 more minutes!");
+			c.amDonated = 25;
+			c.getRights().add(Right.EMERALD);
+			c.getRights().updatePrimary();
 	}
 
 	public void logStuck() {

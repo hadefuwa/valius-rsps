@@ -1077,6 +1077,13 @@ public class ClickingButtons implements PacketType {
 
 		case 58010:
 			c.takeAsNote = !c.takeAsNote;
+			c.getPA().sendFrame36(116, c.takeAsNote ? 1 : 0);
+			break;
+
+		case 58065:
+			c.depositAll = !c.depositAll;
+			c.getPA().sendChangeSprite(58065, c.depositAll ? (byte) 1 : (byte) 0);
+			c.sendMessage(c.depositAll ? "Deposit mode: left-click now deposits all." : "Deposit mode: left-click now deposits 1.");
 			break;
 
 		case 2812:
@@ -1311,6 +1318,9 @@ public class ClickingButtons implements PacketType {
 			break;
 		case 10239:
 			c.forcedChat("I currently have: " + c.loyaltyPoints + " Loyalty Points.");
+			break;
+		case 99851:
+			c.getPortalTeleports().openInterface();
 			break;
 		case 47514:
 			c.getPA().sendFrame126("https://www.valius.net/community", 12000);

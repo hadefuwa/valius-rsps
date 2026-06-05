@@ -359,6 +359,8 @@ public class PlayerSave {
 						p.getBankPin().setUnlockDelay(Long.parseLong(token2));
 					} else if (token.equals("placeholders")) {
 						p.placeHolders = Boolean.parseBoolean(token2);
+					} else if (token.equals("depositAll")) {
+						p.depositAll = Boolean.parseBoolean(token2);
 					} else if (token.equals("newStarter")) {
 						p.newStarter = Boolean.parseBoolean(token2);
 					} else if (token.equals("dailyTaskDate")) {
@@ -1362,6 +1364,8 @@ else if (token.equals("xpLock")) {
 						p.getBankPin().setUnlockDelay(Long.parseLong(token2));
 					} else if (token.equals("placeholders")) {
 						p.placeHolders = Boolean.parseBoolean(token2);
+					} else if (token.equals("depositAll")) {
+						p.depositAll = Boolean.parseBoolean(token2);
 					} else if (token.equals("newStarter")) {
 						p.newStarter = Boolean.parseBoolean(token2);
 					} else if (token.equals("dailyTaskDate")) {
@@ -2342,6 +2346,8 @@ else if (token.equals("xpLock")) {
 			characterfile.write("bank-pin-unlock-delay = " + p.getBankPin().getUnlockDelay());
 			characterfile.newLine();
 			characterfile.write("placeholders = " + p.placeHolders);
+			characterfile.newLine();
+			characterfile.write("depositAll = " + p.depositAll);
 			characterfile.newLine();
 			characterfile.write("newStarter = " + p.newStarter);
 			characterfile.newLine();

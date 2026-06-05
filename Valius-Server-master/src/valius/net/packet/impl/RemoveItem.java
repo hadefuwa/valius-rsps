@@ -156,7 +156,8 @@ public class RemoveItem implements PacketType {
 				return;
 			}
 			if (c.isBanking) {
-				c.getItems().addToBank(removeId, 1, true);
+				int amount = c.depositAll ? c.getItems().getItemAmount(removeId) : 1;
+				c.getItems().addToBank(removeId, amount, true);
 			}
 			if (c.inSafeBox) {
 				if (!c.pkDistrict && removeId != 13307) {

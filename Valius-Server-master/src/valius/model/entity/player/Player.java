@@ -341,6 +341,7 @@ public class Player extends Entity {
 	public boolean placeHolderWarning = false;
 	public int lastPlaceHolderWarning = 0;
 	public boolean placeHolders = false;
+	public boolean depositAll = false;
 	public final Stopwatch last_trap_layed = new Stopwatch();
 	@Getter @Setter private boolean running;
 
@@ -2104,14 +2105,10 @@ public class Player extends Entity {
 			sendMessage("You can now operate the godwars prayer altar again.");
 		}
 
+		// Run energy drain disabled — unlimited run
 		if (isRunning() && runningDistanceTravelled > (wearingGrace() ? 1 + graceSum : staminaDelay != -1 ? 0.85 + (this.getSkills().getLevel(Skill.AGILITY) / 60)
 																										: 0.35 + (this.getSkills().getLevel(Skill.AGILITY) / 60))) {
-			this.getSkills().getLevel(Skill.AGILITY);
-			if (!(getItems().isWearingItem(12637) || getItems().isWearingItem(12638) || getItems().isWearingItem(12639))) {//halos
-				runningDistanceTravelled = 0;
-				runEnergy -= 1;
-				playerAssistant.sendFrame126(Integer.toString(runEnergy) + "%", 149);
-			}
+			runningDistanceTravelled = 0;
 		}
 		
 		//Bonus XP scrolls
@@ -2892,8 +2889,8 @@ public class Player extends Entity {
 	}
 
 	public void updateRank() {
-		if (amDonated <= 0) {
-			amDonated = 0;
+		if (amDonated < 25) {
+			amDonated = 25;
 		}
 		if (amDonated >= 5 && amDonated < 25) {
 			if (getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.GROUP_IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.HC_IRONMAN) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR)) {
