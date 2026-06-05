@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience Rates — Valius Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #f2e8d0;
+    --parchment-shadow: #d4c49a;
+    --ink: #1c1208;
+    --ink-light: #3d2e0f;
+    --gold: #b8860b;
+    --gold-bright: #d4a017;
+    --gold-light: #f0c040;
+    --header-bg: #1a0f00;
+    --sidebar-bg: #ede0c4;
+    --sidebar-border: #c8a96e;
+    --link: #5c3d11;
+    --link-hover: #b8860b;
+    --table-head: #c8a96e;
+    --table-stripe: #ede0c4;
+    --red: #8b1a1a;
+    --dev-accent: #1a3a5c;
+    --dev-accent-bright: #2a5f96;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.65;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* HEADER */
+  header {
+    background: var(--header-bg);
+    border-bottom: 3px solid var(--gold);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 62px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .header-crest { font-size: 28px; line-height: 1; }
+  header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    text-shadow: 0 0 18px rgba(212,160,23,0.4);
+  }
+  header h1 a { color: inherit; text-decoration: none; }
+  .header-tagline {
+    font-family: 'Crimson Text', serif;
+    font-size: 13px;
+    color: #9a7a3a;
+    font-style: italic;
+    padding-left: 14px;
+    border-left: 1px solid #4a3000;
+  }
+  .header-nav { margin-left: auto; display: flex; gap: 20px; }
+  .header-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: #c8a040;
+    text-decoration: none;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  .header-nav a:hover { opacity: 1; color: var(--gold-light); }
+
+  /* LAYOUT */
+  .layout {
+    display: flex;
+    min-height: calc(100vh - 62px);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* SIDEBAR */
+  aside {
+    width: 220px;
+    min-width: 220px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    position: sticky;
+    top: 62px;
+    height: calc(100vh - 62px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-switcher {
+    display: flex;
+    border-bottom: 2px solid var(--sidebar-border);
+    flex-shrink: 0;
+  }
+  .section-btn {
+    flex: 1;
+    padding: 12px 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #a0906a;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.18s;
+  }
+  .section-btn:hover { color: var(--gold); background: rgba(184,134,11,0.06); }
+  .section-btn.active-users {
+    color: var(--gold);
+    border-bottom-color: var(--gold-bright);
+    background: rgba(184,134,11,0.08);
+  }
+  .section-btn.active-dev {
+    color: var(--dev-accent-bright);
+    border-bottom-color: var(--dev-accent-bright);
+    background: rgba(26,58,92,0.07);
+  }
+
+  .sidebar-nav { flex: 1; padding: 16px 0 24px; }
+  .sidebar-section { margin-bottom: 4px; }
+  .sidebar-section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 18px 4px;
+    border-bottom: 1px solid var(--parchment-shadow);
+    margin-bottom: 4px;
+  }
+  .sidebar-section-title.users-title { color: var(--gold); }
+  .sidebar-section-title.dev-title   { color: var(--dev-accent-bright); }
+
+  .sidebar-section a {
+    display: block;
+    padding: 5px 18px 5px 22px;
+    font-family: 'Crimson Text', serif;
+    font-size: 15px;
+    color: var(--link);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+  }
+  .sidebar-section a:hover {
+    color: var(--link-hover);
+    border-left-color: var(--gold);
+    background: rgba(184,134,11,0.07);
+    padding-left: 24px;
+  }
+  .sidebar-section a.active {
+    color: var(--gold);
+    border-left-color: var(--gold-bright);
+    background: rgba(184,134,11,0.1);
+    font-weight: 600;
+  }
+  .sidebar-section a.dim {
+    color: #a0906a;
+    font-style: italic;
+    cursor: default;
+    pointer-events: none;
+  }
+  .dev-nav .sidebar-section a:hover {
+    color: var(--dev-accent-bright);
+    border-left-color: var(--dev-accent-bright);
+    background: rgba(26,58,92,0.07);
+  }
+
+  .nav-panel { display: none; }
+  .nav-panel.visible { display: block; }
+
+  .toc { margin: 6px 0 0; padding: 0; list-style: none; }
+  .toc li a {
+    display: block;
+    padding: 3px 18px 3px 28px;
+    font-size: 13px;
+    color: #7a5a2a;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+  }
+  .toc li a:hover {
+    color: var(--gold);
+    border-left-color: var(--gold);
+    background: rgba(184,134,11,0.06);
+  }
+
+  /* MAIN */
+  main { flex: 1; padding: 36px 48px 60px; min-width: 0; }
+
+  .breadcrumb { font-size: 13px; color: #8a7050; margin-bottom: 16px; }
+  .breadcrumb a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb span { margin: 0 6px; color: #b0906a; }
+
+  .page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+  }
+
+  /* INFOBOX */
+  .infobox {
+    float: right;
+    clear: right;
+    margin: 0 0 20px 28px;
+    width: 230px;
+    background: #fdf6e3;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 14px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.1);
+  }
+  .infobox-title {
+    background: var(--gold);
+    color: #fff8e0;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px 12px;
+    text-transform: uppercase;
+  }
+  .infobox-icon {
+    text-align: center;
+    padding: 18px 12px 14px;
+    background: #fef9ee;
+    border-bottom: 1px solid var(--parchment-shadow);
+    font-size: 52px;
+    line-height: 1;
+  }
+  .infobox table { width: 100%; border-collapse: collapse; }
+  .infobox td {
+    padding: 7px 12px;
+    border-top: 1px solid var(--parchment-shadow);
+    font-size: 13.5px;
+    vertical-align: top;
+  }
+  .infobox td:first-child {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    width: 45%;
+    padding-top: 9px;
+  }
+  .infobox tr:nth-child(even) td { background: #fdf0cc; }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink-light);
+    border-bottom: 1px solid var(--parchment-shadow);
+    padding-bottom: 6px;
+    margin: 32px 0 14px;
+    letter-spacing: 0.5px;
+    clear: both;
+  }
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 22px 0 10px;
+    letter-spacing: 0.5px;
+  }
+
+  p { margin-bottom: 14px; }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+  a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
+
+  /* DATA TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    background: #fdf8ef;
+    border: 1px solid var(--parchment-shadow);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .data-table th {
+    background: var(--table-head);
+    color: var(--ink);
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .data-table td {
+    padding: 8px 14px;
+    border-top: 1px solid var(--parchment-shadow);
+    vertical-align: middle;
+  }
+  .data-table tr:nth-child(even) td { background: var(--table-stripe); }
+  .data-table tr:hover td { background: #f5e8c0; }
+
+  .mult { font-weight: 600; color: var(--red); font-variant-numeric: tabular-nums; }
+
+  /* CALLOUT */
+  .callout {
+    background: #fdf8ef;
+    border: 1px solid var(--parchment-shadow);
+    border-left: 4px solid var(--gold-bright);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 14px 0 24px;
+    font-size: 15px;
+  }
+  .callout.callout-info { border-left-color: #2a5f96; background: #f0f5fc; }
+
+  /* EXAMPLE BLOCKS */
+  .example-block {
+    background: #fef9ee;
+    border: 1px solid var(--parchment-shadow);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .example-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .example-formula {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    background: rgba(0,0,0,0.06);
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: var(--ink);
+    margin-top: 6px;
+    display: block;
+  }
+
+  /* NOTES LIST */
+  .notes-list { padding-left: 0; list-style: none; margin: 14px 0; }
+  .notes-list li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 15px;
+    border-bottom: 1px dotted var(--parchment-shadow);
+  }
+  .notes-list li:last-child { border-bottom: none; }
+  .notes-list li::before { content: '◆'; position: absolute; left: 4px; color: var(--gold); font-size: 10px; top: 10px; }
+
+  /* TAGS */
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
+  .tag-auto  { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+  .tag-admin { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+
+  code {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    background: rgba(0,0,0,0.07);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #4a3000;
+  }
+
+  footer {
+    background: var(--header-bg);
+    border-top: 2px solid #3a2800;
+    color: #6a5020;
+    text-align: center;
+    padding: 18px;
+    font-size: 13px;
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+  }
+  footer a { color: #9a7030; border-bottom: none; }
+
+  @media (max-width: 700px) {
+    .infobox { float: none; width: 100%; margin: 0 0 20px 0; }
+    main { padding: 20px 18px 40px; }
+    aside { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="header-crest">&#9876;</span>
+  <h1><a href="index.html">Valius Wiki</a></h1>
+  <span class="header-tagline">The Valius RSPS community reference</span>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="blood-money.html">Blood Money</a>
+    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub &#8599;</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="section-switcher">
+      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">&#128100; Players</button>
+      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">&#9881; Developers</button>
+    </div>
+
+    <div class="sidebar-nav">
+      <!-- USERS NAV -->
+      <div class="nav-panel users-nav visible" id="nav-users">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Navigation</div>
+          <a href="index.html">&#127968; Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Game Systems</div>
+          <a href="commands.html">&#128220; Commands</a>
+          <a href="blood-money.html">&#128128; Blood Money</a>
+          <a class="dim">&#128481; PvP Guide</a>
+          <a href="exp-rates.html" class="active">&#9889; Exp Rates</a>
+          <a class="dim">&#128121; Bosses</a>
+          <a class="dim">&#127942; Achievements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Shops &amp; Items</div>
+          <a class="dim">&#128722; Point Shops</a>
+          <a class="dim">&#128142; Donator Store</a>
+          <a class="dim">&#129683; Vote Shop</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">On This Page</div>
+          <ul class="toc">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#base-rates">Base Rates</a></li>
+            <li><a href="#game-modes">Game Mode Multipliers</a></li>
+            <li><a href="#stacking">Stacking Bonuses</a></li>
+            <li><a href="#gear">Gear &amp; Pet Bonuses</a></li>
+            <li><a href="#examples">Worked Examples</a></li>
+            <li><a href="#cap">Experience Cap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DEVELOPERS NAV -->
+      <div class="nav-panel dev-nav" id="nav-dev">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Navigation</div>
+          <a href="index.html">&#127968; Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Setup</div>
+          <a class="dim">&#128421; Server Setup</a>
+          <a class="dim">&#127918; Client Setup</a>
+          <a class="dim">&#9749; Java Versions</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Codebase</div>
+          <a href="dev-commands.html">&#128295; Dev Commands</a>
+          <a class="dim">&#128230; Project Structure</a>
+          <a class="dim">&#128722; Shop System</a>
+          <a class="dim">&#129489; NPC Spawns</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Reference</div>
+          <a class="dim">&#128203; Config Keys</a>
+          <a class="dim">&#128027; Known Issues</a>
+          <a class="dim">&#128221; Changelog</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&#8250;</span>
+      Game Systems
+      <span>&#8250;</span>
+      Experience Rates
+    </div>
+
+    <h1 class="page-title">Experience Rates &amp; Multipliers</h1>
+
+    <!-- INFOBOX -->
+    <div class="infobox">
+      <div class="infobox-title">Quick Reference</div>
+      <div class="infobox-icon">&#9889;</div>
+      <table>
+        <tr><td>Skilling base</td><td>30&times; OSRS</td></tr>
+        <tr><td>Combat base</td><td>125&times; OSRS</td></tr>
+        <tr><td>Extreme mode</td><td>15&times; skill mult.</td></tr>
+        <tr><td>Weekend 2&times; XP</td><td>Fri / Sat / Sun</td></tr>
+        <tr><td>Best scroll</td><td>3&times; (200 scroll)</td></tr>
+        <tr><td>XP cap</td><td>200,000,000</td></tr>
+        <tr><td>Cap reward</td><td>40 Loyalty Points</td></tr>
+      </table>
+    </div>
+
+    <h2 id="overview">Overview</h2>
+    <p>
+      Valius uses a layered experience system. A raw OSRS experience value is first scaled by a
+      <strong>base rate multiplier</strong>, then by a <strong>game mode multiplier</strong>, and finally by any
+      active <strong>stacking bonuses</strong> from location, events, scrolls, gear, and pets.
+      All bonuses are applied multiplicatively inside the server's <code>addSkillXP()</code> method
+      (<code>PlayerAssistant.java</code>).
+    </p>
+
+    <h2 id="base-rates">Base Rates</h2>
+    <p>
+      These multipliers are applied to every raw OSRS XP value before any other modifier.
+      They are constants in <code>Config.java</code> and require a server restart to change.
+    </p>
+
+    <h3>Skilling — all skills share a flat 30&times; multiplier</h3>
+    <table class="data-table">
+      <tr>
+        <th>Skill</th><th>Multiplier</th>
+        <th>Skill</th><th>Multiplier</th>
+      </tr>
+      <tr><td>Woodcutting</td><td><span class="mult">30&times;</span></td><td>Cooking</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Mining</td><td><span class="mult">30&times;</span></td><td>Fletching</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Smithing</td><td><span class="mult">30&times;</span></td><td>Herblore</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Fishing</td><td><span class="mult">30&times;</span></td><td>Agility</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Firemaking</td><td><span class="mult">30&times;</span></td><td>Thieving</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Farming</td><td><span class="mult">30&times;</span></td><td>Slayer</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Prayer</td><td><span class="mult">30&times;</span></td><td>Hunter</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Runecrafting</td><td><span class="mult">30&times;</span></td><td>Crafting</td><td><span class="mult">30&times;</span></td></tr>
+    </table>
+
+    <h3>Combat</h3>
+    <table class="data-table">
+      <tr><th>Style</th><th>Multiplier</th></tr>
+      <tr><td>Melee</td><td><span class="mult">125&times;</span></td></tr>
+      <tr><td>Ranged</td><td><span class="mult">125&times;</span></td></tr>
+      <tr><td>Magic</td><td><span class="mult">125&times;</span></td></tr>
+    </table>
+
+    <h2 id="game-modes">Game Mode Multipliers</h2>
+    <p>
+      Your game mode is selected at account creation and applies a permanent multiplier on top of the
+      base rates. Defined in <code>getSkillMultiplier()</code> inside <code>PlayerAssistant.java</code>.
+    </p>
+    <table class="data-table">
+      <tr><th>Mode / Right</th><th>Multiplier</th><th>Notes</th></tr>
+      <tr><td><strong>Extreme</strong></td><td><span class="mult">15&times;</span></td><td>Applied to all skills</td></tr>
+      <tr><td><strong>Classic</strong></td><td><span class="mult">5&times;</span></td><td>Applied to all skills</td></tr>
+      <tr><td><strong>Group Ironman</strong></td><td><span class="mult">5&times;</span></td><td>Applied to all skills</td></tr>
+      <tr><td><strong>Elite</strong></td><td><span class="mult">2&times;</span></td><td>Applied to all skills</td></tr>
+      <tr><td><strong>OSRS mode</strong></td><td><span class="mult">2&times;</span></td><td>Near-OSRS rates; boosted variants apply during events</td></tr>
+      <tr><td><strong>Normal</strong></td><td><span class="mult">1&times;</span></td><td>Uses the Config base rates (30&times; skilling / 125&times; combat)</td></tr>
+    </table>
+
+    <h2 id="stacking">Stacking Bonuses</h2>
+    <p>
+      After the base rate and game mode are applied, the following bonuses stack multiplicatively
+      in the order listed. All are handled in <code>addSkillXP()</code>.
+    </p>
+
+    <h3>1 &mdash; Location</h3>
+    <table class="data-table">
+      <tr><th>Zone</th><th>Bonus</th><th>Notes</th></tr>
+      <tr><td>Donator Zone</td><td><span class="mult">+20% (1.2&times;)</span></td><td>Active while standing inside the zone</td></tr>
+      <tr><td>Elite Donator Zone (EDZ) &mdash; donated under $250</td><td><span class="mult">+20% (1.2&times;)</span></td><td></td></tr>
+      <tr><td>Elite Donator Zone (EDZ) &mdash; donated $250+</td><td><span class="mult">up to +30% (1.3&times;)</span></td><td>Formula: <code>1.2 + ((donated &minus; 100) / 150) &times; 0.1</code>, capped at 1.3&times;</td></tr>
+    </table>
+
+    <h3>2 &mdash; Vote &amp; XP Scroll Bonuses (time-limited)</h3>
+    <p>These tiers are mutually exclusive &mdash; whichever is active applies. Voting grants a timed 1.2&times; bonus; scrolls unlock higher tiers.</p>
+    <table class="data-table">
+      <tr><th>Source</th><th>Bonus</th><th>Duration</th></tr>
+      <tr><td>Voting</td><td><span class="mult">+20% (1.2&times;)</span></td><td><code>(votes / 20) &times; 30 minutes</code></td></tr>
+      <tr><td>XP Scroll (25)</td><td><span class="mult">+25% (1.25&times;)</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (50)</td><td><span class="mult">+50% (1.5&times;)</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (75)</td><td><span class="mult">+75% (1.75&times;)</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (100)</td><td><span class="mult">+100% (2&times;)</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (150)</td><td><span class="mult">+150% (2.5&times;)</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (200)</td><td><span class="mult">+200% (3&times;)</span></td><td>Scroll duration</td></tr>
+    </table>
+
+    <h3>3 &mdash; Server Events</h3>
+    <table class="data-table">
+      <tr><th>Bonus</th><th>Trigger</th><th>Multiplier</th></tr>
+      <tr>
+        <td>Double Experience Weekend</td>
+        <td><span class="tag tag-auto">Automatic</span> Friday, Saturday &amp; Sunday</td>
+        <td><span class="mult">2&times;</span></td>
+      </tr>
+      <tr>
+        <td>Wall of Guthix (<code>BONUS_XP_WOGW</code>)</td>
+        <td><span class="tag tag-admin">Admin toggle</span></td>
+        <td><span class="mult">1.5&times;</span></td>
+      </tr>
+      <tr>
+        <td>Bonus Event (<code>BONUS_EVENT</code>)</td>
+        <td><span class="tag tag-admin">Admin toggle</span></td>
+        <td><span class="mult">2&times;</span></td>
+      </tr>
+    </table>
+    <div class="callout">
+      The Double Experience Weekend fires automatically &mdash; no admin action needed. It is controlled by
+      <code>DoubleExperience.java</code> checking <code>Calendar.FRIDAY</code>, <code>SATURDAY</code>, and <code>SUNDAY</code>.
+      Wall of Guthix and Bonus Event are manually set via <code>Config</code> flags at runtime.
+    </div>
+
+    <h2 id="gear">Gear &amp; Pet Bonuses</h2>
+    <p>These passive bonuses apply based on what you are wearing or have summoned.</p>
+
+    <h3>Achievement Diary Equipment</h3>
+    <p>
+      Tiered diary reward pieces grant a passive XP bonus for their associated skill.
+      Four tiers exist per skill; only the highest tier worn applies.
+    </p>
+    <table class="data-table">
+      <tr><th>Tier</th><th>Bonus</th><th>Skills covered</th></tr>
+      <tr><td>Tier 1</td><td><span class="mult">+5% (1.05&times;)</span></td><td rowspan="4" style="vertical-align:middle;">Thieving, Fishing, Agility, Smithing, Prayer, Farming, Runecrafting, Crafting, Firemaking, Combat (Wilderness only)</td></tr>
+      <tr><td>Tier 2</td><td><span class="mult">+10% (1.10&times;)</span></td></tr>
+      <tr><td>Tier 3</td><td><span class="mult">+15% (1.15&times;)</span></td></tr>
+      <tr><td>Tier 4</td><td><span class="mult">+20% (1.20&times;)</span></td></tr>
+    </table>
+
+    <h3>Other Equipment &amp; Pets</h3>
+    <table class="data-table">
+      <tr><th>Item / Pet</th><th>Bonus</th><th>Condition</th></tr>
+      <tr><td>Mining armour (1 piece)</td><td><span class="mult">+3% (1.03&times;)</span></td><td>Wearing item 33545</td></tr>
+      <tr><td>Mining armour (2 pieces)</td><td><span class="mult">+6% (1.06&times;)</span></td><td>Wearing items 33545 &amp; 33546</td></tr>
+      <tr><td>Vote armour (1&ndash;5 pieces)</td><td><span class="mult">+1% to +5%</span></td><td>Each piece of items 33486&ndash;33490 adds 1%</td></tr>
+      <tr><td>Special items (33876&ndash;33878)</td><td><span class="mult">+5% (1.05&times;)</span></td><td>Any one of the three equipped</td></tr>
+      <tr><td>Summoning pet 6018</td><td><span class="mult">+5% (1.05&times;)</span></td><td>Pet active / summoned</td></tr>
+    </table>
+
+    <h2 id="examples">Worked Examples</h2>
+
+    <div class="example-block">
+      <div class="example-label">Normal player &mdash; skilling, no bonuses</div>
+      <code class="example-formula">Raw OSRS XP &times; 30</code>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Normal player &mdash; Woodcutting, inside Donator Zone, on a Saturday</div>
+      <code class="example-formula">Raw &times; 30 (base) &times; 1.2 (dzone) &times; 2 (weekend) = Raw &times; 72</code>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Extreme mode &mdash; Agility, Tier 4 diary item, 200 XP scroll active</div>
+      <code class="example-formula">Raw &times; 15 (extreme) &times; 1.20 (diary tier 4) &times; 3 (scroll 200) = Raw &times; 54</code>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Normal player &mdash; all server events active (weekend + WoGW + bonus event) with vote bonus</div>
+      <code class="example-formula">Raw &times; 30 &times; 2 (weekend) &times; 1.5 (WoGW) &times; 2 (bonus event) &times; 1.2 (vote) = Raw &times; 216</code>
+    </div>
+
+    <h2 id="cap">Experience Cap</h2>
+    <p>
+      Each skill has a hard cap of <strong>200,000,000 XP</strong>. On hitting the cap in any skill:
+    </p>
+    <ul class="notes-list">
+      <li><strong>40 Loyalty Points</strong> are deposited automatically.</li>
+      <li>A server-wide announcement broadcasts the achievement.</li>
+      <li>No further XP is awarded in that skill.</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <strong>Developer note:</strong> Base rates and skill multipliers are constants in
+      <code>src/valius/Config.java</code> (lines 363&ndash;637). Server event flags
+      (<code>BONUS_XP_WOGW</code>, <code>BONUS_EVENT</code>) are mutable booleans that can be toggled
+      at runtime without a restart. The full multiplier stack is applied inside
+      <code>PlayerAssistant.addSkillXP()</code> (lines 3811&ndash;4433).
+    </div>
+  </main>
+</div>
+
+<footer>
+  Valius Wiki &mdash; fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
+  <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
+</footer>
+
+<script>
+  var STORAGE_KEY = 'valius-wiki-section';
+
+  function switchSection(section) {
+    document.getElementById('btn-users').className = 'section-btn' + (section === 'users' ? ' active-users' : '');
+    document.getElementById('btn-dev').className   = 'section-btn' + (section === 'dev'   ? ' active-dev'   : '');
+    document.getElementById('nav-users').className = 'nav-panel users-nav' + (section === 'users' ? ' visible' : '');
+    document.getElementById('nav-dev').className   = 'nav-panel dev-nav'   + (section === 'dev'   ? ' visible' : '');
+    try { localStorage.setItem(STORAGE_KEY, section); } catch(e) {}
+  }
+
+  (function() {
+    switchSection('users');
+  })();
+</script>
+
+</body>
+</html>
