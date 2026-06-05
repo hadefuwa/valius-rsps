@@ -38,7 +38,6 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   }
 
-  /* HEADER */
   header {
     background: var(--header-bg);
     border-bottom: 3px solid var(--gold);
@@ -53,159 +52,63 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.6);
   }
   .header-crest { font-size: 28px; line-height: 1; }
-  header h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--gold-light);
-    letter-spacing: 2px;
-    text-shadow: 0 0 18px rgba(212,160,23,0.4);
-  }
+  header h1 { font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700; color: var(--gold-light); letter-spacing: 2px; text-shadow: 0 0 18px rgba(212,160,23,0.4); }
   header h1 a { color: inherit; text-decoration: none; }
-  .header-tagline {
-    font-family: 'Crimson Text', serif;
-    font-size: 13px;
-    color: #9a7a3a;
-    font-style: italic;
-    padding-left: 14px;
-    border-left: 1px solid #4a3000;
-  }
+  .header-tagline { font-family: 'Crimson Text', serif; font-size: 13px; color: #9a7a3a; font-style: italic; padding-left: 14px; border-left: 1px solid #4a3000; }
   .header-nav { margin-left: auto; display: flex; gap: 20px; }
-  .header-nav a {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    color: #c8a040;
-    text-decoration: none;
-    letter-spacing: 1px;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-  }
+  .header-nav a { font-family: 'Cinzel', serif; font-size: 12px; color: #c8a040; text-decoration: none; letter-spacing: 1px; opacity: 0.8; transition: opacity 0.2s; }
   .header-nav a:hover { opacity: 1; color: var(--gold-light); }
 
-  /* LAYOUT */
-  .layout {
-    display: flex;
-    min-height: calc(100vh - 62px);
-    max-width: 1280px;
-    margin: 0 auto;
-  }
+  .layout { display: flex; min-height: calc(100vh - 62px); max-width: 1280px; margin: 0 auto; }
 
-  /* SIDEBAR */
   aside {
-    width: 220px;
-    min-width: 220px;
+    width: 220px; min-width: 220px;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--sidebar-border);
-    position: sticky;
-    top: 62px;
+    position: sticky; top: 62px;
     height: calc(100vh - 62px);
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
   }
 
-  .section-switcher {
-    display: flex;
-    border-bottom: 2px solid var(--sidebar-border);
-    flex-shrink: 0;
-  }
+  .section-switcher { display: flex; border-bottom: 2px solid var(--sidebar-border); flex-shrink: 0; }
   .section-btn {
-    flex: 1;
-    padding: 12px 6px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #a0906a;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px;
-    transition: all 0.18s;
+    flex: 1; padding: 12px 6px; border: none; background: transparent; cursor: pointer;
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #a0906a; border-bottom: 3px solid transparent;
+    margin-bottom: -2px; transition: all 0.18s;
   }
   .section-btn:hover { color: var(--gold); background: rgba(184,134,11,0.06); }
-  .section-btn.active-users {
-    color: var(--gold);
-    border-bottom-color: var(--gold-bright);
-    background: rgba(184,134,11,0.08);
-  }
-  .section-btn.active-dev {
-    color: var(--dev-accent-bright);
-    border-bottom-color: var(--dev-accent-bright);
-    background: rgba(26,58,92,0.07);
-  }
+  .section-btn.active-users { color: var(--gold); border-bottom-color: var(--gold-bright); background: rgba(184,134,11,0.08); }
+  .section-btn.active-dev { color: var(--dev-accent-bright); border-bottom-color: var(--dev-accent-bright); background: rgba(26,58,92,0.07); }
 
   .sidebar-nav { flex: 1; padding: 16px 0 24px; }
   .sidebar-section { margin-bottom: 4px; }
   .sidebar-section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 8px 18px 4px;
-    border-bottom: 1px solid var(--parchment-shadow);
-    margin-bottom: 4px;
+    font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 8px 18px 4px;
+    border-bottom: 1px solid var(--parchment-shadow); margin-bottom: 4px;
   }
   .sidebar-section-title.users-title { color: var(--gold); }
-  .sidebar-section-title.dev-title   { color: var(--dev-accent-bright); }
-
+  .sidebar-section-title.dev-title { color: var(--dev-accent-bright); }
   .sidebar-section a {
-    display: block;
-    padding: 5px 18px 5px 22px;
-    font-family: 'Crimson Text', serif;
-    font-size: 15px;
-    color: var(--link);
-    text-decoration: none;
-    border-left: 3px solid transparent;
-    transition: all 0.15s;
+    display: block; padding: 5px 18px 5px 22px;
+    font-family: 'Crimson Text', serif; font-size: 15px;
+    color: var(--link); text-decoration: none;
+    border-left: 3px solid transparent; transition: all 0.15s;
   }
-  .sidebar-section a:hover {
-    color: var(--link-hover);
-    border-left-color: var(--gold);
-    background: rgba(184,134,11,0.07);
-    padding-left: 24px;
-  }
-  .sidebar-section a.active {
-    color: var(--gold);
-    border-left-color: var(--gold-bright);
-    background: rgba(184,134,11,0.1);
-    font-weight: 600;
-  }
-  .sidebar-section a.dim {
-    color: #a0906a;
-    font-style: italic;
-    cursor: default;
-    pointer-events: none;
-  }
-  .dev-nav .sidebar-section a:hover {
-    color: var(--dev-accent-bright);
-    border-left-color: var(--dev-accent-bright);
-    background: rgba(26,58,92,0.07);
-  }
+  .sidebar-section a:hover { color: var(--link-hover); border-left-color: var(--gold); background: rgba(184,134,11,0.07); padding-left: 24px; }
+  .sidebar-section a.active { color: var(--gold); border-left-color: var(--gold-bright); background: rgba(184,134,11,0.1); font-weight: 600; }
+  .sidebar-section a.dim { color: #a0906a; font-style: italic; cursor: default; pointer-events: none; }
+  .dev-nav .sidebar-section a:hover { color: var(--dev-accent-bright); border-left-color: var(--dev-accent-bright); background: rgba(26,58,92,0.07); }
 
   .nav-panel { display: none; }
   .nav-panel.visible { display: block; }
 
   .toc { margin: 6px 0 0; padding: 0; list-style: none; }
-  .toc li a {
-    display: block;
-    padding: 3px 18px 3px 28px;
-    font-size: 13px;
-    color: #7a5a2a;
-    text-decoration: none;
-    border-left: 3px solid transparent;
-    transition: all 0.15s;
-  }
-  .toc li a:hover {
-    color: var(--gold);
-    border-left-color: var(--gold);
-    background: rgba(184,134,11,0.06);
-  }
+  .toc li a { display: block; padding: 3px 18px 3px 28px; font-size: 13px; color: #7a5a2a; text-decoration: none; border-left: 3px solid transparent; transition: all 0.15s; }
+  .toc li a:hover { color: var(--gold); border-left-color: var(--gold); background: rgba(184,134,11,0.06); }
 
-  /* MAIN */
   main { flex: 1; padding: 36px 48px 60px; min-width: 0; }
 
   .breadcrumb { font-size: 13px; color: #8a7050; margin-bottom: 16px; }
@@ -213,198 +116,81 @@
   .breadcrumb a:hover { color: var(--gold); }
   .breadcrumb span { margin: 0 6px; color: #b0906a; }
 
-  .page-title {
-    font-family: 'Cinzel', serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--ink);
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 10px;
-    margin-bottom: 22px;
-    letter-spacing: 1px;
-  }
+  .page-title { font-family: 'Cinzel', serif; font-size: 30px; font-weight: 700; color: var(--ink); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 22px; letter-spacing: 1px; }
 
-  /* INFOBOX */
   .infobox {
-    float: right;
-    clear: right;
-    margin: 0 0 20px 28px;
-    width: 230px;
-    background: #fdf6e3;
-    border: 2px solid var(--gold);
-    border-radius: 6px;
-    overflow: hidden;
-    font-size: 14px;
-    box-shadow: 3px 3px 12px rgba(0,0,0,0.1);
+    float: right; clear: right; margin: 0 0 20px 28px; width: 240px;
+    background: #fdf6e3; border: 2px solid var(--gold); border-radius: 6px;
+    overflow: hidden; font-size: 14px; box-shadow: 3px 3px 12px rgba(0,0,0,0.1);
   }
-  .infobox-title {
-    background: var(--gold);
-    color: #fff8e0;
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-align: center;
-    padding: 10px 12px;
-    text-transform: uppercase;
-  }
-  .infobox-icon {
-    text-align: center;
-    padding: 18px 12px 14px;
-    background: #fef9ee;
-    border-bottom: 1px solid var(--parchment-shadow);
-    font-size: 52px;
-    line-height: 1;
-  }
+  .infobox-title { background: var(--gold); color: #fff8e0; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-align: center; padding: 10px 12px; text-transform: uppercase; }
+  .infobox-icon { text-align: center; padding: 18px 12px 14px; background: #fef9ee; border-bottom: 1px solid var(--parchment-shadow); font-size: 52px; line-height: 1; }
   .infobox table { width: 100%; border-collapse: collapse; }
-  .infobox td {
-    padding: 7px 12px;
-    border-top: 1px solid var(--parchment-shadow);
-    font-size: 13.5px;
-    vertical-align: top;
-  }
-  .infobox td:first-child {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    width: 45%;
-    padding-top: 9px;
-  }
+  .infobox td { padding: 7px 12px; border-top: 1px solid var(--parchment-shadow); font-size: 13.5px; vertical-align: top; }
+  .infobox td:first-child { font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 0.5px; text-transform: uppercase; width: 45%; padding-top: 9px; }
   .infobox tr:nth-child(even) td { background: #fdf0cc; }
 
-  h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--ink-light);
-    border-bottom: 1px solid var(--parchment-shadow);
-    padding-bottom: 6px;
-    margin: 32px 0 14px;
-    letter-spacing: 0.5px;
-    clear: both;
-  }
-  h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--gold);
-    margin: 22px 0 10px;
-    letter-spacing: 0.5px;
-  }
+  h2 { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600; color: var(--ink-light); border-bottom: 1px solid var(--parchment-shadow); padding-bottom: 6px; margin: 32px 0 14px; letter-spacing: 0.5px; clear: both; }
+  h3 { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: var(--gold); margin: 22px 0 10px; letter-spacing: 0.5px; }
 
   p { margin-bottom: 14px; }
   a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
   a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
 
-  /* DATA TABLE */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0 24px;
-    font-size: 15px;
-    background: #fdf8ef;
-    border: 1px solid var(--parchment-shadow);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .data-table th {
-    background: var(--table-head);
-    color: var(--ink);
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 10px 14px;
-    text-align: left;
-  }
-  .data-table td {
-    padding: 8px 14px;
-    border-top: 1px solid var(--parchment-shadow);
-    vertical-align: middle;
-  }
+  .data-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 15px; background: #fdf8ef; border: 1px solid var(--parchment-shadow); border-radius: 6px; overflow: hidden; }
+  .data-table th { background: var(--table-head); color: var(--ink); font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 14px; text-align: left; }
+  .data-table td { padding: 8px 14px; border-top: 1px solid var(--parchment-shadow); vertical-align: middle; }
   .data-table tr:nth-child(even) td { background: var(--table-stripe); }
   .data-table tr:hover td { background: #f5e8c0; }
+  .data-table td.highlight { font-weight: 700; color: var(--ink); }
 
   .mult { font-weight: 600; color: var(--red); font-variant-numeric: tabular-nums; }
+  .tier-bronze    { color: #cd7f32; font-weight: 600; }
+  .tier-silver    { color: #888; font-weight: 600; }
+  .tier-gold      { color: #b8860b; font-weight: 600; }
+  .tier-platinum  { color: #6a8fa8; font-weight: 600; }
+  .tier-diamond   { color: #4a90c4; font-weight: 600; }
+  .tier-dragonstone { color: #7b4ea0; font-weight: 600; }
+  .tier-zenyte    { color: #c0392b; font-weight: 600; }
+  .tier-max       { color: #1a7a1a; font-weight: 600; }
+  .tier-none      { color: #888; font-style: italic; }
 
-  /* CALLOUT */
-  .callout {
-    background: #fdf8ef;
-    border: 1px solid var(--parchment-shadow);
-    border-left: 4px solid var(--gold-bright);
-    border-radius: 4px;
-    padding: 16px 20px;
-    margin: 14px 0 24px;
-    font-size: 15px;
-  }
+  .callout { background: #fdf8ef; border: 1px solid var(--parchment-shadow); border-left: 4px solid var(--gold-bright); border-radius: 4px; padding: 16px 20px; margin: 14px 0 24px; font-size: 15px; }
   .callout.callout-info { border-left-color: #2a5f96; background: #f0f5fc; }
+  .callout.callout-new  { border-left-color: #1a7a1a; background: #f0faf0; }
+  .callout.callout-old  { border-left-color: #888; background: #f5f5f0; }
 
-  /* EXAMPLE BLOCKS */
-  .example-block {
-    background: #fef9ee;
-    border: 1px solid var(--parchment-shadow);
-    border-radius: 6px;
-    padding: 14px 18px;
-    margin-bottom: 12px;
-    font-size: 15px;
+  .method-header {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Cinzel', serif; font-size: 16px; font-weight: 700;
+    padding: 12px 18px; border-radius: 6px 6px 0 0; margin-top: 32px; margin-bottom: 0;
+    border-bottom: none; letter-spacing: 0.5px;
   }
-  .example-label {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .example-formula {
-    font-family: 'Courier New', monospace;
-    font-size: 13px;
-    background: rgba(0,0,0,0.06);
-    padding: 6px 10px;
-    border-radius: 4px;
-    color: var(--ink);
-    margin-top: 6px;
-    display: block;
-  }
+  .method-header.new-method { background: #e6f4e6; color: #1a5a1a; border: 2px solid #4caf50; }
+  .method-header.old-method { background: #f0f0ec; color: #555; border: 2px solid #aaa; }
+  .method-body { border: 2px solid; border-top: none; border-radius: 0 0 6px 6px; padding: 20px 20px 4px; margin-bottom: 28px; }
+  .method-body.new-body { border-color: #4caf50; background: #fafff8; }
+  .method-body.old-body { border-color: #aaa; background: #fafafa; }
+  .method-badge { font-size: 11px; padding: 3px 10px; border-radius: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+  .badge-new { background: #4caf50; color: #fff; }
+  .badge-old { background: #888; color: #fff; }
 
-  /* NOTES LIST */
+  .example-block { background: #fef9ee; border: 1px solid var(--parchment-shadow); border-radius: 6px; padding: 14px 18px; margin-bottom: 12px; font-size: 15px; }
+  .example-label { font-family: 'Cinzel', serif; font-size: 11px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .example-formula { font-family: 'Courier New', monospace; font-size: 13px; background: rgba(0,0,0,0.06); padding: 6px 10px; border-radius: 4px; color: var(--ink); margin-top: 6px; display: block; }
+
   .notes-list { padding-left: 0; list-style: none; margin: 14px 0; }
-  .notes-list li {
-    padding: 6px 0 6px 24px;
-    position: relative;
-    font-size: 15px;
-    border-bottom: 1px dotted var(--parchment-shadow);
-  }
+  .notes-list li { padding: 6px 0 6px 24px; position: relative; font-size: 15px; border-bottom: 1px dotted var(--parchment-shadow); }
   .notes-list li:last-child { border-bottom: none; }
   .notes-list li::before { content: '◆'; position: absolute; left: 4px; color: var(--gold); font-size: 10px; top: 10px; }
 
-  /* TAGS */
   .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
   .tag-auto  { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
   .tag-admin { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
 
-  code {
-    font-family: 'Courier New', monospace;
-    font-size: 13px;
-    background: rgba(0,0,0,0.07);
-    padding: 2px 6px;
-    border-radius: 3px;
-    color: #4a3000;
-  }
+  code { font-family: 'Courier New', monospace; font-size: 13px; background: rgba(0,0,0,0.07); padding: 2px 6px; border-radius: 3px; color: #4a3000; }
 
-  footer {
-    background: var(--header-bg);
-    border-top: 2px solid #3a2800;
-    color: #6a5020;
-    text-align: center;
-    padding: 18px;
-    font-size: 13px;
-    font-family: 'Crimson Text', serif;
-    font-style: italic;
-  }
+  footer { background: var(--header-bg); border-top: 2px solid #3a2800; color: #6a5020; text-align: center; padding: 18px; font-size: 13px; font-family: 'Crimson Text', serif; font-style: italic; }
   footer a { color: #9a7030; border-bottom: none; }
 
   @media (max-width: 700px) {
@@ -433,9 +219,7 @@
       <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">&#128100; Players</button>
       <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">&#9881; Developers</button>
     </div>
-
     <div class="sidebar-nav">
-      <!-- USERS NAV -->
       <div class="nav-panel users-nav visible" id="nav-users">
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">Navigation</div>
@@ -459,7 +243,7 @@
         <div class="sidebar-section">
           <div class="sidebar-section-title users-title">On This Page</div>
           <ul class="toc">
-            <li><a href="#overview">Overview</a></li>
+            <li><a href="#total-level-scaling">Total Level Scaling</a></li>
             <li><a href="#base-rates">Base Rates</a></li>
             <li><a href="#game-modes">Game Mode Multipliers</a></li>
             <li><a href="#stacking">Stacking Bonuses</a></li>
@@ -469,8 +253,6 @@
           </ul>
         </div>
       </div>
-
-      <!-- DEVELOPERS NAV -->
       <div class="nav-panel dev-nav" id="nav-dev">
         <div class="sidebar-section">
           <div class="sidebar-section-title dev-title">Navigation</div>
@@ -510,37 +292,97 @@
 
     <h1 class="page-title">Experience Rates &amp; Multipliers</h1>
 
-    <!-- INFOBOX -->
     <div class="infobox">
       <div class="infobox-title">Quick Reference</div>
       <div class="infobox-icon">&#9889;</div>
       <table>
         <tr><td>Skilling base</td><td>30&times; OSRS</td></tr>
         <tr><td>Combat base</td><td>125&times; OSRS</td></tr>
-        <tr><td>Extreme mode</td><td>15&times; skill mult.</td></tr>
-        <tr><td>Weekend 2&times; XP</td><td>Fri / Sat / Sun</td></tr>
-        <tr><td>Best scroll</td><td>3&times; (200 scroll)</td></tr>
+        <tr><td>Max mode mult.</td><td>15&times;</td></tr>
+        <tr><td>Total lvl scaling</td><td>1&times; &rarr; 210&times;</td></tr>
+        <tr><td>Best scroll</td><td>3&times;</td></tr>
+        <tr><td>Weekend bonus</td><td>2&times; auto Fri&ndash;Sun</td></tr>
         <tr><td>XP cap</td><td>200,000,000</td></tr>
         <tr><td>Cap reward</td><td>40 Loyalty Points</td></tr>
       </table>
     </div>
 
-    <h2 id="overview">Overview</h2>
     <p>
-      Valius uses a layered experience system. A raw OSRS experience value is first scaled by a
-      <strong>base rate multiplier</strong>, then by a <strong>game mode multiplier</strong>, and finally by any
-      active <strong>stacking bonuses</strong> from location, events, scrolls, gear, and pets.
-      All bonuses are applied multiplicatively inside the server's <code>addSkillXP()</code> method
-      (<code>PlayerAssistant.java</code>).
+      Valius uses a layered experience system. Every XP drop passes through several multipliers applied
+      in sequence — base rate, total-level scaling, stacking bonuses, and finally your game mode multiplier.
+      The sections below cover each layer, with the most impactful system first.
     </p>
 
+    <!-- ═══════════════════════════════════════════════ -->
+    <h2 id="total-level-scaling">Total Level Scaling</h2>
+
+    <div class="method-header new-method">
+      <span>&#9889; Total Level XP Scaling</span>
+      <span class="method-badge badge-new">Current System</span>
+    </div>
+    <div class="method-body new-body">
+      <p>
+        The higher your total level, the larger the multiplier applied to every XP drop.
+        This rewards long-term progression &mdash; the closer you are to max, the faster remaining
+        skills train. The multiplier is looked up live each XP drop from your current total level,
+        so it increases automatically as you level up.
+      </p>
+      <p>
+        Below total level 500 no scaling bonus applies. Once you hit 500 the multiplier kicks in
+        and grows through eight tiers up to <strong>210&times;</strong> at max total level (2277).
+      </p>
+
+      <table class="data-table">
+        <tr><th>Total Level</th><th>Tier</th><th>Multiplier</th></tr>
+        <tr><td>0 &ndash; 499</td><td><span class="tier-none">None</span></td><td><span class="mult">1&times;</span></td></tr>
+        <tr><td>500 &ndash; 749</td><td><span class="tier-bronze">Bronze</span></td><td><span class="mult">25&times;</span></td></tr>
+        <tr><td>750 &ndash; 999</td><td><span class="tier-silver">Silver</span></td><td><span class="mult">40&times;</span></td></tr>
+        <tr><td>1000 &ndash; 1249</td><td><span class="tier-gold">Gold</span></td><td><span class="mult">60&times;</span></td></tr>
+        <tr><td>1250 &ndash; 1499</td><td><span class="tier-platinum">Platinum</span></td><td><span class="mult">85&times;</span></td></tr>
+        <tr><td>1500 &ndash; 1749</td><td><span class="tier-diamond">Diamond</span></td><td><span class="mult">110&times;</span></td></tr>
+        <tr><td>1750 &ndash; 1999</td><td><span class="tier-dragonstone">Dragonstone</span></td><td><span class="mult">150&times;</span></td></tr>
+        <tr><td>2000 &ndash; 2276</td><td><span class="tier-zenyte">Zenyte</span></td><td><span class="mult">180&times;</span></td></tr>
+        <tr><td>2277 (max)</td><td><span class="tier-max">Max</span></td><td><span class="mult">210&times;</span></td></tr>
+      </table>
+
+      <div class="callout callout-new">
+        <strong>Tier-up notification:</strong> When a level-up pushes your total level across a tier
+        threshold, you receive a coloured chat message — e.g.
+        <em>"[XP Scaling] Total level 500 reached! Tier: Bronze &mdash; XP multiplier now 25x."</em>
+        The new multiplier applies from that XP drop onward.
+      </div>
+
+      <p>
+        This multiplier stacks on top of the base rate and all other bonuses. A Normal mode player
+        woodcutting at Bronze tier already receives <strong>30 &times; 25 = 750&times;</strong> OSRS rates
+        before any events, scrolls, or gear bonuses.
+      </p>
+    </div>
+
+    <div class="method-header old-method">
+      <span>Flat Rate System</span>
+      <span class="method-badge badge-old">Previous System</span>
+    </div>
+    <div class="method-body old-body">
+      <p>
+        Previously all players received the same fixed multiplier regardless of total level.
+        There was no scaling &mdash; a fresh account and a near-max account trained at identical rates.
+        The only differences came from game mode, events, gear, and scrolls.
+      </p>
+      <p>
+        The base rates (30&times; skilling, 125&times; combat) and all stacking bonuses below still exist
+        in the current system &mdash; total level scaling is simply an additional multiplier layered on top.
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
     <h2 id="base-rates">Base Rates</h2>
     <p>
-      These multipliers are applied to every raw OSRS XP value before any other modifier.
-      They are constants in <code>Config.java</code> and require a server restart to change.
+      Applied to every raw OSRS XP value before any other modifier.
+      Defined as constants in <code>Config.java</code> and require a server restart to change.
     </p>
 
-    <h3>Skilling — all skills share a flat 30&times; multiplier</h3>
+    <h3>Skilling &mdash; all skills share a flat 30&times; multiplier</h3>
     <table class="data-table">
       <tr>
         <th>Skill</th><th>Multiplier</th>
@@ -564,46 +406,46 @@
       <tr><td>Magic</td><td><span class="mult">125&times;</span></td></tr>
     </table>
 
+    <!-- ═══════════════════════════════════════════════ -->
     <h2 id="game-modes">Game Mode Multipliers</h2>
     <p>
-      Your game mode is selected at account creation and applies a permanent multiplier on top of the
-      base rates. Defined in <code>getSkillMultiplier()</code> inside <code>PlayerAssistant.java</code>.
+      Selected at account creation. Applied after total-level scaling.
+      Defined in <code>getSkillMultiplier()</code> inside <code>PlayerAssistant.java</code>.
     </p>
     <table class="data-table">
-      <tr><th>Mode / Right</th><th>Multiplier</th><th>Notes</th></tr>
+      <tr><th>Mode</th><th>Multiplier</th><th>Notes</th></tr>
       <tr><td><strong>Extreme</strong></td><td><span class="mult">15&times;</span></td><td>Applied to all skills</td></tr>
       <tr><td><strong>Classic</strong></td><td><span class="mult">5&times;</span></td><td>Applied to all skills</td></tr>
       <tr><td><strong>Group Ironman</strong></td><td><span class="mult">5&times;</span></td><td>Applied to all skills</td></tr>
       <tr><td><strong>Elite</strong></td><td><span class="mult">2&times;</span></td><td>Applied to all skills</td></tr>
       <tr><td><strong>OSRS mode</strong></td><td><span class="mult">2&times;</span></td><td>Near-OSRS rates; boosted variants apply during events</td></tr>
-      <tr><td><strong>Normal</strong></td><td><span class="mult">1&times;</span></td><td>Uses the Config base rates (30&times; skilling / 125&times; combat)</td></tr>
+      <tr><td><strong>Normal</strong></td><td><span class="mult">1&times;</span></td><td>Uses the Config base rates above</td></tr>
     </table>
 
+    <!-- ═══════════════════════════════════════════════ -->
     <h2 id="stacking">Stacking Bonuses</h2>
     <p>
-      After the base rate and game mode are applied, the following bonuses stack multiplicatively
-      in the order listed. All are handled in <code>addSkillXP()</code>.
+      Applied multiplicatively before the game mode multiplier, in the order listed.
     </p>
 
     <h3>1 &mdash; Location</h3>
     <table class="data-table">
-      <tr><th>Zone</th><th>Bonus</th><th>Notes</th></tr>
-      <tr><td>Donator Zone</td><td><span class="mult">+20% (1.2&times;)</span></td><td>Active while standing inside the zone</td></tr>
-      <tr><td>Elite Donator Zone (EDZ) &mdash; donated under $250</td><td><span class="mult">+20% (1.2&times;)</span></td><td></td></tr>
-      <tr><td>Elite Donator Zone (EDZ) &mdash; donated $250+</td><td><span class="mult">up to +30% (1.3&times;)</span></td><td>Formula: <code>1.2 + ((donated &minus; 100) / 150) &times; 0.1</code>, capped at 1.3&times;</td></tr>
+      <tr><th>Zone</th><th>Multiplier</th><th>Notes</th></tr>
+      <tr><td>Donator Zone</td><td><span class="mult">1.2&times;</span></td><td>Active while inside the zone</td></tr>
+      <tr><td>Elite Donator Zone &mdash; donated under $250</td><td><span class="mult">1.2&times;</span></td><td></td></tr>
+      <tr><td>Elite Donator Zone &mdash; donated $250+</td><td><span class="mult">up to 1.3&times;</span></td><td>Formula: <code>1.2 + ((donated &minus; 100) / 150) &times; 0.1</code>, capped at 1.3&times;</td></tr>
     </table>
 
     <h3>2 &mdash; Vote &amp; XP Scroll Bonuses (time-limited)</h3>
-    <p>These tiers are mutually exclusive &mdash; whichever is active applies. Voting grants a timed 1.2&times; bonus; scrolls unlock higher tiers.</p>
     <table class="data-table">
-      <tr><th>Source</th><th>Bonus</th><th>Duration</th></tr>
-      <tr><td>Voting</td><td><span class="mult">+20% (1.2&times;)</span></td><td><code>(votes / 20) &times; 30 minutes</code></td></tr>
-      <tr><td>XP Scroll (25)</td><td><span class="mult">+25% (1.25&times;)</span></td><td>Scroll duration</td></tr>
-      <tr><td>XP Scroll (50)</td><td><span class="mult">+50% (1.5&times;)</span></td><td>Scroll duration</td></tr>
-      <tr><td>XP Scroll (75)</td><td><span class="mult">+75% (1.75&times;)</span></td><td>Scroll duration</td></tr>
-      <tr><td>XP Scroll (100)</td><td><span class="mult">+100% (2&times;)</span></td><td>Scroll duration</td></tr>
-      <tr><td>XP Scroll (150)</td><td><span class="mult">+150% (2.5&times;)</span></td><td>Scroll duration</td></tr>
-      <tr><td>XP Scroll (200)</td><td><span class="mult">+200% (3&times;)</span></td><td>Scroll duration</td></tr>
+      <tr><th>Source</th><th>Multiplier</th><th>Duration</th></tr>
+      <tr><td>Voting</td><td><span class="mult">1.2&times;</span></td><td><code>(votes / 20) &times; 30 minutes</code></td></tr>
+      <tr><td>XP Scroll (25)</td><td><span class="mult">1.25&times;</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (50)</td><td><span class="mult">1.5&times;</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (75)</td><td><span class="mult">1.75&times;</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (100)</td><td><span class="mult">2&times;</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (150)</td><td><span class="mult">2.5&times;</span></td><td>Scroll duration</td></tr>
+      <tr><td>XP Scroll (200)</td><td><span class="mult">3&times;</span></td><td>Scroll duration</td></tr>
     </table>
 
     <h3>3 &mdash; Server Events</h3>
@@ -625,64 +467,56 @@
         <td><span class="mult">2&times;</span></td>
       </tr>
     </table>
-    <div class="callout">
-      The Double Experience Weekend fires automatically &mdash; no admin action needed. It is controlled by
-      <code>DoubleExperience.java</code> checking <code>Calendar.FRIDAY</code>, <code>SATURDAY</code>, and <code>SUNDAY</code>.
-      Wall of Guthix and Bonus Event are manually set via <code>Config</code> flags at runtime.
-    </div>
 
+    <!-- ═══════════════════════════════════════════════ -->
     <h2 id="gear">Gear &amp; Pet Bonuses</h2>
-    <p>These passive bonuses apply based on what you are wearing or have summoned.</p>
 
     <h3>Achievement Diary Equipment</h3>
-    <p>
-      Tiered diary reward pieces grant a passive XP bonus for their associated skill.
-      Four tiers exist per skill; only the highest tier worn applies.
-    </p>
+    <p>Tiered diary reward pieces grant a passive XP multiplier for their associated skill. Only the highest tier worn applies.</p>
     <table class="data-table">
-      <tr><th>Tier</th><th>Bonus</th><th>Skills covered</th></tr>
-      <tr><td>Tier 1</td><td><span class="mult">+5% (1.05&times;)</span></td><td rowspan="4" style="vertical-align:middle;">Thieving, Fishing, Agility, Smithing, Prayer, Farming, Runecrafting, Crafting, Firemaking, Combat (Wilderness only)</td></tr>
-      <tr><td>Tier 2</td><td><span class="mult">+10% (1.10&times;)</span></td></tr>
-      <tr><td>Tier 3</td><td><span class="mult">+15% (1.15&times;)</span></td></tr>
-      <tr><td>Tier 4</td><td><span class="mult">+20% (1.20&times;)</span></td></tr>
+      <tr><th>Tier</th><th>Multiplier</th><th>Skills covered</th></tr>
+      <tr><td>Tier 1</td><td><span class="mult">1.05&times;</span></td><td rowspan="4" style="vertical-align:middle;">Thieving, Fishing, Agility, Smithing, Prayer, Farming, Runecrafting, Crafting, Firemaking, Combat (Wilderness only)</td></tr>
+      <tr><td>Tier 2</td><td><span class="mult">1.10&times;</span></td></tr>
+      <tr><td>Tier 3</td><td><span class="mult">1.15&times;</span></td></tr>
+      <tr><td>Tier 4</td><td><span class="mult">1.20&times;</span></td></tr>
     </table>
 
     <h3>Other Equipment &amp; Pets</h3>
     <table class="data-table">
-      <tr><th>Item / Pet</th><th>Bonus</th><th>Condition</th></tr>
-      <tr><td>Mining armour (1 piece)</td><td><span class="mult">+3% (1.03&times;)</span></td><td>Wearing item 33545</td></tr>
-      <tr><td>Mining armour (2 pieces)</td><td><span class="mult">+6% (1.06&times;)</span></td><td>Wearing items 33545 &amp; 33546</td></tr>
-      <tr><td>Vote armour (1&ndash;5 pieces)</td><td><span class="mult">+1% to +5%</span></td><td>Each piece of items 33486&ndash;33490 adds 1%</td></tr>
-      <tr><td>Special items (33876&ndash;33878)</td><td><span class="mult">+5% (1.05&times;)</span></td><td>Any one of the three equipped</td></tr>
-      <tr><td>Summoning pet 6018</td><td><span class="mult">+5% (1.05&times;)</span></td><td>Pet active / summoned</td></tr>
+      <tr><th>Item / Pet</th><th>Multiplier</th><th>Condition</th></tr>
+      <tr><td>Mining armour (1 piece)</td><td><span class="mult">1.03&times;</span></td><td>Wearing item 33545</td></tr>
+      <tr><td>Mining armour (2 pieces)</td><td><span class="mult">1.06&times;</span></td><td>Wearing items 33545 &amp; 33546</td></tr>
+      <tr><td>Vote armour (1&ndash;5 pieces)</td><td><span class="mult">1.01&times; to 1.05&times;</span></td><td>Each piece of items 33486&ndash;33490 adds 1%</td></tr>
+      <tr><td>Special items (33876&ndash;33878)</td><td><span class="mult">1.05&times;</span></td><td>Any one of the three equipped</td></tr>
+      <tr><td>Summoning pet 6018</td><td><span class="mult">1.05&times;</span></td><td>Pet active / summoned</td></tr>
     </table>
 
+    <!-- ═══════════════════════════════════════════════ -->
     <h2 id="examples">Worked Examples</h2>
 
     <div class="example-block">
-      <div class="example-label">Normal player &mdash; skilling, no bonuses</div>
-      <code class="example-formula">Raw OSRS XP &times; 30</code>
+      <div class="example-label">Fresh account (total level &lt; 500) &mdash; Normal mode, skilling, no bonuses</div>
+      <code class="example-formula">Raw OSRS XP &times; 30 = 30&times; OSRS rates</code>
     </div>
 
     <div class="example-block">
-      <div class="example-label">Normal player &mdash; Woodcutting, inside Donator Zone, on a Saturday</div>
-      <code class="example-formula">Raw &times; 30 (base) &times; 1.2 (dzone) &times; 2 (weekend) = Raw &times; 72</code>
+      <div class="example-label">Bronze tier (total 500+) &mdash; Normal mode, Woodcutting, on a Saturday</div>
+      <code class="example-formula">Raw &times; 30 (base) &times; 25 (bronze scaling) &times; 2 (weekend) = Raw &times; 1,500</code>
     </div>
 
     <div class="example-block">
-      <div class="example-label">Extreme mode &mdash; Agility, Tier 4 diary item, 200 XP scroll active</div>
-      <code class="example-formula">Raw &times; 15 (extreme) &times; 1.20 (diary tier 4) &times; 3 (scroll 200) = Raw &times; 54</code>
+      <div class="example-label">Gold tier (total 1000+) &mdash; Extreme mode, Agility, Tier 4 diary item</div>
+      <code class="example-formula">Raw &times; 30 (base) &times; 60 (gold scaling) &times; 1.20 (diary) &times; 15 (extreme) = Raw &times; 32,400</code>
     </div>
 
     <div class="example-block">
-      <div class="example-label">Normal player &mdash; all server events active (weekend + WoGW + bonus event) with vote bonus</div>
-      <code class="example-formula">Raw &times; 30 &times; 2 (weekend) &times; 1.5 (WoGW) &times; 2 (bonus event) &times; 1.2 (vote) = Raw &times; 216</code>
+      <div class="example-label">Max total (2277) &mdash; Normal mode, all server events active, vote bonus active</div>
+      <code class="example-formula">Raw &times; 30 &times; 210 (max scaling) &times; 2 (weekend) &times; 1.5 (WoGW) &times; 2 (event) &times; 1.2 (vote) = Raw &times; 45,360</code>
     </div>
 
+    <!-- ═══════════════════════════════════════════════ -->
     <h2 id="cap">Experience Cap</h2>
-    <p>
-      Each skill has a hard cap of <strong>200,000,000 XP</strong>. On hitting the cap in any skill:
-    </p>
+    <p>Each skill has a hard cap of <strong>200,000,000 XP</strong>. On hitting the cap:</p>
     <ul class="notes-list">
       <li><strong>40 Loyalty Points</strong> are deposited automatically.</li>
       <li>A server-wide announcement broadcasts the achievement.</li>
@@ -690,11 +524,11 @@
     </ul>
 
     <div class="callout callout-info">
-      <strong>Developer note:</strong> Base rates and skill multipliers are constants in
-      <code>src/valius/Config.java</code> (lines 363&ndash;637). Server event flags
-      (<code>BONUS_XP_WOGW</code>, <code>BONUS_EVENT</code>) are mutable booleans that can be toggled
-      at runtime without a restart. The full multiplier stack is applied inside
-      <code>PlayerAssistant.addSkillXP()</code> (lines 3811&ndash;4433).
+      <strong>Developer note:</strong> Total-level tier thresholds and multipliers are the
+      <code>TOTAL_LEVEL_THRESHOLDS</code> and <code>TOTAL_LEVEL_BONUSES</code> arrays in
+      <code>src/valius/Config.java</code>. Edit those arrays to rebalance tiers without touching logic.
+      The lookup runs in <code>PlayerAssistant.getTotalLevelBonus()</code> and is applied inside
+      <code>addSkillXP()</code> just before the game mode multiplier.
     </div>
   </main>
 </div>
@@ -706,7 +540,6 @@
 
 <script>
   var STORAGE_KEY = 'valius-wiki-section';
-
   function switchSection(section) {
     document.getElementById('btn-users').className = 'section-btn' + (section === 'users' ? ' active-users' : '');
     document.getElementById('btn-dev').className   = 'section-btn' + (section === 'dev'   ? ' active-dev'   : '');
@@ -714,10 +547,7 @@
     document.getElementById('nav-dev').className   = 'nav-panel dev-nav'   + (section === 'dev'   ? ' visible' : '');
     try { localStorage.setItem(STORAGE_KEY, section); } catch(e) {}
   }
-
-  (function() {
-    switchSection('users');
-  })();
+  (function() { switchSection('users'); })();
 </script>
 
 </body>
