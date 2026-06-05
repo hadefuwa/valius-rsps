@@ -1439,7 +1439,7 @@ public class PlayerAssistant {
 			return;
 		}
 		c.getPA().sendChangeSprite(58014, c.placeHolders ? (byte) 1 : (byte) 0);
-		c.getPA().sendChangeSprite(58065, c.depositAll ? (byte) 1 : (byte) 0);
+		c.getPA().sendChangeSprite(58200, c.depositAll ? (byte) 1 : (byte) 0);
 		if (c.viewingLootBag || c.addingItemsToLootBag || c.viewingRunePouch) {
 			c.sendMessage("You should stop what you are doing before opening the bank.");
 			return;
@@ -2567,22 +2567,6 @@ public class PlayerAssistant {
 			c.sendMessage("You cannot teleport out of jail.");
 			return false;
 		}
-		if (c.inWild()) {
-			if (!type.equals("glory")) {
-				if (c.wildLevel > Config.NO_TELEPORT_WILD_LEVEL) {
-					c.sendMessage(
-							"You can't teleport above level " + Config.NO_TELEPORT_WILD_LEVEL + " in the wilderness.");
-					c.getPA().closeAllWindows();
-					return false;
-				}
-			} else {
-				if (c.wildLevel > 30) {
-					c.sendMessage("You can't teleport above level 30 in the wilderness.");
-					c.getPA().closeAllWindows();
-					return false;
-				}
-			}
-		}
 		if (System.currentTimeMillis() - c.teleBlockDelay < c.teleBlockLength) {
 			c.sendMessage("You are teleblocked and can't teleport.");
 			return false;
@@ -2667,23 +2651,6 @@ public class PlayerAssistant {
 		}
 		if (c.isDead) {
 			return;
-		}
-		if (c.inWild() && !(c.getRights().isOrInherits(Right.OWNER))) {
-			boolean hasPetPassive = (c.summonId == Pets.MINI_PORAZDIR.getNpcId());
-			if (!hasPetPassive && !teleportType.equals("glory") && !teleportType.equals("obelisk")) {
-				if (c.wildLevel > Config.NO_TELEPORT_WILD_LEVEL) {
-					c.sendMessage(
-							"You can't teleport above level " + Config.NO_TELEPORT_WILD_LEVEL + " in the wilderness.");
-					c.getPA().closeAllWindows();
-					return;
-				}
-			} else if (!teleportType.equals("obelisk")) {
-				if (c.wildLevel > 30) {
-					c.sendMessage("You can't teleport above level 30 in the wilderness.");
-					c.getPA().closeAllWindows();
-					return;
-				}
-			}
 		}
 		if (System.currentTimeMillis() - c.teleBlockDelay < c.teleBlockLength) {
 			c.sendMessage("You are teleblocked and can't teleport.");
@@ -3968,6 +3935,9 @@ public class PlayerAssistant {
 			amount *= getBonusXPItem(skillId);
 		}
 		
+		//Total-level veteran XP bonus.
+		amount *= getTotalLevelBonus();
+
 		//Finally multiply the experience by the rights multiplier.
 		amount *= getSkillMultiplier(skillId);
 
@@ -4010,6 +3980,17 @@ public class PlayerAssistant {
 			levelUp(skillId);
 			if (c.getSkills().getActualLevel(skill) == 99) {
 				// TODO Skill Activity feed
+			}
+			// Check if crossing a total-level XP tier threshold
+			int newTotal = c.getSkills().getTotalLevel();
+			int oldTotal = newTotal - (c.getSkills().getActualLevel(skill) - oldLevel);
+			for (int i = 0; i < Config.TOTAL_LEVEL_THRESHOLDS.length; i++) {
+				if (oldTotal < Config.TOTAL_LEVEL_THRESHOLDS[i] && newTotal >= Config.TOTAL_LEVEL_THRESHOLDS[i]) {
+					c.sendMessage("@red@[XP Scaling]</col> Total level " + Config.TOTAL_LEVEL_THRESHOLDS[i]
+						+ " reached! Tier: @gre@" + Config.TOTAL_LEVEL_TIER_NAMES[i]
+						+ "</col> — XP multiplier now @yel@" + Config.TOTAL_LEVEL_BONUSES[i] + "x</col>.");
+					break;
+				}
 			}
 			requestUpdates();
 		}
@@ -4182,7 +4163,17 @@ public class PlayerAssistant {
 
 		}
 	}
-	
+
+	public double getTotalLevelBonus() {
+		int total = c.getSkills().getTotalLevel();
+		for (int i = Config.TOTAL_LEVEL_THRESHOLDS.length - 1; i >= 0; i--) {
+			if (total >= Config.TOTAL_LEVEL_THRESHOLDS[i]) {
+				return Config.TOTAL_LEVEL_BONUSES[i];
+			}
+		}
+		return 1.0;
+	}
+
 	public double getSkillMultiplier(int id) {
 		Skill skill = Skill.forId(id);
 		if (c.getRights().contains(Right.EXTREME)) { // for osrs rights

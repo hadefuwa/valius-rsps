@@ -1080,9 +1080,9 @@ public class ClickingButtons implements PacketType {
 			c.getPA().sendFrame36(116, c.takeAsNote ? 1 : 0);
 			break;
 
-		case 58065:
+		case 58200:
 			c.depositAll = !c.depositAll;
-			c.getPA().sendChangeSprite(58065, c.depositAll ? (byte) 1 : (byte) 0);
+			c.getPA().sendChangeSprite(58200, c.depositAll ? (byte) 1 : (byte) 0);
 			c.sendMessage(c.depositAll ? "Deposit mode: left-click now deposits all." : "Deposit mode: left-click now deposits 1.");
 			break;
 

@@ -2439,7 +2439,7 @@ public class RSInterface {
 				10, 12, "banktab/bank", 58013, "Switch to note withdrawal \nmode", "Switch to item withdrawal \nmode",
 				12, 20);
 		addClickableSprites(58014, "Enable/Disable Always Placeholders", "banktab/07/bank", 5, 6, 5);
-		addClickableSprites(58065, "Deposit Mode: left-click deposits 1 (off) or all (on)", "banktab/07/bank", 5, 6);
+		addClickableSprites(58200, "Deposit Mode: left-click deposits 1 (off) or all (on)", "banktab/07/bank", 5, 6);
 
 		addBankHover1(58018, 5, 58019, 1, "banktab/07/bank", 37, 29, "Deposit carried items", 58020, 2,
 				"banktab/07/bank", 58021, "Empty your backpack into\nyour bank", 0, 20);
@@ -2508,7 +2508,7 @@ public class RSInterface {
 
 		setBounds(58063, 25, 298, 26, rs); // Search
 		setBounds(58064, 250, 11, 27, rs);
-		setBounds(58065, 215, 298, 29, rs); // Deposit mode toggle
+		setBounds(58200, 215, 298, 29, rs); // Deposit mode toggle
 	}
 
 	public static void addInputField(int identity, int characterLimit, int color, String text, int width, int height,
