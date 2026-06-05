@@ -296,8 +296,8 @@
       <div class="infobox-title">Quick Reference</div>
       <div class="infobox-icon">&#9889;</div>
       <table>
-        <tr><td>Skilling base</td><td>30&times; OSRS</td></tr>
-        <tr><td>Combat base</td><td>125&times; OSRS</td></tr>
+        <tr><td>Skilling base</td><td>1&times; OSRS</td></tr>
+        <tr><td>Combat base</td><td>1&times; OSRS</td></tr>
         <tr><td>Max mode mult.</td><td>15&times;</td></tr>
         <tr><td>Total lvl scaling</td><td>1&times; &rarr; 210&times;</td></tr>
         <tr><td>Best scroll</td><td>3&times;</td></tr>
@@ -353,9 +353,7 @@
       </div>
 
       <p>
-        This multiplier stacks on top of the base rate and all other bonuses. A Normal mode player
-        woodcutting at Bronze tier already receives <strong>30 &times; 25 = 750&times;</strong> OSRS rates
-        before any events, scrolls, or gear bonuses.
+        This multiplier stacks on top of the base rate and all other bonuses. A Normal mode player woodcutting at Bronze tier receives <strong>25&times;</strong> OSRS rates before any events, scrolls, or gear bonuses.
       </p>
     </div>
 
@@ -382,28 +380,28 @@
       Defined as constants in <code>Config.java</code> and require a server restart to change.
     </p>
 
-    <h3>Skilling &mdash; all skills share a flat 30&times; multiplier</h3>
+    <h3>Skilling &mdash; all skills share a flat 1&times; multiplier (pure OSRS rates)</h3>
     <table class="data-table">
       <tr>
         <th>Skill</th><th>Multiplier</th>
         <th>Skill</th><th>Multiplier</th>
       </tr>
-      <tr><td>Woodcutting</td><td><span class="mult">30&times;</span></td><td>Cooking</td><td><span class="mult">30&times;</span></td></tr>
-      <tr><td>Mining</td><td><span class="mult">30&times;</span></td><td>Fletching</td><td><span class="mult">30&times;</span></td></tr>
-      <tr><td>Smithing</td><td><span class="mult">30&times;</span></td><td>Herblore</td><td><span class="mult">30&times;</span></td></tr>
-      <tr><td>Fishing</td><td><span class="mult">30&times;</span></td><td>Agility</td><td><span class="mult">30&times;</span></td></tr>
-      <tr><td>Firemaking</td><td><span class="mult">30&times;</span></td><td>Thieving</td><td><span class="mult">30&times;</span></td></tr>
-      <tr><td>Farming</td><td><span class="mult">30&times;</span></td><td>Slayer</td><td><span class="mult">30&times;</span></td></tr>
-      <tr><td>Prayer</td><td><span class="mult">30&times;</span></td><td>Hunter</td><td><span class="mult">30&times;</span></td></tr>
-      <tr><td>Runecrafting</td><td><span class="mult">30&times;</span></td><td>Crafting</td><td><span class="mult">30&times;</span></td></tr>
+      <tr><td>Woodcutting</td><td><span class="mult">1&times;</span></td><td>Cooking</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Mining</td><td><span class="mult">1&times;</span></td><td>Fletching</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Smithing</td><td><span class="mult">1&times;</span></td><td>Herblore</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Fishing</td><td><span class="mult">1&times;</span></td><td>Agility</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Firemaking</td><td><span class="mult">1&times;</span></td><td>Thieving</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Farming</td><td><span class="mult">1&times;</span></td><td>Slayer</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Prayer</td><td><span class="mult">1&times;</span></td><td>Hunter</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Runecrafting</td><td><span class="mult">1&times;</span></td><td>Crafting</td><td><span class="mult">1&times;</span></td></tr>
     </table>
 
     <h3>Combat</h3>
     <table class="data-table">
       <tr><th>Style</th><th>Multiplier</th></tr>
-      <tr><td>Melee</td><td><span class="mult">125&times;</span></td></tr>
-      <tr><td>Ranged</td><td><span class="mult">125&times;</span></td></tr>
-      <tr><td>Magic</td><td><span class="mult">125&times;</span></td></tr>
+      <tr><td>Melee</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Ranged</td><td><span class="mult">1&times;</span></td></tr>
+      <tr><td>Magic</td><td><span class="mult">1&times;</span></td></tr>
     </table>
 
     <!-- ═══════════════════════════════════════════════ -->
@@ -496,22 +494,22 @@
 
     <div class="example-block">
       <div class="example-label">Fresh account (total level &lt; 500) &mdash; Normal mode, skilling, no bonuses</div>
-      <code class="example-formula">Raw OSRS XP &times; 30 = 30&times; OSRS rates</code>
+      <code class="example-formula">Raw OSRS XP &times; 1 = OSRS rates (no total level scaling below 500)</code>
     </div>
 
     <div class="example-block">
       <div class="example-label">Bronze tier (total 500+) &mdash; Normal mode, Woodcutting, on a Saturday</div>
-      <code class="example-formula">Raw &times; 30 (base) &times; 25 (bronze scaling) &times; 2 (weekend) = Raw &times; 1,500</code>
+      <code class="example-formula">Raw &times; 1 (base) &times; 25 (bronze scaling) &times; 2 (weekend) = Raw &times; 50</code>
     </div>
 
     <div class="example-block">
       <div class="example-label">Gold tier (total 1000+) &mdash; Extreme mode, Agility, Tier 4 diary item</div>
-      <code class="example-formula">Raw &times; 30 (base) &times; 60 (gold scaling) &times; 1.20 (diary) &times; 15 (extreme) = Raw &times; 32,400</code>
+      <code class="example-formula">Raw &times; 1 (base) &times; 60 (gold scaling) &times; 1.20 (diary) &times; 15 (extreme) = Raw &times; 1,080</code>
     </div>
 
     <div class="example-block">
       <div class="example-label">Max total (2277) &mdash; Normal mode, all server events active, vote bonus active</div>
-      <code class="example-formula">Raw &times; 30 &times; 210 (max scaling) &times; 2 (weekend) &times; 1.5 (WoGW) &times; 2 (event) &times; 1.2 (vote) = Raw &times; 45,360</code>
+      <code class="example-formula">Raw &times; 1 &times; 210 (max scaling) &times; 2 (weekend) &times; 1.5 (WoGW) &times; 2 (event) &times; 1.2 (vote) = Raw &times; 1,512</code>
     </div>
 
     <!-- ═══════════════════════════════════════════════ -->
