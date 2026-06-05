@@ -1,0 +1,32 @@
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%logger{20}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/valius.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/valius.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%logger{30}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Show DEBUG for all valius code, INFO for everything else -->
+    <logger name="valius" level="DEBUG" />
+
+    <!-- Silence noisy third-party libs -->
+    <logger name="io.netty" level="WARN" />
+    <logger name="org.jboss" level="WARN" />
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

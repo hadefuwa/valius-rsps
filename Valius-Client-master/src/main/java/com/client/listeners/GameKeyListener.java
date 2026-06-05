@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import com.client.Client;
+import com.client.TileMarkerManager;
 import com.client.graphics.interfaces.impl.Keybinding;
 
 public class GameKeyListener implements KeyListener {
@@ -26,6 +27,10 @@ public class GameKeyListener implements KeyListener {
 
 		if (keyevent.isShiftDown()) {
 			Client.shiftDown = true;
+			if (i == KeyEvent.VK_M) {
+				TileMarkerManager.toggleCurrentTile();
+				return;
+			}
 		}
 		if(keyevent.isControlDown() && keyevent.getKeyCode() == 192) {
 			client.consoleOpen = !client.consoleOpen;

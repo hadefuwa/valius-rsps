@@ -83,15 +83,7 @@ public class CacheDownloader {
 	}
 	
 	private double getExpectedVersion() {
-		try {
-			URL versionFile = new URL(Configuration.betaClient ? BETA_VERSION_FILE_URL : VERSION_FILE_URL);
-			BufferedReader in = new BufferedReader(new InputStreamReader(versionFile.openStream()));
-			String line = in.readLine();
-			in.close();
-			return Double.parseDouble(line);
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		}
+		// Remote version server is offline; always use local cache
 		return 0.0;
 	}
 	

@@ -1,0 +1,83 @@
+[
+  {
+    "id": 140,
+    "name": "Christmas Shop",
+    "currency": "ORNAMENTS",
+    "sellModifier": 0.0,
+    "buyModifier": 1.0,
+    "canSellTo": false,
+    "generalStore": false,
+    "items": [
+      {
+        "id": 962,
+        "defaultAmount": 100,
+        "cost": 75
+      },
+      {
+        "id": 33961,
+        "defaultAmount": 10,
+        "cost": 400
+      },
+      {
+        "id": 12887,
+        "defaultAmount": 5,
+        "cost": 500
+      },
+      {
+        "id": 12888,
+        "defaultAmount": 5,
+        "cost": 500
+      },
+      {
+        "id": 12889,
+        "defaultAmount": 5,
+        "cost": 500
+      },
+      {
+        "id": 12890,
+        "defaultAmount": 5,
+        "cost": 500
+      },
+      {
+        "id": 33956,
+        "defaultAmount": 5,
+        "cost": 750
+      },
+      {
+        "id": 33957,
+        "defaultAmount": 5,
+        "cost": 750
+      },
+      {
+        "id": 33958,
+        "defaultAmount": 5,
+        "cost": 1000
+      },
+      {
+        "id": 33111,
+        "defaultAmount": 2,
+        "cost": 3000
+      },
+      {
+        "id": 33959,
+        "defaultAmount": 2,
+        "cost": 3500
+      },
+      {
+        "id": 33960,
+        "defaultAmount": 2,
+        "cost": 3500
+      },
+      {
+        "id": 33133,
+        "defaultAmount": 1,
+        "cost": 7500
+      },
+      {
+        "id": 33134,
+        "defaultAmount": 1,
+        "cost": 7500
+      }
+    ]
+  }
+]

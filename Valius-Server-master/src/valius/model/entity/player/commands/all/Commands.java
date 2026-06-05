@@ -39,6 +39,7 @@ public class Commands extends Command {
 		c.getPA().sendFrame126("::Highscores - Takes you to the highscores page", counter++);
 		c.getPA().sendFrame126("::Forums - Sends you to the Forum main page", counter++);
 		c.getPA().sendFrame126("::Explock - Locks XP gains", counter++);
+		c.getPA().sendFrame126("::Xptiers - Shows XP tier scaling multipliers by total level", counter++);
 		c.getPA().sendFrame126("::Toggledrop - Toggles the message when droping items", counter++);
 		c.getPA().sendFrame126("::Home - Teleports you to the home area", counter++);
 		c.getPA().sendFrame126("::Forums - Takes you to the Forums main page", counter++);

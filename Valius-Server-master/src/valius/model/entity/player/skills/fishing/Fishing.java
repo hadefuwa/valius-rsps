@@ -20,10 +20,14 @@ import valius.model.entity.player.GlobalMessages;
 import valius.model.entity.player.Player;
 import valius.model.entity.player.skills.Skill;
 import valius.util.Misc;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import valius.world.World;
 
 public class Fishing {
-	
+
+	private static final Logger log = LoggerFactory.getLogger(Fishing.class);
+
 	/*
 	 * Player Object
 	 */
@@ -188,6 +192,7 @@ public class Fishing {
 	
 	
 	public void startFishing(int fishingSpotId, int fishingType) {//starts fishing
+		log.debug("[{}] startFishing spotId={} fishingType={} fishingLevel={}", player.playerName, fishingSpotId, fishingType, player.getSkills().getLevel(Skill.FISHING));
 		int useBaitChance = Misc.random(1, 2);
 		attemptCatch.clear();//resets possible catches from spot
 		for(FISHING fishing: FISHING.values()) {
@@ -220,6 +225,7 @@ public class Fishing {
 		}
 		//if you pass all the conditions you begin to fish
 		isFishing = true;
+		log.info("[{}] started fishing at spotId={} catches={}", player.playerName, fishingSpotId, attemptCatch);
 		player.sendMessage("You begin fishing.");
 		player.stopPlayerSkill = true;
 		CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
@@ -259,6 +265,7 @@ public class Fishing {
 	
 	
 	public void catchFish(int fishingSpotId) {// when you catch the fish it is handled here
+		log.debug("[{}] catchFish spotId={} isFishing={}", player.playerName, fishingSpotId, isFishing);
 		if (isFishing == false) {
 			return;
 		}

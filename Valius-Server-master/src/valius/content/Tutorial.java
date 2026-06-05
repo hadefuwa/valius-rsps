@@ -190,7 +190,7 @@ public class Tutorial {
 					player.bonusXpTime50 = 3000;
 					player.sendMessage("@blu@You now have " + player.bonusXpTime50 / 100 + " Minutes of 50% BONUS XP! ::Vote to receive 30 more minutes!");
 					GlobalMessages.send(Misc.capitalizeJustFirst(player.playerName) + " has logged in for the first time! Welcome!", GlobalMessages.MessageType.NEWS);
-					player.getPA().sendString("https://discord.gg/UQABRTC", 12000);
+
 				} else if (player.getMode().isUltimateIronman()) {
 					player.getItems().wearItem(12813, 1, player.playerHat);
 					player.getItems().wearItem(12814, 1, player.playerChest);
@@ -221,7 +221,7 @@ public class Tutorial {
 					player.bonusXpTime50 = 3000;
 					player.sendMessage("@blu@You now have " + player.bonusXpTime50 / 100 + " Minutes of 50% BONUS XP! ::Vote to receive 30 more minutes!");
 					GlobalMessages.send(Misc.capitalizeJustFirst(player.playerName) + " has logged in for the first time! Welcome!", GlobalMessages.MessageType.NEWS);
-					player.getPA().sendString("https://discord.gg/UQABRTC", 12000);
+
 				} else if (player.getMode().isHcIronman()) {
 					player.getItems().wearItem(20792, 1, player.playerHat);
 					player.getItems().wearItem(20794, 1, player.playerChest);
@@ -252,7 +252,7 @@ public class Tutorial {
 					player.bonusXpTime50 = 3000;
 					player.sendMessage("@blu@You now have " + player.bonusXpTime50 / 100 + " Minutes of 50% BONUS XP! ::Vote to receive 30 more minutes!");
 					GlobalMessages.send(Misc.capitalizeJustFirst(player.playerName) + " has logged in for the first time! Welcome!", GlobalMessages.MessageType.NEWS);
-					player.getPA().sendString("https://discord.gg/UQABRTC", 12000);
+
 				} else if (player.getMode().isGroupIronman()) {
 					player.getItems().wearItem(33601, 1, player.playerHat);
 					player.getItems().wearItem(33602, 1, player.playerChest);
@@ -283,10 +283,10 @@ public class Tutorial {
 					player.bonusXpTime50 = 3000;
 					player.sendMessage("@blu@You now have " + player.bonusXpTime50 / 100 + " Minutes of 50% BONUS XP! ::Vote to receive 30 more minutes!");
 					GlobalMessages.send(Misc.capitalizeJustFirst(player.playerName) + " has logged in for the first time! Welcome!", GlobalMessages.MessageType.NEWS);
-					player.getPA().sendString("https://discord.gg/UQABRTC", 12000);
+
 				} else {
 					GlobalMessages.send(Misc.capitalizeJustFirst(player.playerName) + " has logged in for the first time! Welcome!", GlobalMessages.MessageType.NEWS);
-					player.getPA().sendString("https://discord.gg/UQABRTC", 12000);
+
 					player.getPA().addStarter();
 				} 
 				player.getTutorial().proceed();

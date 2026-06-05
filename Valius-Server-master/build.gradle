@@ -24,6 +24,9 @@ sourceSets {
         java {
             srcDir 'src/'
         }
+        resources {
+            srcDir 'resources/'
+        }
     }
 }
 
@@ -64,5 +67,12 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     testCompile 'junit:junit:4.12'
+}
+
+run {
+    jvmArgs = [
+        '--add-opens', 'java.base/java.nio=ALL-UNNAMED',
+        '--add-opens', 'java.base/sun.nio.ch=ALL-UNNAMED'
+    ]
 }
 

@@ -2470,7 +2470,6 @@ public class RSInterface {
 		Interface.width = 10;
 		Interface.invSpritePadX = 12;
 		Interface.height = 35;
-		Interface.aBoolean235 = true;
 		Interface.actions = new String[] { "Withdraw 1", "Withdraw 5", "Withdraw 10", "Withdraw All", "Withdraw X",
 				"Withdraw All but one" };
 		setBounds(58001, 13, 1, 0, rs);

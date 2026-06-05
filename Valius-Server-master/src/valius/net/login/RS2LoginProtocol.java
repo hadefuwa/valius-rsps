@@ -263,18 +263,21 @@ public class RS2LoginProtocol extends FrameDecoder {
 			player.saveCharacter = true;
 			player.packetType = -1;
 			player.packetSize = 0;
+			log.info("Login OK: {} at ({},{}) height={} rights={}", player.playerName, player.getX(), player.getY(), player.getHeight(), player.getRights().getPrimary());
 			final PacketBuilder bldr = new PacketBuilder();
 			bldr.put((byte) 2);
 			bldr.put((byte) player.getRights().getPrimary().getValue());
 			bldr.put((byte) 0);
 			channel.write(bldr.toPacket());
 		} else {
+			log.info("Login DENIED: {} returnCode={}", name, returnCode);
 			sendReturnCode(channel, returnCode);
 			return null;
 		}
 		synchronized (PlayerHandler.lock) {
 			player.initialize();
 			player.initialized = true;
+			log.debug("Player initialized: {} slot={}", player.playerName, player.getIndex());
 		}
 		return player;
 	}

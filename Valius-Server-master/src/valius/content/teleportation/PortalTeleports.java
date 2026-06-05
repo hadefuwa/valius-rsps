@@ -40,10 +40,6 @@ public class PortalTeleports {
 	}
 	
 	public boolean canTeleport(Player player) {
-		if (player.wildLevel > 20) {
-			player.sendMessage("You must be below lvl 20 wilderness to teleport");
-			return false;
-		}
 		if (System.currentTimeMillis() - player.lastTeleport < 3500) {
 			return false;	
 		}

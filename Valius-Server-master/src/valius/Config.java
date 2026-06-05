@@ -297,7 +297,7 @@ public class Config {
 	/**
 	 * The level in which you can not teleport in the wild, and higher.
 	 */
-	public static final int NO_TELEPORT_WILD_LEVEL = 20;
+	public static final int NO_TELEPORT_WILD_LEVEL = 99;
 
 	/**
 	 * The time, in game cycles that the skull above a player should exist for.
@@ -360,9 +360,9 @@ public class Config {
 	/**
 	 * Combat experience rates.
 	 */
-	public static final int MELEE_EXP_RATE = 125;
-	public static final int RANGE_EXP_RATE = 125;
-	public static final int MAGIC_EXP_RATE = 125;
+	public static final int MELEE_EXP_RATE = 1;
+	public static final int RANGE_EXP_RATE = 1;
+	public static final int MAGIC_EXP_RATE = 1;
 	/**
 	 * Special server experience bonus rates. (Double experience weekend etc)
 	 */
@@ -398,6 +398,15 @@ public class Config {
 	 */
 	public static final double SERVER_EXP_BONUS_WEEKEND = 2;
 	public static final double BONUS_EXP_WOGW = 2;
+
+	/**
+	 * Total-level XP scaling tiers.
+	 * Thresholds are inclusive lower bounds; the multiplier for the highest matched tier is applied.
+	 * 0->1.0x, Bronze->2.5x, Silver->4.0x, ... Max->21.0x
+	 */
+	public static final int[]    TOTAL_LEVEL_THRESHOLDS = { 500,  750,  1000, 1250, 1500,  1750,  2000,  2277 };
+	public static final double[] TOTAL_LEVEL_BONUSES    = { 25.0, 40.0, 60.0, 85.0, 110.0, 150.0, 180.0, 210.0 };
+	public static final String[] TOTAL_LEVEL_TIER_NAMES = { "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Dragonstone", "Zenyte", "Max" };
 
 	/**
 	 * Bonus modes Manually set while server is live
@@ -619,22 +628,22 @@ public class Config {
 	 * Skill experience multipliers.
 	 */
 	
-	public static final int WOODCUTTING_EXPERIENCE = 30;
-	public static final int MINING_EXPERIENCE = 30;
-	public static final int SMITHING_EXPERIENCE = 30;
-	public static final int FARMING_EXPERIENCE = 30;
-	public static final int FIREMAKING_EXPERIENCE = 30;
-	public static final int HERBLORE_EXPERIENCE = 30;
-	public static final int FISHING_EXPERIENCE = 30;
-	public static final int AGILITY_EXPERIENCE = 30;
-	public static final int PRAYER_EXPERIENCE = 30;
-	public static final int RUNECRAFTING_EXPERIENCE = 30;
-	public static final int CRAFTING_EXPERIENCE = 30;
-	public static final int THIEVING_EXPERIENCE = 30;
-	public static final int SLAYER_EXPERIENCE = 30;
-	public static final int COOKING_EXPERIENCE = 30;
-	public static final int FLETCHING_EXPERIENCE = 30;
-	public static final int HUNTER_EXPERIENCE = 30;
+	public static final int WOODCUTTING_EXPERIENCE = 1;
+	public static final int MINING_EXPERIENCE = 1;
+	public static final int SMITHING_EXPERIENCE = 1;
+	public static final int FARMING_EXPERIENCE = 1;
+	public static final int FIREMAKING_EXPERIENCE = 1;
+	public static final int HERBLORE_EXPERIENCE = 1;
+	public static final int FISHING_EXPERIENCE = 1;
+	public static final int AGILITY_EXPERIENCE = 1;
+	public static final int PRAYER_EXPERIENCE = 1;
+	public static final int RUNECRAFTING_EXPERIENCE = 1;
+	public static final int CRAFTING_EXPERIENCE = 1;
+	public static final int THIEVING_EXPERIENCE = 1;
+	public static final int SLAYER_EXPERIENCE = 1;
+	public static final int COOKING_EXPERIENCE = 1;
+	public static final int FLETCHING_EXPERIENCE = 1;
+	public static final int HUNTER_EXPERIENCE = 1;
 	
 	public static final String COMBAT_SCRIPT_DIR = "valius.model.entity.npc.combat.impl";
 	

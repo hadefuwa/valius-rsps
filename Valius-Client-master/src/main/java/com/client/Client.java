@@ -1120,7 +1120,7 @@ public class Client extends JPanel implements Runnable {
 					int l1 = menuActionCmd2[menuActionRow - 1];
 					int j2 = menuActionCmd3[menuActionRow - 1];
 					RSInterface class9 = RSInterface.interfaceCache[j2];
-					if (class9.aBoolean259 || class9.aBoolean235) {
+					if (class9.aBoolean259 || class9.aBoolean235 || j2 == 5382) {
 						aBoolean1242 = false;
 						anInt989 = 0;
 						anInt1084 = j2;
@@ -4517,19 +4517,24 @@ public class Client extends JPanel implements Runnable {
 		if (SceneGraph.anInt470 != -1) {
 			int k = SceneGraph.anInt470;
 			int k1 = SceneGraph.anInt471;
-			boolean flag = false;
-			if (myPlayer.getRights() == 3 && controlIsDown) {
-				teleport(baseX + k, baseY + k1);
+			if (TileMarkerManager.pendingMark) {
+				TileMarkerManager.toggle(baseX + k, baseY + k1);
+				TileMarkerManager.pendingMark = false;
 			} else {
-				flag = doWalkTo(0, 0, 0, 0, myPlayer.smallY[0], 0, 0, k1, myPlayer.smallX[0], true, k);
+				boolean flag = false;
+				if (myPlayer.getRights() == 3 && controlIsDown) {
+					teleport(baseX + k, baseY + k1);
+				} else {
+					flag = doWalkTo(0, 0, 0, 0, myPlayer.smallY[0], 0, 0, k1, myPlayer.smallX[0], true, k);
+				}
+				if (flag) {
+					crossX = saveClickX;
+					crossY = saveClickY;
+					crossType = 1;
+					crossIndex = 0;
+				}
 			}
 			SceneGraph.anInt470 = -1;
-			if (flag) {
-				crossX = saveClickX;
-				crossY = saveClickY;
-				crossType = 1;
-				crossIndex = 0;
-			}
 		}
 		if (clickMode3 == 1 && aString844 != null) {
 			aString844 = null;
@@ -4869,7 +4874,6 @@ public class Client extends JPanel implements Runnable {
 		int l = menuActionID[i];
 		int i1 = (int) menuActionCmd1[i];
 		long keyLong = menuActionCmd1[i];
-		System.out.println("k: " + k);
 		switch (k) {
 			case 59106:
 				RSInterface rsInterface = RSInterface.interfaceCache[59000];
@@ -5354,6 +5358,23 @@ public class Client extends JPanel implements Runnable {
 				x <<= 1;
 				y <<= 1;
 			}
+			this.sceneGraph.method312(y, x);
+		}
+		if (l == 9991) {
+			int y;
+			int x;
+			if (!this.menuOpen) {
+				x = this.saveClickX - 4;
+				y = this.saveClickY - 4;
+			} else {
+				x = j - 4;
+				y = k - 4;
+			}
+			if (Configuration.enableAntiAliasing == true) {
+				x <<= 1;
+				y <<= 1;
+			}
+			TileMarkerManager.pendingMark = true;
 			this.sceneGraph.method312(y, x);
 		}
 		if (l == 1062) {
@@ -6493,7 +6514,19 @@ public class Client extends JPanel implements Runnable {
 	}
 	
 	private ReentrantLock lock = new ReentrantLock();
- 
+
+	private void logCrash(String context, Throwable t) {
+		try {
+			String logPath = System.getProperty("user.home") + "/valius-crash.log";
+			java.io.PrintStream ps = new java.io.PrintStream(new java.io.FileOutputStream(logPath, true));
+			ps.println("[" + new java.util.Date() + "] CRASH in " + context + ":");
+			t.printStackTrace(ps);
+			ps.println("---");
+			ps.close();
+		} catch (Exception ignored) {}
+		t.printStackTrace();
+	}
+
 	public void run() {
 		if (drawFlames) {
 			drawFlames();
@@ -6560,7 +6593,11 @@ public class Client extends JPanel implements Runnable {
 						saveClickY = clickY;
 						aLong29 = clickTime;
 						clickMode1 = 0;
-						processGameLoop();
+						try {
+							processGameLoop();
+						} catch (Throwable t) {
+							logCrash("processGameLoop", t);
+						}
 						readIndex = writeIndex;
 					}
 				} finally {
@@ -6568,7 +6605,11 @@ public class Client extends JPanel implements Runnable {
 				}
 				
 				if(!Configuration.THREADED_RENDERING) {
-					processDrawing();
+					try {
+						processDrawing();
+					} catch (Throwable t) {
+						logCrash("processDrawing", t);
+					}
 				}
 				i1 &= 0xff;
 			}
@@ -6650,6 +6691,13 @@ public class Client extends JPanel implements Runnable {
 		if (itemSelected == 0 && spellSelected == 0) {
 			menuActionName[menuActionRow] = "Walk here";
 			menuActionID[menuActionRow] = 516;
+			menuActionCmd2[menuActionRow] = mouseX;
+			menuActionCmd3[menuActionRow] = mouseY;
+			menuActionRow++;
+		}
+		if (shiftDown) {
+			menuActionName[menuActionRow] = "Mark tile";
+			menuActionID[menuActionRow] = 9991;
 			menuActionCmd2[menuActionRow] = mouseX;
 			menuActionCmd3[menuActionRow] = mouseY;
 			menuActionRow++;
@@ -17980,7 +18028,9 @@ public class Client extends JPanel implements Runnable {
 			sceneGraph.renderFloatingText(plane);
 			sceneGraph.renderFloatingSprite(plane);
 		}
-		
+
+		TileMarkerManager.drawMarkers(this);
+
 		drawHeadIcon();
 		writeBackgroundTexture(k2);
 		if (loggedIn) {
@@ -18423,8 +18473,8 @@ public class Client extends JPanel implements Runnable {
 	private final int[] anIntArray1030;
 	private boolean aBoolean1031;
 	private static Sprite[] mapFunctions;
-	private static int baseX;
-	private static int baseY;
+	static int baseX;
+	static int baseY;
 	private int anInt1036;
 	private int anInt1037;
 	private int loginFailures;
