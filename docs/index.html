@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valius Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #f2e8d0;
+    --parchment-dark: #e8d9b8;
+    --parchment-shadow: #d4c49a;
+    --ink: #1c1208;
+    --ink-light: #3d2e0f;
+    --gold: #b8860b;
+    --gold-bright: #d4a017;
+    --gold-light: #f0c040;
+    --header-bg: #1a0f00;
+    --header-border: #5a3a00;
+    --sidebar-bg: #ede0c4;
+    --sidebar-border: #c8a96e;
+    --link: #5c3d11;
+    --link-hover: #b8860b;
+    --table-head: #c8a96e;
+    --table-stripe: #ede0c4;
+    --red: #8b1a1a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.65;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--header-bg);
+    border-bottom: 3px solid var(--gold);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 62px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+
+  .header-crest {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    text-shadow: 0 0 18px rgba(212,160,23,0.4);
+    text-decoration: none;
+  }
+
+  header h1 a { color: inherit; text-decoration: none; }
+
+  .header-tagline {
+    font-family: 'Crimson Text', serif;
+    font-size: 13px;
+    color: #9a7a3a;
+    font-style: italic;
+    margin-left: 4px;
+    padding-left: 14px;
+    border-left: 1px solid #4a3000;
+  }
+
+  .header-nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+  }
+
+  .header-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: #c8a040;
+    text-decoration: none;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .header-nav a:hover { opacity: 1; color: var(--gold-light); }
+
+  /* ── LAYOUT ── */
+  .layout {
+    display: flex;
+    min-height: calc(100vh - 62px);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* ── SIDEBAR ── */
+  aside {
+    width: 210px;
+    min-width: 210px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    padding: 24px 0;
+    position: sticky;
+    top: 62px;
+    height: calc(100vh - 62px);
+    overflow-y: auto;
+  }
+
+  .sidebar-section {
+    margin-bottom: 6px;
+  }
+
+  .sidebar-section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    padding: 8px 18px 4px;
+    border-bottom: 1px solid var(--parchment-shadow);
+    margin-bottom: 4px;
+  }
+
+  .sidebar-section a {
+    display: block;
+    padding: 5px 18px 5px 22px;
+    font-family: 'Crimson Text', serif;
+    font-size: 15px;
+    color: var(--link);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+  }
+
+  .sidebar-section a:hover {
+    color: var(--link-hover);
+    border-left-color: var(--gold);
+    background: rgba(184,134,11,0.07);
+    padding-left: 24px;
+  }
+
+  .sidebar-section a.active {
+    color: var(--gold);
+    border-left-color: var(--gold-bright);
+    background: rgba(184,134,11,0.1);
+    font-weight: 600;
+  }
+
+  .sidebar-section a.dim {
+    color: #a0906a;
+    font-style: italic;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* ── MAIN ── */
+  main {
+    flex: 1;
+    padding: 36px 48px 60px;
+    max-width: 900px;
+  }
+
+  /* ── PAGE TITLE ── */
+  .page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink-light);
+    border-bottom: 1px solid var(--parchment-shadow);
+    padding-bottom: 6px;
+    margin: 32px 0 14px;
+    letter-spacing: 0.5px;
+  }
+
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--gold);
+    margin: 20px 0 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  p { margin-bottom: 14px; }
+
+  a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+  a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
+
+  /* ── NOTICE BOX ── */
+  .notice {
+    background: #fdf6e3;
+    border: 1px solid var(--gold);
+    border-left: 4px solid var(--gold-bright);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+
+  .notice strong { color: var(--gold); }
+
+  /* ── FEATURE GRID ── */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .feature-card {
+    background: #fdf8ef;
+    border: 1px solid var(--parchment-shadow);
+    border-radius: 6px;
+    padding: 18px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    display: block;
+    color: var(--ink) !important;
+  }
+
+  .feature-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 3px 12px rgba(184,134,11,0.15);
+  }
+
+  .feature-card .card-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+  .feature-card .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--link);
+    margin-bottom: 6px;
+  }
+
+  .feature-card .card-desc {
+    font-size: 14px;
+    color: #5a4a2a;
+    line-height: 1.5;
+  }
+
+  /* ── QUICK START TABLE ── */
+  .quick-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    background: #fdf8ef;
+    border: 1px solid var(--parchment-shadow);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .quick-table th {
+    background: var(--table-head);
+    color: var(--ink);
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .quick-table td {
+    padding: 9px 14px;
+    border-top: 1px solid var(--parchment-shadow);
+    vertical-align: top;
+  }
+
+  .quick-table tr:nth-child(even) td { background: var(--table-stripe); }
+
+  .quick-table code {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    background: rgba(0,0,0,0.06);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--ink-light);
+  }
+
+  /* ── FEATURED ARTICLE ── */
+  .featured-article {
+    background: linear-gradient(135deg, #fdf8ef 0%, #f5e8c8 100%);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 28px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .featured-article::before {
+    content: '★ FEATURED ARTICLE';
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .featured-article h2 {
+    border: none;
+    margin-top: 0;
+    font-size: 20px;
+    padding-bottom: 0;
+  }
+
+  .featured-article p { color: #3d2e0f; font-size: 16px; }
+
+  .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: var(--gold);
+    color: #fff8e0;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--gold-bright);
+    box-shadow: 0 2px 8px rgba(184,134,11,0.35);
+    color: #fff !important;
+  }
+
+  /* ── WARNING TAG ── */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.5px;
+  }
+
+  .tag-warning { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+  .tag-info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--header-bg);
+    border-top: 2px solid #3a2800;
+    color: #6a5020;
+    text-align: center;
+    padding: 18px;
+    font-size: 13px;
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+  }
+
+  footer a { color: #9a7030; border-bottom: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="header-crest">⚔</span>
+  <h1><a href="index.html">Valius Wiki</a></h1>
+  <span class="header-tagline">The Valius RSPS community reference</span>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="blood-money.html">Blood Money</a>
+    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub ↗</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <a href="index.html" class="active">🏠 Home</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Game Systems</div>
+      <a href="blood-money.html">💀 Blood Money</a>
+      <a class="dim">🗡 PvP Guide</a>
+      <a class="dim">🧪 Skilling</a>
+      <a class="dim">👹 Bosses</a>
+      <a class="dim">🏆 Achievements</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Shops &amp; Items</div>
+      <a class="dim">🛒 Point Shops</a>
+      <a class="dim">💎 Donator Store</a>
+      <a class="dim">🪙 Vote Shop</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Server Info</div>
+      <a class="dim">⚙ Server Setup</a>
+      <a class="dim">📋 Changelog</a>
+    </div>
+  </aside>
+
+  <main>
+    <h1 class="page-title">Welcome to the Valius Wiki</h1>
+
+    <div class="notice">
+      <strong>Work in progress.</strong> This wiki is actively being built. More articles coming soon — contributions welcome via <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>.
+    </div>
+
+    <p>
+      <strong>Valius</strong> is a 317-revision Old School RuneScape private server with custom content, PvP systems, and a growing economy. This wiki documents game mechanics, items, NPCs, and server-specific features to help both new and experienced players.
+    </p>
+
+    <h2>Quick Start</h2>
+    <p>New to Valius? Here are the essentials to get up and running:</p>
+
+    <table class="quick-table">
+      <tr>
+        <th>Step</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td><strong>1. Start the Server</strong></td>
+        <td>
+          Requires Java 11 (Amazon Corretto). Run <code>gradlew.bat run</code> from<br>
+          <code>Valius-Server-master\</code> — listens on port <strong>43594</strong>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>2. Launch the Client</strong></td>
+        <td>
+          Must use <strong>Java 8</strong> (JavaFX is bundled in JDK 8 only).<br>
+          Run: <code>java.exe -jar client.jar</code>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>3. Version Match</strong></td>
+        <td>
+          <code>Config.CLIENT_VERSION = 5</code> must match on both server &amp; client.<br>
+          A mismatch causes <em>silent login failure</em> with no error shown. <span class="tag tag-warning">Critical</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>4. Game Cache</strong></td>
+        <td>
+          Cache lives at <code>C:\Users\[you]\ValiusCache1\</code> — already extracted.<br>
+          Do <strong>not</strong> delete this folder.
+        </td>
+      </tr>
+    </table>
+
+    <h2>Browse by Category</h2>
+    <div class="feature-grid">
+      <a href="blood-money.html" class="feature-card">
+        <span class="card-icon">💀</span>
+        <div class="card-title">Blood Money</div>
+        <div class="card-desc">Earn BM through PvP and spend it on rare gear at the home area shop.</div>
+      </a>
+      <div class="feature-card" style="opacity:0.5; pointer-events:none;">
+        <span class="card-icon">🗡</span>
+        <div class="card-title">PvP &amp; Wilderness</div>
+        <div class="card-desc">Coming soon — PKing tips, safe zones, and wilderness mechanics.</div>
+      </div>
+      <div class="feature-card" style="opacity:0.5; pointer-events:none;">
+        <span class="card-icon">👹</span>
+        <div class="card-title">Bosses</div>
+        <div class="card-desc">Coming soon — Boss mechanics, drop tables, and point rewards.</div>
+      </div>
+      <div class="feature-card" style="opacity:0.5; pointer-events:none;">
+        <span class="card-icon">🏆</span>
+        <div class="card-title">Achievements</div>
+        <div class="card-desc">Coming soon — Completing achievements for points and rewards.</div>
+      </div>
+    </div>
+
+    <div class="featured-article">
+      <h2><a href="blood-money.html">Blood Money</a></h2>
+      <p>
+        Blood Money (item ID: 13307) is the primary PvP reward currency in Valius. Earned by defeating
+        other players in the wilderness or PK District, it can be exchanged at the
+        <strong>Point Reward Shops</strong> NPC at the home teleport for powerful custom gear including
+        Goliath Gloves, Swift Gloves, Spellcaster Gloves, and more.
+      </p>
+      <a href="blood-money.html" class="btn">Read Article →</a>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  Valius Wiki — fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
+  <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
+</footer>
+
+</body>
+</html>
