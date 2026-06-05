@@ -9,7 +9,6 @@
 <style>
   :root {
     --parchment: #f2e8d0;
-    --parchment-dark: #e8d9b8;
     --parchment-shadow: #d4c49a;
     --ink: #1c1208;
     --ink-light: #3d2e0f;
@@ -17,7 +16,6 @@
     --gold-bright: #d4a017;
     --gold-light: #f0c040;
     --header-bg: #1a0f00;
-    --header-border: #5a3a00;
     --sidebar-bg: #ede0c4;
     --sidebar-border: #c8a96e;
     --link: #5c3d11;
@@ -25,6 +23,8 @@
     --table-head: #c8a96e;
     --table-stripe: #ede0c4;
     --red: #8b1a1a;
+    --dev-accent: #1a3a5c;
+    --dev-accent-bright: #2a5f96;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,9 +52,7 @@
     z-index: 100;
     box-shadow: 0 2px 12px rgba(0,0,0,0.6);
   }
-
   .header-crest { font-size: 28px; line-height: 1; }
-
   header h1 {
     font-family: 'Cinzel', serif;
     font-size: 22px;
@@ -63,25 +61,16 @@
     letter-spacing: 2px;
     text-shadow: 0 0 18px rgba(212,160,23,0.4);
   }
-
   header h1 a { color: inherit; text-decoration: none; }
-
   .header-tagline {
     font-family: 'Crimson Text', serif;
     font-size: 13px;
     color: #9a7a3a;
     font-style: italic;
-    margin-left: 4px;
     padding-left: 14px;
     border-left: 1px solid #4a3000;
   }
-
-  .header-nav {
-    margin-left: auto;
-    display: flex;
-    gap: 20px;
-  }
-
+  .header-nav { margin-left: auto; display: flex; gap: 20px; }
   .header-nav a {
     font-family: 'Cinzel', serif;
     font-size: 12px;
@@ -91,7 +80,6 @@
     opacity: 0.8;
     transition: opacity 0.2s;
   }
-
   .header-nav a:hover { opacity: 1; color: var(--gold-light); }
 
   /* ── LAYOUT ── */
@@ -104,30 +92,66 @@
 
   /* ── SIDEBAR ── */
   aside {
-    width: 210px;
-    min-width: 210px;
+    width: 220px;
+    min-width: 220px;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--sidebar-border);
-    padding: 24px 0;
     position: sticky;
     top: 62px;
     height: calc(100vh - 62px);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
 
-  .sidebar-section { margin-bottom: 6px; }
+  /* ── SECTION SWITCHER ── */
+  .section-switcher {
+    display: flex;
+    border-bottom: 2px solid var(--sidebar-border);
+    flex-shrink: 0;
+  }
+  .section-btn {
+    flex: 1;
+    padding: 12px 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #a0906a;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.18s;
+  }
+  .section-btn:hover { color: var(--gold); background: rgba(184,134,11,0.06); }
+  .section-btn.active-users {
+    color: var(--gold);
+    border-bottom-color: var(--gold-bright);
+    background: rgba(184,134,11,0.08);
+  }
+  .section-btn.active-dev {
+    color: var(--dev-accent-bright);
+    border-bottom-color: var(--dev-accent-bright);
+    background: rgba(26,58,92,0.07);
+  }
 
+  .sidebar-nav { flex: 1; padding: 16px 0 24px; }
+  .sidebar-section { margin-bottom: 4px; }
   .sidebar-section-title {
     font-family: 'Cinzel', serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--gold);
     text-transform: uppercase;
     padding: 8px 18px 4px;
     border-bottom: 1px solid var(--parchment-shadow);
     margin-bottom: 4px;
   }
+  .sidebar-section-title.users-title { color: var(--gold); }
+  .sidebar-section-title.dev-title   { color: var(--dev-accent-bright); }
 
   .sidebar-section a {
     display: block;
@@ -139,35 +163,36 @@
     border-left: 3px solid transparent;
     transition: all 0.15s;
   }
-
   .sidebar-section a:hover {
     color: var(--link-hover);
     border-left-color: var(--gold);
     background: rgba(184,134,11,0.07);
     padding-left: 24px;
   }
-
   .sidebar-section a.active {
     color: var(--gold);
     border-left-color: var(--gold-bright);
     background: rgba(184,134,11,0.1);
     font-weight: 600;
   }
-
   .sidebar-section a.dim {
     color: #a0906a;
     font-style: italic;
     cursor: default;
     pointer-events: none;
   }
-
-  /* ── TOC (sidebar sub-list) ── */
-  .toc {
-    margin: 6px 0 0;
-    padding: 0;
-    list-style: none;
+  .dev-nav .sidebar-section a:hover {
+    color: var(--dev-accent-bright);
+    border-left-color: var(--dev-accent-bright);
+    background: rgba(26,58,92,0.07);
   }
 
+  /* Hide/show nav panels */
+  .nav-panel { display: none; }
+  .nav-panel.visible { display: block; }
+
+  /* TOC */
+  .toc { margin: 6px 0 0; padding: 0; list-style: none; }
   .toc li a {
     display: block;
     padding: 3px 18px 3px 28px;
@@ -177,7 +202,6 @@
     border-left: 3px solid transparent;
     transition: all 0.15s;
   }
-
   .toc li a:hover {
     color: var(--gold);
     border-left-color: var(--gold);
@@ -185,19 +209,10 @@
   }
 
   /* ── MAIN ── */
-  main {
-    flex: 1;
-    padding: 36px 48px 60px;
-    min-width: 0;
-  }
+  main { flex: 1; padding: 36px 48px 60px; min-width: 0; }
 
   /* ── BREADCRUMB ── */
-  .breadcrumb {
-    font-size: 13px;
-    color: #8a7050;
-    margin-bottom: 16px;
-  }
-
+  .breadcrumb { font-size: 13px; color: #8a7050; margin-bottom: 16px; }
   .breadcrumb a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
   .breadcrumb a:hover { color: var(--gold); }
   .breadcrumb span { margin: 0 6px; color: #b0906a; }
@@ -227,7 +242,6 @@
     font-size: 14px;
     box-shadow: 3px 3px 12px rgba(0,0,0,0.1);
   }
-
   .infobox-title {
     background: var(--gold);
     color: #fff8e0;
@@ -239,7 +253,6 @@
     padding: 10px 12px;
     text-transform: uppercase;
   }
-
   .infobox-icon {
     text-align: center;
     padding: 18px 12px 14px;
@@ -248,19 +261,13 @@
     font-size: 52px;
     line-height: 1;
   }
-
-  .infobox table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
+  .infobox table { width: 100%; border-collapse: collapse; }
   .infobox td {
     padding: 7px 12px;
     border-top: 1px solid var(--parchment-shadow);
     font-size: 13.5px;
     vertical-align: top;
   }
-
   .infobox td:first-child {
     font-family: 'Cinzel', serif;
     font-size: 11px;
@@ -271,10 +278,9 @@
     width: 45%;
     padding-top: 9px;
   }
-
   .infobox tr:nth-child(even) td { background: #fdf0cc; }
 
-  /* ── SECTION HEADINGS ── */
+  /* ── HEADINGS ── */
   h2 {
     font-family: 'Cinzel', serif;
     font-size: 18px;
@@ -287,17 +293,7 @@
     clear: both;
   }
 
-  h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    color: var(--gold);
-    margin: 20px 0 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
   p { margin-bottom: 14px; }
-
   a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
   a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
 
@@ -312,7 +308,6 @@
     border-radius: 6px;
     overflow: hidden;
   }
-
   .shop-table th {
     background: var(--table-head);
     color: var(--ink);
@@ -323,23 +318,15 @@
     padding: 10px 14px;
     text-align: left;
   }
-
   .shop-table td {
     padding: 8px 14px;
     border-top: 1px solid var(--parchment-shadow);
     vertical-align: middle;
   }
-
   .shop-table tr:nth-child(even) td { background: var(--table-stripe); }
   .shop-table tr:hover td { background: #f5e8c0; }
 
-  .cost {
-    font-weight: 600;
-    color: var(--red);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
-
+  .cost { font-weight: 600; color: var(--red); font-variant-numeric: tabular-nums; white-space: nowrap; }
   .cost::before { content: '💀 '; font-size: 12px; }
 
   .item-cat {
@@ -363,10 +350,7 @@
     margin: 14px 0 24px;
     font-size: 15px;
   }
-
-  .location-box strong { color: var(--ink-light); }
-
-  .location-box .coord {
+  .coord {
     display: inline-block;
     font-family: 'Courier New', monospace;
     font-size: 13px;
@@ -379,7 +363,6 @@
 
   /* ── STEPS ── */
   .steps { margin: 14px 0 24px; padding-left: 0; list-style: none; counter-reset: step; }
-
   .steps li {
     counter-increment: step;
     padding: 10px 14px 10px 46px;
@@ -390,7 +373,6 @@
     border-radius: 4px;
     font-size: 15px;
   }
-
   .steps li::before {
     content: counter(step);
     position: absolute;
@@ -405,50 +387,24 @@
     font-size: 12px;
     font-weight: 700;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     line-height: 22px;
     text-align: center;
   }
 
   /* ── NOTES LIST ── */
-  .notes-list {
-    padding-left: 0;
-    list-style: none;
-    margin: 14px 0;
-  }
-
+  .notes-list { padding-left: 0; list-style: none; margin: 14px 0; }
   .notes-list li {
     padding: 6px 0 6px 24px;
     position: relative;
     font-size: 15px;
     border-bottom: 1px dotted var(--parchment-shadow);
   }
-
   .notes-list li:last-child { border-bottom: none; }
+  .notes-list li::before { content: '◆'; position: absolute; left: 4px; color: var(--gold); font-size: 10px; top: 10px; }
 
-  .notes-list li::before {
-    content: '◆';
-    position: absolute;
-    left: 4px;
-    color: var(--gold);
-    font-size: 10px;
-    top: 10px;
-  }
-
-  /* ── TAG ── */
-  .tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.5px;
-  }
-
+  /* ── TAGS ── */
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
   .tag-warning { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
-  .tag-info    { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
   .tag-pvp     { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
   /* ── FOOTER ── */
@@ -462,7 +418,6 @@
     font-family: 'Crimson Text', serif;
     font-style: italic;
   }
-
   footer a { color: #9a7030; border-bottom: none; }
 
   @media (max-width: 700px) {
@@ -487,38 +442,73 @@
 
 <div class="layout">
   <aside>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Navigation</div>
-      <a href="index.html">🏠 Home</a>
+    <div class="section-switcher">
+      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">👤 Players</button>
+      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">⚙ Developers</button>
     </div>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Game Systems</div>
-      <a href="blood-money.html" class="active">💀 Blood Money</a>
-      <a class="dim">🗡 PvP Guide</a>
-      <a class="dim">🧪 Skilling</a>
-      <a class="dim">👹 Bosses</a>
-      <a class="dim">🏆 Achievements</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">On This Page</div>
-      <ul class="toc">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#where-to-spend">Where to Spend It</a></li>
-        <li><a href="#shop-items">Shop Items</a></li>
-        <li><a href="#npc-location">NPC Location</a></li>
-        <li><a href="#notes">Notes</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Shops &amp; Items</div>
-      <a class="dim">🛒 Point Shops</a>
-      <a class="dim">💎 Donator Store</a>
-      <a class="dim">🪙 Vote Shop</a>
+
+    <div class="sidebar-nav">
+      <!-- USERS NAV -->
+      <div class="nav-panel users-nav visible" id="nav-users">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Navigation</div>
+          <a href="index.html">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Game Systems</div>
+          <a href="blood-money.html" class="active">💀 Blood Money</a>
+          <a class="dim">🗡 PvP Guide</a>
+          <a class="dim">🧪 Skilling</a>
+          <a class="dim">👹 Bosses</a>
+          <a class="dim">🏆 Achievements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Shops &amp; Items</div>
+          <a class="dim">🛒 Point Shops</a>
+          <a class="dim">💎 Donator Store</a>
+          <a class="dim">🪙 Vote Shop</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">On This Page</div>
+          <ul class="toc">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#npc-location">NPC Location</a></li>
+            <li><a href="#shop-items">Shop Items</a></li>
+            <li><a href="#notes">Notes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DEVELOPERS NAV -->
+      <div class="nav-panel dev-nav" id="nav-dev">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Navigation</div>
+          <a href="index.html">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Setup</div>
+          <a class="dim">🖥 Server Setup</a>
+          <a class="dim">🎮 Client Setup</a>
+          <a class="dim">☕ Java Versions</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Codebase</div>
+          <a class="dim">📦 Project Structure</a>
+          <a class="dim">🛒 Shop System</a>
+          <a class="dim">🧑‍💻 NPC Spawns</a>
+          <a class="dim">🔧 Commands</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Reference</div>
+          <a class="dim">📋 Config Keys</a>
+          <a class="dim">🐛 Known Issues</a>
+          <a class="dim">📝 Changelog</a>
+        </div>
+      </div>
     </div>
   </aside>
 
   <main>
-
     <div class="breadcrumb">
       <a href="index.html">Home</a>
       <span>›</span>
@@ -534,38 +524,16 @@
       <div class="infobox-title">Blood Money</div>
       <div class="infobox-icon">💀</div>
       <table>
-        <tr>
-          <td>Item ID</td>
-          <td>13307</td>
-        </tr>
-        <tr>
-          <td>Type</td>
-          <td>Currency</td>
-        </tr>
-        <tr>
-          <td>Use</td>
-          <td>PvP reward currency</td>
-        </tr>
-        <tr>
-          <td>Tradeable</td>
-          <td>Yes</td>
-        </tr>
-        <tr>
-          <td>Stackable</td>
-          <td>Yes</td>
-        </tr>
-        <tr>
-          <td>Shop</td>
-          <td>Shop ID 119</td>
-        </tr>
-        <tr>
-          <td>NPC</td>
-          <td>Renegade Knight (4321)</td>
-        </tr>
+        <tr><td>Item ID</td><td>13307</td></tr>
+        <tr><td>Type</td><td>Currency</td></tr>
+        <tr><td>Use</td><td>PvP reward currency</td></tr>
+        <tr><td>Tradeable</td><td>Yes</td></tr>
+        <tr><td>Stackable</td><td>Yes</td></tr>
+        <tr><td>Shop</td><td>Shop ID 119</td></tr>
+        <tr><td>NPC</td><td>Renegade Knight (4321)</td></tr>
       </table>
     </div>
 
-    <!-- OVERVIEW -->
     <h2 id="overview">Overview</h2>
     <p>
       <strong>Blood Money</strong> is the primary Player-vs-Player reward currency in Valius. It is earned
@@ -574,23 +542,15 @@
     </p>
     <p>
       Blood Money is carried as a stackable item (ID: <strong>13307</strong>) in your inventory. It can
-      also be stored in the <strong>Safe Box</strong> — useful for transporting it out of the PK District safely,
-      as it is the only item that can be withdrawn from the Safe Box outside of clan wars safe mode.
-    </p>
-
-    <h2 id="where-to-spend">Where to Spend It</h2>
-    <p>
-      Blood Money is spent at the <strong>Blood Money Shop</strong>, which is the 4th tab of the
-      <em>Point Reward Shops</em> interface. The shop is accessed through the
-      <strong>Renegade Knight</strong> NPC located at the home teleport area.
+      also be stored in the <strong>Safe Box</strong> — it is the only item withdrawable from the Safe Box
+      outside of clan wars safe mode, making it safe to transport out of dangerous zones.
     </p>
 
     <h2 id="npc-location">NPC Location</h2>
     <div class="location-box">
       <strong>NPC:</strong> Renegade Knight &nbsp;<span class="tag tag-pvp">NPC ID 4321</span><br><br>
-      <strong>Location:</strong> Home teleport area
-      <span class="coord">~3090, 3500</span><br><br>
-      <strong>How to access the shop:</strong>
+      <strong>Location:</strong> Home teleport area <span class="coord">~3090, 3500</span><br><br>
+      <strong>Shop tab:</strong> 4th tab of the <em>Point Reward Shops</em> interface
     </div>
 
     <ol class="steps">
@@ -600,16 +560,10 @@
       <li>Navigate to the <strong>4th tab</strong> — "Blood Money" — in the tabbed shop interface.</li>
     </ol>
 
-    <p>
-      The Point Reward Shops NPC opens a tabbed interface with four reward shops:
-    </p>
+    <p>The Point Reward Shops NPC opens a tabbed interface with four reward shops:</p>
 
     <table class="shop-table" style="margin-bottom:28px;">
-      <tr>
-        <th>Tab</th>
-        <th>Shop Name</th>
-        <th>Currency</th>
-      </tr>
+      <tr><th>Tab</th><th>Shop Name</th><th>Currency</th></tr>
       <tr><td>1</td><td>PVM Points</td><td>PVM Points</td></tr>
       <tr><td>2</td><td>Boss Points</td><td>Boss Points</td></tr>
       <tr><td>3</td><td>Skill Points</td><td>Skill Points</td></tr>
@@ -617,143 +571,43 @@
     </table>
 
     <h2 id="shop-items">Shop Items</h2>
-    <p>
-      The Blood Money shop (Shop ID: 119) stocks 23 items. All prices are listed in Blood Money.
-      Players cannot sell items back to this shop.
-    </p>
+    <p>The Blood Money shop (Shop ID: 119) stocks 23 items. All prices are in Blood Money. Players cannot sell items back to this shop.</p>
 
     <table class="shop-table">
-      <tr>
-        <th>Item</th>
-        <th>Cost</th>
-        <th>Category</th>
-      </tr>
-      <tr>
-        <td>Cannonball</td>
-        <td><span class="cost">10</span></td>
-        <td><span class="item-cat">Ammo</span></td>
-      </tr>
-      <tr>
-        <td>Dragon thrownaxe</td>
-        <td><span class="cost">250</span></td>
-        <td><span class="item-cat">Ammo</span></td>
-      </tr>
-      <tr>
-        <td>Volcanic whip mix</td>
-        <td><span class="cost">5,000</span></td>
-        <td><span class="item-cat">Cosmetic</span></td>
-      </tr>
-      <tr>
-        <td>Frozen whip mix</td>
-        <td><span class="cost">5,000</span></td>
-        <td><span class="item-cat">Cosmetic</span></td>
-      </tr>
-      <tr>
-        <td>Ring of wealth scroll</td>
-        <td><span class="cost">25,000</span></td>
-        <td><span class="item-cat">Upgrade</span></td>
-      </tr>
-      <tr>
-        <td>Pharaoh's sceptre (4)</td>
-        <td><span class="cost">15,000</span></td>
-        <td><span class="item-cat">Weapon</span></td>
-      </tr>
-      <tr>
-        <td>Katagon helmet</td>
-        <td><span class="cost">15,000</span></td>
-        <td><span class="item-cat">Armour</span></td>
-      </tr>
-      <tr>
-        <td>Katagon platebody</td>
-        <td><span class="cost">20,000</span></td>
-        <td><span class="item-cat">Armour</span></td>
-      </tr>
-      <tr>
-        <td>Katagon platelegs</td>
-        <td><span class="cost">20,000</span></td>
-        <td><span class="item-cat">Armour</span></td>
-      </tr>
-      <tr>
-        <td>Stunning hammer</td>
-        <td><span class="cost">15,000</span></td>
-        <td><span class="item-cat">Weapon</span></td>
-      </tr>
-      <tr>
-        <td>Goliath Gloves</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Goliath Gloves (variant 2)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Goliath Gloves (variant 3)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Goliath Gloves (variant 4)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Swift Gloves</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Swift Gloves (variant 2)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Swift Gloves (variant 3)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Swift Gloves (variant 4)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Spellcaster Gloves</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Spellcaster Gloves (variant 2)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Spellcaster Gloves (variant 3)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td>Spellcaster Gloves (variant 4)</td>
-        <td><span class="cost">50,000</span></td>
-        <td><span class="item-cat">Gloves</span></td>
-      </tr>
-      <tr>
-        <td><em>Unknown item (ID 33668)</em></td>
-        <td><span class="cost">30,000</span></td>
-        <td><span class="item-cat">Unknown</span></td>
-      </tr>
+      <tr><th>Item</th><th>Cost</th><th>Category</th></tr>
+      <tr><td>Cannonball</td><td><span class="cost">10</span></td><td><span class="item-cat">Ammo</span></td></tr>
+      <tr><td>Dragon thrownaxe</td><td><span class="cost">250</span></td><td><span class="item-cat">Ammo</span></td></tr>
+      <tr><td>Volcanic whip mix</td><td><span class="cost">5,000</span></td><td><span class="item-cat">Cosmetic</span></td></tr>
+      <tr><td>Frozen whip mix</td><td><span class="cost">5,000</span></td><td><span class="item-cat">Cosmetic</span></td></tr>
+      <tr><td>Ring of wealth scroll</td><td><span class="cost">25,000</span></td><td><span class="item-cat">Upgrade</span></td></tr>
+      <tr><td>Pharaoh's sceptre (4)</td><td><span class="cost">15,000</span></td><td><span class="item-cat">Weapon</span></td></tr>
+      <tr><td>Katagon helmet</td><td><span class="cost">15,000</span></td><td><span class="item-cat">Armour</span></td></tr>
+      <tr><td>Katagon platebody</td><td><span class="cost">20,000</span></td><td><span class="item-cat">Armour</span></td></tr>
+      <tr><td>Katagon platelegs</td><td><span class="cost">20,000</span></td><td><span class="item-cat">Armour</span></td></tr>
+      <tr><td>Stunning hammer</td><td><span class="cost">15,000</span></td><td><span class="item-cat">Weapon</span></td></tr>
+      <tr><td>Goliath Gloves</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Goliath Gloves (variant 2)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Goliath Gloves (variant 3)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Goliath Gloves (variant 4)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Swift Gloves</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Swift Gloves (variant 2)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Swift Gloves (variant 3)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Swift Gloves (variant 4)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Spellcaster Gloves</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Spellcaster Gloves (variant 2)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Spellcaster Gloves (variant 3)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td>Spellcaster Gloves (variant 4)</td><td><span class="cost">50,000</span></td><td><span class="item-cat">Gloves</span></td></tr>
+      <tr><td><em>Unknown item (ID 33668)</em></td><td><span class="cost">30,000</span></td><td><span class="item-cat">Unknown</span></td></tr>
     </table>
 
     <h2 id="notes">Notes</h2>
     <ul class="notes-list">
-      <li>Blood Money can be stored in the <strong>Safe Box</strong> — it is the only item withdrawable from the Safe Box outside of clan wars safe mode, making it useful for safely moving earnings out of dangerous zones.</li>
+      <li>Blood Money can be stored in the <strong>Safe Box</strong> — it is the only item withdrawable outside of clan wars safe mode, making it useful for safely moving earnings out of dangerous zones.</li>
       <li>Purchasing additional <strong>Safe Deposit Box</strong> slots costs <strong>15 Blood Money</strong> per extra slot.</li>
-      <li>The Renegade Knight (NPC 4321) also provides a dialogue interface — talking to them reveals your current Blood Money balance.</li>
-      <li>The shop has a sell modifier of <strong>0.7</strong> (buys items at 70% value) but the <em>Can Sell To</em> flag is disabled — you cannot sell items back to this shop.</li>
-      <li>Blood Money is stored as item ID <strong>13307</strong> in your inventory and stacks normally.</li>
+      <li>Talking to the Renegade Knight shows your current Blood Money balance in the chat.</li>
+      <li>The shop does not allow selling items back (the <em>Can Sell To</em> flag is disabled in the shop definition).</li>
+      <li>Blood Money stacks in your inventory as item ID <strong>13307</strong>.</li>
     </ul>
-
   </main>
 </div>
 
@@ -761,6 +615,25 @@
   Valius Wiki — fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
   <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
 </footer>
+
+<script>
+  var STORAGE_KEY = 'valius-wiki-section';
+
+  function switchSection(section) {
+    document.getElementById('btn-users').className = 'section-btn' + (section === 'users' ? ' active-users' : '');
+    document.getElementById('btn-dev').className   = 'section-btn' + (section === 'dev'   ? ' active-dev'   : '');
+    document.getElementById('nav-users').className = 'nav-panel users-nav' + (section === 'users' ? ' visible' : '');
+    document.getElementById('nav-dev').className   = 'nav-panel dev-nav'   + (section === 'dev'   ? ' visible' : '');
+    try { localStorage.setItem(STORAGE_KEY, section); } catch(e) {}
+  }
+
+  // Restore saved section — but this is a player page so always open in users nav
+  (function() {
+    var saved = 'users';
+    try { saved = localStorage.getItem(STORAGE_KEY) || 'users'; } catch(e) {}
+    switchSection(saved);
+  })();
+</script>
 
 </body>
 </html>

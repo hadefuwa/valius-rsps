@@ -17,14 +17,15 @@
     --gold-bright: #d4a017;
     --gold-light: #f0c040;
     --header-bg: #1a0f00;
-    --header-border: #5a3a00;
     --sidebar-bg: #ede0c4;
     --sidebar-border: #c8a96e;
     --link: #5c3d11;
     --link-hover: #b8860b;
     --table-head: #c8a96e;
     --table-stripe: #ede0c4;
-    --red: #8b1a1a;
+    --dev-accent: #1a3a5c;
+    --dev-accent-bright: #2a5f96;
+    --dev-light: #e8f0f8;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,12 +53,7 @@
     z-index: 100;
     box-shadow: 0 2px 12px rgba(0,0,0,0.6);
   }
-
-  .header-crest {
-    font-size: 28px;
-    line-height: 1;
-  }
-
+  .header-crest { font-size: 28px; line-height: 1; }
   header h1 {
     font-family: 'Cinzel', serif;
     font-size: 22px;
@@ -65,27 +61,17 @@
     color: var(--gold-light);
     letter-spacing: 2px;
     text-shadow: 0 0 18px rgba(212,160,23,0.4);
-    text-decoration: none;
   }
-
   header h1 a { color: inherit; text-decoration: none; }
-
   .header-tagline {
     font-family: 'Crimson Text', serif;
     font-size: 13px;
     color: #9a7a3a;
     font-style: italic;
-    margin-left: 4px;
     padding-left: 14px;
     border-left: 1px solid #4a3000;
   }
-
-  .header-nav {
-    margin-left: auto;
-    display: flex;
-    gap: 20px;
-  }
-
+  .header-nav { margin-left: auto; display: flex; gap: 20px; }
   .header-nav a {
     font-family: 'Cinzel', serif;
     font-size: 12px;
@@ -95,7 +81,6 @@
     opacity: 0.8;
     transition: opacity 0.2s;
   }
-
   .header-nav a:hover { opacity: 1; color: var(--gold-light); }
 
   /* ── LAYOUT ── */
@@ -108,32 +93,74 @@
 
   /* ── SIDEBAR ── */
   aside {
-    width: 210px;
-    min-width: 210px;
+    width: 220px;
+    min-width: 220px;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--sidebar-border);
-    padding: 24px 0;
     position: sticky;
     top: 62px;
     height: calc(100vh - 62px);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
 
-  .sidebar-section {
-    margin-bottom: 6px;
+  /* ── SECTION SWITCHER ── */
+  .section-switcher {
+    display: flex;
+    border-bottom: 2px solid var(--sidebar-border);
+    flex-shrink: 0;
   }
+
+  .section-btn {
+    flex: 1;
+    padding: 12px 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #a0906a;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.18s;
+  }
+
+  .section-btn:hover { color: var(--gold); background: rgba(184,134,11,0.06); }
+
+  .section-btn.active-users {
+    color: var(--gold);
+    border-bottom-color: var(--gold-bright);
+    background: rgba(184,134,11,0.08);
+  }
+
+  .section-btn.active-dev {
+    color: var(--dev-accent-bright);
+    border-bottom-color: var(--dev-accent-bright);
+    background: rgba(26,58,92,0.07);
+  }
+
+  /* ── SIDEBAR NAV ── */
+  .sidebar-nav { flex: 1; padding: 16px 0 24px; }
+
+  .sidebar-section { margin-bottom: 4px; }
 
   .sidebar-section-title {
     font-family: 'Cinzel', serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--gold);
     text-transform: uppercase;
     padding: 8px 18px 4px;
     border-bottom: 1px solid var(--parchment-shadow);
     margin-bottom: 4px;
   }
+
+  .sidebar-section-title.users-title { color: var(--gold); }
+  .sidebar-section-title.dev-title   { color: var(--dev-accent-bright); }
 
   .sidebar-section a {
     display: block;
@@ -145,21 +172,18 @@
     border-left: 3px solid transparent;
     transition: all 0.15s;
   }
-
   .sidebar-section a:hover {
     color: var(--link-hover);
     border-left-color: var(--gold);
     background: rgba(184,134,11,0.07);
     padding-left: 24px;
   }
-
   .sidebar-section a.active {
     color: var(--gold);
     border-left-color: var(--gold-bright);
     background: rgba(184,134,11,0.1);
     font-weight: 600;
   }
-
   .sidebar-section a.dim {
     color: #a0906a;
     font-style: italic;
@@ -167,12 +191,28 @@
     pointer-events: none;
   }
 
-  /* ── MAIN ── */
-  main {
-    flex: 1;
-    padding: 36px 48px 60px;
-    max-width: 900px;
+  /* Dev section links use blue accent */
+  .dev-nav .sidebar-section a:hover {
+    color: var(--dev-accent-bright);
+    border-left-color: var(--dev-accent-bright);
+    background: rgba(26,58,92,0.07);
   }
+  .dev-nav .sidebar-section a.active {
+    color: var(--dev-accent-bright);
+    border-left-color: var(--dev-accent);
+    background: rgba(26,58,92,0.1);
+  }
+
+  /* Hide/show nav panels */
+  .nav-panel { display: none; }
+  .nav-panel.visible { display: block; }
+
+  /* ── MAIN ── */
+  main { flex: 1; padding: 36px 48px 60px; max-width: 960px; }
+
+  /* Hide/show content panels */
+  .content-panel { display: none; }
+  .content-panel.visible { display: block; }
 
   /* ── PAGE TITLE ── */
   .page-title {
@@ -185,8 +225,24 @@
     margin-bottom: 22px;
     letter-spacing: 1px;
   }
+  .page-title.dev-title-bar { border-bottom-color: var(--dev-accent-bright); }
 
-  /* ── SECTION HEADINGS ── */
+  /* Section badge shown next to title */
+  .section-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    margin-left: 12px;
+    position: relative;
+    top: -3px;
+  }
+  .badge-users { background: rgba(184,134,11,0.15); color: var(--gold); border: 1px solid rgba(184,134,11,0.3); }
+  .badge-dev   { background: rgba(26,58,92,0.12); color: var(--dev-accent-bright); border: 1px solid rgba(42,95,150,0.3); }
+
   h2 {
     font-family: 'Cinzel', serif;
     font-size: 18px;
@@ -197,42 +253,32 @@
     margin: 32px 0 14px;
     letter-spacing: 0.5px;
   }
-
-  h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    color: var(--gold);
-    margin: 20px 0 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  h2.dev-h2 { color: var(--dev-accent); border-bottom-color: #b8cfe0; }
 
   p { margin-bottom: 14px; }
-
   a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
   a:hover { color: var(--link-hover); border-bottom-color: var(--gold-bright); }
 
   /* ── NOTICE BOX ── */
   .notice {
-    background: #fdf6e3;
-    border: 1px solid var(--gold);
-    border-left: 4px solid var(--gold-bright);
     border-radius: 4px;
     padding: 14px 18px;
     margin-bottom: 24px;
     font-size: 15px;
+    border-left: 4px solid;
   }
-
+  .notice-users { background: #fdf6e3; border-color: var(--gold-bright); border: 1px solid var(--gold); border-left: 4px solid var(--gold-bright); }
+  .notice-dev   { background: #eaf0f8; border-color: var(--dev-accent-bright); border: 1px solid #b0c8e0; border-left: 4px solid var(--dev-accent-bright); }
   .notice strong { color: var(--gold); }
+  .notice-dev strong { color: var(--dev-accent); }
 
   /* ── FEATURE GRID ── */
   .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 16px;
     margin: 20px 0;
   }
-
   .feature-card {
     background: #fdf8ef;
     border: 1px solid var(--parchment-shadow);
@@ -244,28 +290,16 @@
     display: block;
     color: var(--ink) !important;
   }
-
-  .feature-card:hover {
-    border-color: var(--gold);
-    box-shadow: 0 3px 12px rgba(184,134,11,0.15);
-  }
-
+  .feature-card:hover { border-color: var(--gold); box-shadow: 0 3px 12px rgba(184,134,11,0.15); }
+  .feature-card.dev-card { background: #f0f5fc; }
+  .feature-card.dev-card:hover { border-color: var(--dev-accent-bright); box-shadow: 0 3px 12px rgba(26,58,92,0.12); }
   .feature-card .card-icon { font-size: 28px; margin-bottom: 8px; display: block; }
-  .feature-card .card-title {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--link);
-    margin-bottom: 6px;
-  }
+  .feature-card .card-title { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: var(--link); margin-bottom: 6px; }
+  .feature-card.dev-card .card-title { color: var(--dev-accent); }
+  .feature-card .card-desc { font-size: 14px; color: #5a4a2a; line-height: 1.5; }
+  .feature-card.dev-card .card-desc { color: #2a3a4a; }
 
-  .feature-card .card-desc {
-    font-size: 14px;
-    color: #5a4a2a;
-    line-height: 1.5;
-  }
-
-  /* ── QUICK START TABLE ── */
+  /* ── QUICK TABLE ── */
   .quick-table {
     width: 100%;
     border-collapse: collapse;
@@ -276,7 +310,6 @@
     border-radius: 6px;
     overflow: hidden;
   }
-
   .quick-table th {
     background: var(--table-head);
     color: var(--ink);
@@ -287,23 +320,39 @@
     padding: 10px 14px;
     text-align: left;
   }
-
-  .quick-table td {
-    padding: 9px 14px;
-    border-top: 1px solid var(--parchment-shadow);
-    vertical-align: top;
-  }
-
+  .quick-table.dev-table th { background: #2a5f96; color: #e8f0f8; }
+  .quick-table.dev-table { background: #f0f5fc; border-color: #b0c8e0; }
+  .quick-table td { padding: 9px 14px; border-top: 1px solid var(--parchment-shadow); vertical-align: top; }
+  .quick-table.dev-table td { border-top-color: #c0d4e8; }
   .quick-table tr:nth-child(even) td { background: var(--table-stripe); }
-
+  .quick-table.dev-table tr:nth-child(even) td { background: #dce8f4; }
   .quick-table code {
     font-family: 'Courier New', monospace;
     font-size: 13px;
-    background: rgba(0,0,0,0.06);
+    background: rgba(0,0,0,0.07);
     padding: 1px 5px;
     border-radius: 3px;
     color: var(--ink-light);
   }
+  .quick-table.dev-table code { background: rgba(26,58,92,0.1); color: var(--dev-accent); }
+
+  /* ── CODE BLOCK ── */
+  pre {
+    background: #1a1a2e;
+    color: #c8d8e8;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    padding: 16px 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 12px 0 20px;
+    border: 1px solid #2a3a5a;
+    line-height: 1.7;
+  }
+  pre .comment { color: #6a8a6a; }
+  pre .keyword { color: #82aaff; }
+  pre .string  { color: #c3e88d; }
+  pre .cmd     { color: #ffcb6b; }
 
   /* ── FEATURED ARTICLE ── */
   .featured-article {
@@ -315,26 +364,17 @@
     position: relative;
     overflow: hidden;
   }
-
   .featured-article::before {
     content: '★ FEATURED ARTICLE';
     position: absolute;
-    top: 10px;
-    right: 14px;
+    top: 10px; right: 14px;
     font-family: 'Cinzel', serif;
     font-size: 10px;
     letter-spacing: 2px;
     color: var(--gold);
     opacity: 0.7;
   }
-
-  .featured-article h2 {
-    border: none;
-    margin-top: 0;
-    font-size: 20px;
-    padding-bottom: 0;
-  }
-
+  .featured-article h2 { border: none; margin-top: 0; font-size: 20px; padding-bottom: 0; }
   .featured-article p { color: #3d2e0f; font-size: 16px; }
 
   .btn {
@@ -352,25 +392,14 @@
     border-bottom: none !important;
     transition: background 0.2s, box-shadow 0.2s;
   }
+  .btn:hover { background: var(--gold-bright); box-shadow: 0 2px 8px rgba(184,134,11,0.35); color: #fff !important; }
+  .btn-dev { background: var(--dev-accent); }
+  .btn-dev:hover { background: var(--dev-accent-bright); box-shadow: 0 2px 8px rgba(26,58,92,0.35); }
 
-  .btn:hover {
-    background: var(--gold-bright);
-    box-shadow: 0 2px 8px rgba(184,134,11,0.35);
-    color: #fff !important;
-  }
-
-  /* ── WARNING TAG ── */
-  .tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.5px;
-  }
-
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
   .tag-warning { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
-  .tag-info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+  .tag-info    { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+  .tag-dev     { background: #dce8f4; color: var(--dev-accent); border: 1px solid #b0c8e0; }
 
   /* ── FOOTER ── */
   footer {
@@ -383,8 +412,12 @@
     font-family: 'Crimson Text', serif;
     font-style: italic;
   }
-
   footer a { color: #9a7030; border-bottom: none; }
+
+  @media (max-width: 700px) {
+    aside { display: none; }
+    main { padding: 20px 18px 40px; }
+  }
 </style>
 </head>
 <body>
@@ -402,115 +435,207 @@
 
 <div class="layout">
   <aside>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Navigation</div>
-      <a href="index.html" class="active">🏠 Home</a>
+    <!-- SECTION SWITCHER -->
+    <div class="section-switcher">
+      <button class="section-btn active-users" id="btn-users" onclick="switchSection('users')">👤 Players</button>
+      <button class="section-btn" id="btn-dev" onclick="switchSection('dev')">⚙ Developers</button>
     </div>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Game Systems</div>
-      <a href="blood-money.html">💀 Blood Money</a>
-      <a class="dim">🗡 PvP Guide</a>
-      <a class="dim">🧪 Skilling</a>
-      <a class="dim">👹 Bosses</a>
-      <a class="dim">🏆 Achievements</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Shops &amp; Items</div>
-      <a class="dim">🛒 Point Shops</a>
-      <a class="dim">💎 Donator Store</a>
-      <a class="dim">🪙 Vote Shop</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Server Info</div>
-      <a class="dim">⚙ Server Setup</a>
-      <a class="dim">📋 Changelog</a>
+
+    <div class="sidebar-nav">
+      <!-- USERS NAV -->
+      <div class="nav-panel users-nav visible" id="nav-users">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Navigation</div>
+          <a href="index.html" class="active">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Game Systems</div>
+          <a href="blood-money.html">💀 Blood Money</a>
+          <a class="dim">🗡 PvP Guide</a>
+          <a class="dim">🧪 Skilling</a>
+          <a class="dim">👹 Bosses</a>
+          <a class="dim">🏆 Achievements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Shops &amp; Items</div>
+          <a class="dim">🛒 Point Shops</a>
+          <a class="dim">💎 Donator Store</a>
+          <a class="dim">🪙 Vote Shop</a>
+        </div>
+      </div>
+
+      <!-- DEVELOPERS NAV -->
+      <div class="nav-panel dev-nav" id="nav-dev">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Navigation</div>
+          <a href="index.html" class="active">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Setup</div>
+          <a class="dim">🖥 Server Setup</a>
+          <a class="dim">🎮 Client Setup</a>
+          <a class="dim">☕ Java Versions</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Codebase</div>
+          <a class="dim">📦 Project Structure</a>
+          <a class="dim">🛒 Shop System</a>
+          <a class="dim">🧑‍💻 NPC Spawns</a>
+          <a class="dim">🔧 Commands</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Reference</div>
+          <a class="dim">📋 Config Keys</a>
+          <a class="dim">🐛 Known Issues</a>
+          <a class="dim">📝 Changelog</a>
+        </div>
+      </div>
     </div>
   </aside>
 
   <main>
-    <h1 class="page-title">Welcome to the Valius Wiki</h1>
+    <!-- USERS CONTENT -->
+    <div class="content-panel visible" id="content-users">
+      <h1 class="page-title">Welcome to the Valius Wiki <span class="section-badge badge-users">Players</span></h1>
 
-    <div class="notice">
-      <strong>Work in progress.</strong> This wiki is actively being built. More articles coming soon — contributions welcome via <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>.
-    </div>
-
-    <p>
-      <strong>Valius</strong> is a 317-revision Old School RuneScape private server with custom content, PvP systems, and a growing economy. This wiki documents game mechanics, items, NPCs, and server-specific features to help both new and experienced players.
-    </p>
-
-    <h2>Quick Start</h2>
-    <p>New to Valius? Here are the essentials to get up and running:</p>
-
-    <table class="quick-table">
-      <tr>
-        <th>Step</th>
-        <th>Details</th>
-      </tr>
-      <tr>
-        <td><strong>1. Start the Server</strong></td>
-        <td>
-          Requires Java 11 (Amazon Corretto). Run <code>gradlew.bat run</code> from<br>
-          <code>Valius-Server-master\</code> — listens on port <strong>43594</strong>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>2. Launch the Client</strong></td>
-        <td>
-          Must use <strong>Java 8</strong> (JavaFX is bundled in JDK 8 only).<br>
-          Run: <code>java.exe -jar client.jar</code>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>3. Version Match</strong></td>
-        <td>
-          <code>Config.CLIENT_VERSION = 5</code> must match on both server &amp; client.<br>
-          A mismatch causes <em>silent login failure</em> with no error shown. <span class="tag tag-warning">Critical</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>4. Game Cache</strong></td>
-        <td>
-          Cache lives at <code>C:\Users\[you]\ValiusCache1\</code> — already extracted.<br>
-          Do <strong>not</strong> delete this folder.
-        </td>
-      </tr>
-    </table>
-
-    <h2>Browse by Category</h2>
-    <div class="feature-grid">
-      <a href="blood-money.html" class="feature-card">
-        <span class="card-icon">💀</span>
-        <div class="card-title">Blood Money</div>
-        <div class="card-desc">Earn BM through PvP and spend it on rare gear at the home area shop.</div>
-      </a>
-      <div class="feature-card" style="opacity:0.5; pointer-events:none;">
-        <span class="card-icon">🗡</span>
-        <div class="card-title">PvP &amp; Wilderness</div>
-        <div class="card-desc">Coming soon — PKing tips, safe zones, and wilderness mechanics.</div>
+      <div class="notice notice-users">
+        <strong>Work in progress.</strong> This wiki is growing — contributions welcome via <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>. Use the <strong>⚙ Developers</strong> tab in the sidebar for server setup and code docs.
       </div>
-      <div class="feature-card" style="opacity:0.5; pointer-events:none;">
-        <span class="card-icon">👹</span>
-        <div class="card-title">Bosses</div>
-        <div class="card-desc">Coming soon — Boss mechanics, drop tables, and point rewards.</div>
-      </div>
-      <div class="feature-card" style="opacity:0.5; pointer-events:none;">
-        <span class="card-icon">🏆</span>
-        <div class="card-title">Achievements</div>
-        <div class="card-desc">Coming soon — Completing achievements for points and rewards.</div>
-      </div>
-    </div>
 
-    <div class="featured-article">
-      <h2><a href="blood-money.html">Blood Money</a></h2>
       <p>
-        Blood Money (item ID: 13307) is the primary PvP reward currency in Valius. Earned by defeating
-        other players in the wilderness or PK District, it can be exchanged at the
-        <strong>Point Reward Shops</strong> NPC at the home teleport for powerful custom gear including
-        Goliath Gloves, Swift Gloves, Spellcaster Gloves, and more.
+        <strong>Valius</strong> is a 317-revision Old School RuneScape private server with custom content, PvP systems, and a growing economy. This wiki documents game mechanics, items, NPCs, and server-specific features to help players.
       </p>
-      <a href="blood-money.html" class="btn">Read Article →</a>
+
+      <h2>Getting Started</h2>
+      <p>New to Valius? You'll spawn at the home area. Here's what to know right away:</p>
+      <table class="quick-table">
+        <tr><th>Topic</th><th>Details</th></tr>
+        <tr><td><strong>Home Teleport</strong></td><td>Use <code>::home</code> to return to the home area at any time outside the wilderness.</td></tr>
+        <tr><td><strong>Point Reward Shops</strong></td><td>A cluster of NPCs at home sells gear purchasable with PvM, Boss, Skill, and Blood Money points.</td></tr>
+        <tr><td><strong>Blood Money</strong></td><td>Earned through PvP. Spend it at the 4th tab of the Point Reward Shops NPC. <a href="blood-money.html">Full article →</a></td></tr>
+        <tr><td><strong>Safe Box</strong></td><td>Stores Blood Money safely — useful for moving it out of dangerous PK zones.</td></tr>
+      </table>
+
+      <h2>Browse by Category</h2>
+      <div class="feature-grid">
+        <a href="blood-money.html" class="feature-card">
+          <span class="card-icon">💀</span>
+          <div class="card-title">Blood Money</div>
+          <div class="card-desc">Earn BM through PvP and spend it on rare gear at the home area shop.</div>
+        </a>
+        <div class="feature-card" style="opacity:0.5;pointer-events:none;">
+          <span class="card-icon">🗡</span>
+          <div class="card-title">PvP &amp; Wilderness</div>
+          <div class="card-desc">Coming soon — PKing tips, safe zones, and wilderness mechanics.</div>
+        </div>
+        <div class="feature-card" style="opacity:0.5;pointer-events:none;">
+          <span class="card-icon">👹</span>
+          <div class="card-title">Bosses</div>
+          <div class="card-desc">Coming soon — Boss mechanics, drop tables, and point rewards.</div>
+        </div>
+        <div class="feature-card" style="opacity:0.5;pointer-events:none;">
+          <span class="card-icon">🏆</span>
+          <div class="card-title">Achievements</div>
+          <div class="card-desc">Coming soon — Completing achievements for points and rewards.</div>
+        </div>
+      </div>
+
+      <div class="featured-article">
+        <h2><a href="blood-money.html">Blood Money</a></h2>
+        <p>Blood Money (item ID: 13307) is the primary PvP reward currency in Valius. Earned by defeating other players, it can be exchanged at the <strong>Point Reward Shops</strong> NPC at home for powerful custom gear including Goliath Gloves, Swift Gloves, Spellcaster Gloves, and more.</p>
+        <a href="blood-money.html" class="btn">Read Article →</a>
+      </div>
     </div>
 
+    <!-- DEVELOPERS CONTENT -->
+    <div class="content-panel" id="content-dev">
+      <h1 class="page-title dev-title-bar">Developer Reference <span class="section-badge badge-dev">Developers</span></h1>
+
+      <div class="notice notice-dev">
+        <strong>Dev docs.</strong> This section covers running, configuring, and modifying the Valius server. Switch to the <strong>👤 Players</strong> tab for gameplay guides.
+      </div>
+
+      <p>
+        Valius is a Java-based 317 RSPS. The server runs on <strong>Gradle + Java 11</strong>; the client requires <strong>Java 8</strong> for bundled JavaFX. Both live in the same GitHub repo under separate subdirectories.
+      </p>
+
+      <h2 class="dev-h2">Running the Server</h2>
+      <table class="quick-table dev-table">
+        <tr><th>Component</th><th>Command / Notes</th></tr>
+        <tr>
+          <td><strong>Server</strong></td>
+          <td>
+            Java 11 required (Amazon Corretto). Port <strong>43594</strong>.<br>
+            <code>set JAVA_HOME=C:\Program Files\Amazon Corretto\jdk11.0.29_7</code><br>
+            <code>gradlew.bat run</code>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Client</strong></td>
+          <td>
+            Must use Java 8 — JavaFX is bundled in JDK 8 only.<br>
+            <code>"C:\Program Files\Java\jre-1.8\bin\java.exe" -jar client.jar</code>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Rebuild client</strong></td>
+          <td><code>set JAVA_HOME=...</code> then <code>gradlew.bat jar</code> in <code>Valius-Client-master\</code></td>
+        </tr>
+        <tr>
+          <td><strong>Game cache</strong></td>
+          <td><code>C:\Users\[you]\ValiusCache1\</code> — already extracted, do not delete.</td>
+        </tr>
+        <tr>
+          <td><strong>Player saves</strong></td>
+          <td><code>Valius-Server-master\Data\saves\</code></td>
+        </tr>
+      </table>
+
+      <h2 class="dev-h2">Critical Configuration</h2>
+      <p><span class="tag tag-warning">Critical</span> &nbsp;<code>Config.CLIENT_VERSION = 5</code> must match on both server and client. A mismatch causes <em>silent login failure</em> — no error is shown in-game or in logs.</p>
+
+      <h2 class="dev-h2">Key Fixes Already Applied</h2>
+      <table class="quick-table dev-table">
+        <tr><th>Fix</th><th>Details</th></tr>
+        <tr><td>Dead Maven repo</td><td>Replaced jcenter with a working mirror in <code>build.gradle</code></td></tr>
+        <tr><td>JavaFX dependency</td><td>Fixed for Java 8 compatibility in client build</td></tr>
+        <tr><td>Discord RPC crash</td><td>Stubbed out Discord RPC which caused startup crash</td></tr>
+        <tr><td>Cache extraction</td><td>Game cache extracted to <code>ValiusCache1\</code></td></tr>
+      </table>
+
+      <h2 class="dev-h2">Project Structure</h2>
+      <table class="quick-table dev-table">
+        <tr><th>Path</th><th>Contents</th></tr>
+        <tr><td><code>Valius-Server-master/src/valius/</code></td><td>Server Java source — model, content, net, world packages</td></tr>
+        <tr><td><code>Valius-Server-master/Data/json/</code></td><td>NPC spawns, shop definitions, drop tables (JSON)</td></tr>
+        <tr><td><code>Valius-Server-master/Data/cfg/</code></td><td>NPC config definitions</td></tr>
+        <tr><td><code>Valius-Client-master/src/</code></td><td>Client Java source</td></tr>
+        <tr><td><code>docs/</code></td><td>This wiki (GitHub Pages)</td></tr>
+      </table>
+
+      <div class="feature-grid" style="margin-top:28px;">
+        <div class="feature-card dev-card" style="opacity:0.5;pointer-events:none;">
+          <span class="card-icon">🛒</span>
+          <div class="card-title">Shop System</div>
+          <div class="card-desc">Coming soon — TabbedShop enum, ShopTab loading, currency types.</div>
+        </div>
+        <div class="feature-card dev-card" style="opacity:0.5;pointer-events:none;">
+          <span class="card-icon">🧑‍💻</span>
+          <div class="card-title">NPC Spawns</div>
+          <div class="card-desc">Coming soon — JSON vs hardcoded spawns, adding new NPCs.</div>
+        </div>
+        <div class="feature-card dev-card" style="opacity:0.5;pointer-events:none;">
+          <span class="card-icon">🔧</span>
+          <div class="card-title">Admin Commands</div>
+          <div class="card-desc">Coming soon — Staff commands, permission levels, adding new commands.</div>
+        </div>
+        <div class="feature-card dev-card" style="opacity:0.5;pointer-events:none;">
+          <span class="card-icon">🐛</span>
+          <div class="card-title">Known Issues</div>
+          <div class="card-desc">Coming soon — Tracked bugs and workarounds.</div>
+        </div>
+      </div>
+    </div>
   </main>
 </div>
 
@@ -518,6 +643,35 @@
   Valius Wiki — fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
   <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
 </footer>
+
+<script>
+  // Section keys
+  var STORAGE_KEY = 'valius-wiki-section';
+
+  function switchSection(section) {
+    // Update buttons
+    document.getElementById('btn-users').className = 'section-btn' + (section === 'users' ? ' active-users' : '');
+    document.getElementById('btn-dev').className   = 'section-btn' + (section === 'dev'   ? ' active-dev'   : '');
+
+    // Toggle nav panels
+    document.getElementById('nav-users').className = 'nav-panel users-nav' + (section === 'users' ? ' visible' : '');
+    document.getElementById('nav-dev').className   = 'nav-panel dev-nav'   + (section === 'dev'   ? ' visible' : '');
+
+    // Toggle content panels
+    document.getElementById('content-users').className = 'content-panel' + (section === 'users' ? ' visible' : '');
+    document.getElementById('content-dev').className   = 'content-panel' + (section === 'dev'   ? ' visible' : '');
+
+    // Persist
+    try { localStorage.setItem(STORAGE_KEY, section); } catch(e) {}
+  }
+
+  // Restore saved section, default to 'users'
+  (function() {
+    var saved = 'users';
+    try { saved = localStorage.getItem(STORAGE_KEY) || 'users'; } catch(e) {}
+    switchSection(saved);
+  })();
+</script>
 
 </body>
 </html>
