@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Commands — Valius Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #f2e8d0;
+    --parchment-shadow: #d4c49a;
+    --ink: #1c1208;
+    --ink-light: #3d2e0f;
+    --gold: #b8860b;
+    --gold-bright: #d4a017;
+    --gold-light: #f0c040;
+    --header-bg: #1a0f00;
+    --sidebar-bg: #ede0c4;
+    --sidebar-border: #c8a96e;
+    --link: #5c3d11;
+    --link-hover: #b8860b;
+    --table-head: #c8a96e;
+    --table-stripe: #ede0c4;
+    --dev: #1a3a5c;
+    --dev-bright: #2a5f96;
+    --dev-light: #e8f0f8;
+    --dev-mid: #b0c8e0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.65;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--header-bg);
+    border-bottom: 3px solid var(--gold);
+    padding: 0 24px;
+    display: flex; align-items: center; gap: 16px;
+    height: 62px; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .header-crest { font-size: 28px; line-height: 1; }
+  header h1 { font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700; color: var(--gold-light); letter-spacing: 2px; text-shadow: 0 0 18px rgba(212,160,23,0.4); }
+  header h1 a { color: inherit; text-decoration: none; }
+  .header-tagline { font-family: 'Crimson Text', serif; font-size: 13px; color: #9a7a3a; font-style: italic; padding-left: 14px; border-left: 1px solid #4a3000; }
+  .header-nav { margin-left: auto; display: flex; gap: 20px; }
+  .header-nav a { font-family: 'Cinzel', serif; font-size: 12px; color: #c8a040; text-decoration: none; letter-spacing: 1px; opacity: 0.8; transition: opacity 0.2s; }
+  .header-nav a:hover { opacity: 1; color: var(--gold-light); }
+
+  /* ── LAYOUT ── */
+  .layout { display: flex; min-height: calc(100vh - 62px); max-width: 1280px; margin: 0 auto; }
+
+  /* ── SIDEBAR ── */
+  aside {
+    width: 220px; min-width: 220px;
+    background: var(--sidebar-bg); border-right: 1px solid var(--sidebar-border);
+    position: sticky; top: 62px; height: calc(100vh - 62px);
+    overflow-y: auto; display: flex; flex-direction: column;
+  }
+  .section-switcher { display: flex; border-bottom: 2px solid var(--sidebar-border); flex-shrink: 0; }
+  .section-btn {
+    flex: 1; padding: 12px 6px; border: none; background: transparent; cursor: pointer;
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #a0906a; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.18s;
+  }
+  .section-btn:hover { color: var(--gold); background: rgba(184,134,11,0.06); }
+  .section-btn.active-users { color: var(--gold); border-bottom-color: var(--gold-bright); background: rgba(184,134,11,0.08); }
+  .section-btn.active-dev { color: var(--dev-bright); border-bottom-color: var(--dev-bright); background: rgba(26,58,92,0.07); }
+
+  .sidebar-nav { flex: 1; padding: 16px 0 24px; }
+  .sidebar-section { margin-bottom: 4px; }
+  .sidebar-section-title {
+    font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 8px 18px 4px; border-bottom: 1px solid var(--parchment-shadow); margin-bottom: 4px;
+  }
+  .sidebar-section-title.users-title { color: var(--gold); }
+  .sidebar-section-title.dev-title   { color: var(--dev-bright); }
+  .sidebar-section a {
+    display: block; padding: 5px 18px 5px 22px; font-family: 'Crimson Text', serif; font-size: 15px;
+    color: var(--link); text-decoration: none; border-left: 3px solid transparent; transition: all 0.15s;
+  }
+  .sidebar-section a:hover { color: var(--link-hover); border-left-color: var(--gold); background: rgba(184,134,11,0.07); padding-left: 24px; }
+  .sidebar-section a.active { color: var(--gold); border-left-color: var(--gold-bright); background: rgba(184,134,11,0.1); font-weight: 600; }
+  .sidebar-section a.dim { color: #a0906a; font-style: italic; cursor: default; pointer-events: none; }
+  .dev-nav .sidebar-section a:hover { color: var(--dev-bright); border-left-color: var(--dev-bright); background: rgba(26,58,92,0.07); }
+  .dev-nav .sidebar-section a.active { color: var(--dev-bright); border-left-color: var(--dev); background: rgba(26,58,92,0.1); font-weight: 600; }
+
+  .nav-panel { display: none; }
+  .nav-panel.visible { display: block; }
+
+  .toc { margin: 6px 0 0; padding: 0; list-style: none; }
+  .toc li a { display: block; padding: 3px 18px 3px 28px; font-size: 13px; color: #7a5a2a; text-decoration: none; border-left: 3px solid transparent; transition: all 0.15s; }
+  .toc li a:hover { color: var(--gold); border-left-color: var(--gold); background: rgba(184,134,11,0.06); }
+  .dev-toc li a { color: #4a7aaa; }
+  .dev-toc li a:hover { color: var(--dev-bright); border-left-color: var(--dev-bright); background: rgba(26,58,92,0.06); }
+
+  /* ── MAIN ── */
+  main { flex: 1; padding: 36px 48px 60px; min-width: 0; }
+
+  .breadcrumb { font-size: 13px; color: #8a7050; margin-bottom: 16px; }
+  .breadcrumb a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb span { margin: 0 6px; color: #b0906a; }
+
+  .page-title { font-family: 'Cinzel', serif; font-size: 30px; font-weight: 700; color: var(--ink); border-bottom: 2px solid var(--dev-bright); padding-bottom: 10px; margin-bottom: 8px; letter-spacing: 1px; }
+  .page-subtitle { font-size: 15px; color: #5a6a7a; font-style: italic; margin-bottom: 24px; }
+
+  /* ── SECTION HEADINGS ── */
+  h2 {
+    font-family: 'Cinzel', serif; font-size: 17px; font-weight: 600;
+    color: var(--dev); padding: 10px 16px; margin: 36px 0 0;
+    background: var(--dev-light); border-left: 4px solid var(--dev-bright);
+    border-radius: 4px 4px 0 0; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2 .h2-count { font-size: 11px; color: var(--dev-bright); font-family: 'Cinzel', serif; letter-spacing: 1px; margin-left: auto; opacity: 0.8; }
+
+  p { margin-bottom: 14px; }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+  a:hover { color: var(--link-hover); }
+
+  /* ── NOTICE ── */
+  .notice {
+    border-radius: 4px; padding: 14px 18px; margin-bottom: 28px; font-size: 15px;
+    background: var(--dev-light); border: 1px solid var(--dev-mid); border-left: 4px solid var(--dev-bright);
+  }
+  .notice strong { color: var(--dev); }
+
+  /* ── SEARCH ── */
+  .search-wrap { margin-bottom: 28px; position: relative; }
+  .search-wrap input {
+    width: 100%; padding: 11px 16px 11px 42px;
+    font-family: 'Crimson Text', serif; font-size: 16px;
+    background: #f0f5fc; border: 1px solid var(--dev-mid); border-radius: 6px;
+    color: var(--ink); outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-wrap input:focus { border-color: var(--dev-bright); box-shadow: 0 0 0 3px rgba(42,95,150,0.12); }
+  .search-wrap input::placeholder { color: #7a9ab8; font-style: italic; }
+  .search-wrap .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; pointer-events: none; }
+  .search-count { margin-top: 6px; font-size: 13px; color: var(--dev-bright); font-style: italic; }
+
+  /* ── COMMAND CARDS ── */
+  .cmd-group { border: 1px solid var(--dev-mid); border-top: none; border-radius: 0 0 8px 8px; margin-bottom: 28px; overflow: hidden; }
+
+  .cmd-card {
+    background: #f8fbff;
+    border-bottom: 1px solid #d0e0f0;
+    padding: 0;
+    transition: background 0.15s;
+  }
+  .cmd-card:last-child { border-bottom: none; }
+  .cmd-card.hidden { display: none; }
+
+  .cmd-card-header {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 14px 20px 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .cmd-card-header:hover { background: #edf4ff; }
+
+  .cmd-keyword {
+    font-family: 'Courier New', monospace;
+    font-size: 16px; font-weight: 700;
+    color: var(--dev);
+    white-space: nowrap;
+  }
+  .cmd-keyword::before { content: '::'; color: var(--dev-bright); }
+
+  .cmd-syntax {
+    font-family: 'Courier New', monospace;
+    font-size: 13px; color: #5a8ab0;
+    font-style: italic;
+  }
+
+  .cmd-rank {
+    margin-left: auto;
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 9px; border-radius: 10px;
+    font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .rank-admin  { background: #fff0f0; color: #7c1a1a; border: 1px solid #d08a8a; }
+  .rank-owner  { background: #1a0f00; color: var(--gold-light); border: 1px solid var(--gold); }
+
+  .cmd-summary { padding: 0 20px 8px; font-size: 16px; color: #2a3a4a; }
+
+  .cmd-body { padding: 0 20px 18px; display: none; }
+  .cmd-card.open .cmd-body { display: block; }
+  .cmd-card.open .cmd-card-header { background: #edf4ff; }
+
+  /* ── EXAMPLE BLOCKS ── */
+  .example-block {
+    background: #111827;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 12px 0 6px;
+    border: 1px solid #2a3a5a;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .example-label {
+    background: #1e2d45;
+    color: #6a9ac8;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-bottom: 1px solid #2a3a5a;
+  }
+
+  .example-lines { padding: 10px 14px; }
+
+  .ex-input  { color: #82aaff; }
+  .ex-input::before  { content: '> '; color: #4a6a90; }
+  .ex-output { color: #c3e88d; }
+  .ex-output::before { content: '  '; }
+  .ex-comment { color: #546e7a; font-style: italic; }
+  .ex-comment::before { content: '  # '; }
+  .ex-warn   { color: #ffcb6b; }
+  .ex-warn::before   { content: '  ⚠ '; }
+
+  /* ── DETAIL TABLE ── */
+  .detail-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14.5px; }
+  .detail-table td { padding: 6px 12px; border-top: 1px solid #d0e0f0; vertical-align: top; }
+  .detail-table td:first-child { font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; color: var(--dev-bright); letter-spacing: 0.5px; text-transform: uppercase; width: 110px; padding-top: 8px; white-space: nowrap; }
+  .detail-table tr:first-child td { border-top: none; }
+
+  /* ── LIMITATION NOTE ── */
+  .limitation {
+    background: #fff8e8; border: 1px solid #e0c060; border-left: 3px solid #d4a017;
+    border-radius: 4px; padding: 8px 12px; margin-top: 10px;
+    font-size: 14px; color: #5a4000;
+  }
+  .limitation::before { content: '⚠ '; font-size: 13px; }
+
+  /* ── NOTE ── */
+  .tip {
+    background: #e8f4e8; border: 1px solid #8fba8f; border-left: 3px solid #2a8a2a;
+    border-radius: 4px; padding: 8px 12px; margin-top: 10px;
+    font-size: 14px; color: #1a4a1a;
+  }
+  .tip::before { content: '✓ '; font-size: 13px; }
+
+  code {
+    font-family: 'Courier New', monospace; font-size: 13px;
+    background: rgba(26,58,92,0.1); padding: 1px 5px; border-radius: 3px; color: var(--dev);
+  }
+
+  /* ── FOOTER ── */
+  footer { background: var(--header-bg); border-top: 2px solid #3a2800; color: #6a5020; text-align: center; padding: 18px; font-size: 13px; font-family: 'Crimson Text', serif; font-style: italic; }
+  footer a { color: #9a7030; border-bottom: none; }
+
+  @media (max-width: 700px) { aside { display: none; } main { padding: 20px 18px 40px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="header-crest">⚔</span>
+  <h1><a href="index.html">Valius Wiki</a></h1>
+  <span class="header-tagline">The Valius RSPS community reference</span>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="commands.html">Commands</a>
+    <a href="dev-commands.html">Dev Tools</a>
+    <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub ↗</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="section-switcher">
+      <button class="section-btn" id="btn-users" onclick="switchSection('users')">👤 Players</button>
+      <button class="section-btn active-dev" id="btn-dev" onclick="switchSection('dev')">⚙ Developers</button>
+    </div>
+    <div class="sidebar-nav">
+      <!-- USERS NAV -->
+      <div class="nav-panel users-nav" id="nav-users">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Navigation</div>
+          <a href="index.html">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Game Systems</div>
+          <a href="commands.html">📜 Commands</a>
+          <a href="blood-money.html">💀 Blood Money</a>
+          <a class="dim">🗡 PvP Guide</a>
+          <a class="dim">🧪 Skilling</a>
+          <a class="dim">👹 Bosses</a>
+          <a class="dim">🏆 Achievements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title users-title">Shops &amp; Items</div>
+          <a class="dim">🛒 Point Shops</a>
+          <a class="dim">💎 Donator Store</a>
+          <a class="dim">🪙 Vote Shop</a>
+        </div>
+      </div>
+      <!-- DEV NAV -->
+      <div class="nav-panel dev-nav visible" id="nav-dev">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Navigation</div>
+          <a href="index.html">🏠 Home</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Setup</div>
+          <a class="dim">🖥 Server Setup</a>
+          <a class="dim">🎮 Client Setup</a>
+          <a class="dim">☕ Java Versions</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Codebase</div>
+          <a href="dev-commands.html" class="active">🔧 Dev Commands</a>
+          <a class="dim">📦 Project Structure</a>
+          <a class="dim">🛒 Shop System</a>
+          <a class="dim">🧑‍💻 NPC Spawns</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">Reference</div>
+          <a class="dim">📋 Config Keys</a>
+          <a class="dim">🐛 Known Issues</a>
+          <a class="dim">📝 Changelog</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title dev-title">On This Page</div>
+          <ul class="toc dev-toc">
+            <li><a href="#position">Position &amp; Navigation</a></li>
+            <li><a href="#lookup">ID Lookup</a></li>
+            <li><a href="#world">World Inspection</a></li>
+            <li><a href="#reload">Hot-Reload</a></li>
+            <li><a href="#server">Server State</a></li>
+            <li><a href="#items">Item Spawning</a></li>
+            <li><a href="#npc">NPC Tools</a></li>
+            <li><a href="#testing">Testing &amp; Misc</a></li>
+            <li><a href="#logging">Logging</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      Developer
+      <span>›</span>
+      Dev Commands
+    </div>
+
+    <h1 class="page-title">Developer Commands</h1>
+    <p class="page-subtitle">All debug and tooling commands available in-game. Most require Owner rank; some work at Admin level — each card notes the minimum rank.</p>
+
+    <div class="notice">
+      <strong>Owner/Admin only.</strong> These commands are not available to regular players. Type them in chat prefixed with <code>::</code>. All output goes to your chat window unless otherwise noted.
+    </div>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="cmd-search" placeholder="Search dev commands…" oninput="filterCards(this.value)">
+      <div class="search-count" id="search-count"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         POSITION & NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <h2 id="position">📍 Position &amp; Navigation <span class="h2-count">4 commands</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">coords</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Print your current tile coordinates to chat.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::coords</code></td></tr>
+            <tr><td>Output</td><td>Chat message with X, Y, and height (plane).</td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Coords.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">coords</div>
+              <div class="ex-output">Your coordinates are: 3090, 3500 0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">pos</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Verbose position output — same as <code>::coords</code> with slightly different format.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::pos</code></td></tr>
+            <tr><td>Output</td><td>Chat message with labelled x, y, h values.</td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Pos.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">pos</div>
+              <div class="ex-output">Current coordinates x: 3090 y: 3500 h: 0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">tele</span>
+          <span class="cmd-syntax">[x] [y] [z]</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Teleport yourself to any tile on the map by coordinates.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::tele &lt;x&gt; &lt;y&gt; &lt;z&gt;</code></td></tr>
+            <tr><td>Args</td><td><strong>x</strong> — tile X &nbsp; <strong>y</strong> — tile Y &nbsp; <strong>z</strong> — height plane (0 = ground)</td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Tele.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">tele 3090 3500 0</div>
+              <div class="ex-comment">Teleport to home area, ground floor</div>
+              <div class="ex-input">tele 3222 3219 0</div>
+              <div class="ex-comment">Teleport to Lumbridge</div>
+              <div class="ex-input">tele 2452 9481 0</div>
+              <div class="ex-comment">Teleport to Fight Cave area (underground)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">chunkinfo</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Print your position within the current map chunk.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::chunkinfo</code></td></tr>
+            <tr><td>Output</td><td>Your X and Y offset within the 8×8 chunk grid.</td></tr>
+            <tr><td>Source</td><td>Inline in <code>Commands.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">chunkinfo</div>
+              <div class="ex-output">X: 2, Y: 4</div>
+              <div class="ex-comment">Position within the current 8x8 chunk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /position group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         ID LOOKUP
+    ═══════════════════════════════════════════ -->
+    <h2 id="lookup">🔎 ID Lookup <span class="h2-count">2 commands</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">getid</span>
+          <span class="cmd-syntax">[item name]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Search the item database by name and return matching item IDs.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::getid &lt;name&gt;</code></td></tr>
+            <tr><td>Args</td><td>Minimum 3 characters. Case-insensitive. Returns up to 100 results.</td></tr>
+            <tr><td>Output</td><td>List of matching items as <code>ItemName - ItemID</code>, then a result count.</td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Getid.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">getid abyssal whip</div>
+              <div class="ex-output">Searching: abyssal whip</div>
+              <div class="ex-output">Abyssal whip - 4151</div>
+              <div class="ex-output">Abyssal whip (or) - 12773</div>
+              <div class="ex-output">2 results found...</div>
+              <div class="ex-input">getid dragon</div>
+              <div class="ex-output">Dragon scimitar - 4587</div>
+              <div class="ex-output">Dragon dagger - 1215</div>
+              <div class="ex-output">Dragon sword - 21009</div>
+              <div class="ex-comment">... (up to 100 results)</div>
+            </div>
+          </div>
+          <div class="limitation">Only searches items. Use <code>::npc</code> to test-spawn an NPC if you need to find its ID by appearance.</div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">shop</span>
+          <span class="cmd-syntax">[shop-id]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Open any shop directly by its numeric ID — useful for inspecting shop contents without finding the NPC.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::shop &lt;id&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Shop.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">shop 119</div>
+              <div class="ex-comment">Opens the Blood Money shop (tab 4 of Point Reward Shops)</div>
+              <div class="ex-input">shop 125</div>
+              <div class="ex-comment">Opens the PVM Points shop</div>
+              <div class="ex-input">shop 2</div>
+              <div class="ex-comment">Opens the General Store</div>
+            </div>
+          </div>
+          <div class="tip">Shop IDs are defined in <code>Data/json/shops/points.json</code> and the other shop JSON files. The <code>TabbedShop</code> enum maps category names to their IDs.</div>
+        </div>
+      </div>
+
+    </div><!-- /lookup group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         WORLD INSPECTION
+    ═══════════════════════════════════════════ -->
+    <h2 id="world">🌍 World Inspection <span class="h2-count">3 commands</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">tileinfo</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Check whether movement is blocked on your current tile.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::tileinfo</code></td></tr>
+            <tr><td>Output</td><td>Chat message: <code>Blocked ? true/false</code></td></tr>
+            <tr><td>Source</td><td>Inline in <code>Commands.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example — standing on a walkable tile</div>
+            <div class="example-lines">
+              <div class="ex-input">tileinfo</div>
+              <div class="ex-output">Blocked ? false</div>
+              <div class="ex-input">tileinfo</div>
+              <div class="ex-comment">After walking into a wall/object</div>
+              <div class="ex-output">Blocked ? true</div>
+            </div>
+          </div>
+          <div class="tip">Use this when debugging NPC pathfinding issues or verifying custom object collision.</div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">boundaries</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Print Theatre of Blood room boundary checks — shows which rooms you are currently inside.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::boundaries</code></td></tr>
+            <tr><td>Output</td><td>One chat line per room: <code>Boundary: RoomName - true/false</code></td></tr>
+            <tr><td>Source</td><td>Inline in <code>Commands.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example — standing outside ToB</div>
+            <div class="example-lines">
+              <div class="ex-input">boundaries</div>
+              <div class="ex-output">Boundary: Maiden - false</div>
+              <div class="ex-output">Boundary: Bloat - false</div>
+              <div class="ex-output">Boundary: Nylocas - false</div>
+              <div class="ex-output">Boundary: Sotetseg - false</div>
+              <div class="ex-output">Boundary: Verzik - false</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">rights</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Show your current permission flags — useful to verify a rank has been applied correctly.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::rights</code></td></tr>
+            <tr><td>Output</td><td>5 boolean status lines covering player rights, donator status, and staff rank.</td></tr>
+            <tr><td>Source</td><td>Inline in <code>Commands.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">rights</div>
+              <div class="ex-output">playerRights: 3</div>
+              <div class="ex-output">donatorRights: 7</div>
+              <div class="ex-output">isIronman: false</div>
+              <div class="ex-output">isMod: true</div>
+              <div class="ex-output">isOwner: true</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /world group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         HOT-RELOAD
+    ═══════════════════════════════════════════ -->
+    <h2 id="reload">🔄 Hot-Reload <span class="h2-count">11 options</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">reload</span>
+          <span class="cmd-syntax">[subsystem]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Hot-reload server data without restarting. Pass a subsystem name as the argument.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::reload &lt;subsystem&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Reload.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">All available subsystems</div>
+            <div class="example-lines">
+              <div class="ex-input">reload shops</div>
+              <div class="ex-output">@blu@Reloaded Shops.</div>
+              <div class="ex-comment">Re-reads all shop JSON files from disk</div>
+              <div class="ex-input">reload drops</div>
+              <div class="ex-output">@blu@Reloaded Drops.</div>
+              <div class="ex-comment">Re-reads NPC drop tables and RNG data</div>
+              <div class="ex-input">reload items</div>
+              <div class="ex-output">@blu@Reloaded Items.</div>
+              <div class="ex-comment">Re-reads item config, definitions, and prices</div>
+              <div class="ex-input">reload npcs</div>
+              <div class="ex-output">@blu@Reloaded Npcs.</div>
+              <div class="ex-comment">Re-reads NPC spawns and handler data</div>
+              <div class="ex-input">reload doors</div>
+              <div class="ex-output">@blu@Reloaded Doors.</div>
+              <div class="ex-comment">Re-reads door/object definitions</div>
+              <div class="ex-input">reload objects</div>
+              <div class="ex-output">@blu@Reloaded Objects.</div>
+              <div class="ex-input">reload punishments</div>
+              <div class="ex-output">@blu@Reloaded Punishments.</div>
+              <div class="ex-comment">Re-reads ban and mute lists from disk</div>
+              <div class="ex-input">reload commands</div>
+              <div class="ex-output">@blu@Reloaded Commands.</div>
+              <div class="ex-comment">Clears the reflection command class cache — forces re-lookup next use</div>
+              <div class="ex-input">reload looting</div>
+              <div class="ex-output">@blu@Reloaded Looting.</div>
+              <div class="ex-comment">Toggles Config.BAG_AND_POUCH_PERMITTED</div>
+              <div class="ex-input">reload tp</div>
+              <div class="ex-output">@blu@Reloaded Tp.</div>
+              <div class="ex-comment">Saves then reloads trading post listings</div>
+            </div>
+          </div>
+          <div class="tip">Use <code>::reload commands</code> after adding a new command class to pick it up without a full server restart. Other reloads are safe to run on a live server.</div>
+          <div class="limitation">No validation before reload — a malformed JSON file will crash the subsystem. Always check your JSON before reloading.</div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">reload</span>
+          <span class="cmd-syntax">(no args)</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Admin-level reload — clears and reinitialises the combat script handler.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::reload</code> (no argument)</td></tr>
+            <tr><td>Output</td><td>Chat message: <code>Scripts reloaded.</code></td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Reload.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">reload</div>
+              <div class="ex-output">Scripts reloaded.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /reload group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         SERVER STATE
+    ═══════════════════════════════════════════ -->
+    <h2 id="server">🖥 Server State <span class="h2-count">3 commands</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">serverstatus</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Print server thread pool status to the console.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::serverstatus</code></td></tr>
+            <tr><td>Output</td><td>Chat: <em>"See console for server status information."</em> — full output in the server console window.</td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Serverstatus.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Console output</div>
+            <div class="example-lines">
+              <div class="ex-output">IO_THREAD</div>
+              <div class="ex-output">    Shutdown? false</div>
+              <div class="ex-output">    Terminated? false</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">myplayers</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">List all currently connected player session indices to the console.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::myplayers</code></td></tr>
+            <tr><td>Output</td><td>Server console — one line per connected player showing their slot index and name.</td></tr>
+            <tr><td>Source</td><td>Inline in <code>Commands.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Console output</div>
+            <div class="example-lines">
+              <div class="ex-output">[1] admin</div>
+              <div class="ex-output">[2] testplayer</div>
+              <div class="ex-output">[5] iron_man1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">saveall</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Force-save all online players to disk immediately.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::saveall</code></td></tr>
+            <tr><td>Output</td><td>Server console logs each player saved. Chat confirms completion.</td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Saveall.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">saveall</div>
+              <div class="ex-output">Saved all players.</div>
+            </div>
+          </div>
+          <div class="tip">Run this before making risky server-side changes so no progress is lost if something crashes.</div>
+        </div>
+      </div>
+
+    </div><!-- /server group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         ITEM SPAWNING
+    ═══════════════════════════════════════════ -->
+    <h2 id="items">📦 Item Spawning <span class="h2-count">3 commands</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">spawn</span>
+          <span class="cmd-syntax">[item-id] [amount]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Spawn items directly into your inventory. Supports single items, quantities, or ranges.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::spawn &lt;item-id&gt; &lt;amount&gt;</code><br><code>::spawn &lt;start-id&gt;-&lt;end-id&gt; &lt;amount&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Spawn.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">spawn 4151 1</div>
+              <div class="ex-comment">Spawn 1 Abyssal whip (ID 4151)</div>
+              <div class="ex-input">spawn 995 10000000</div>
+              <div class="ex-comment">Spawn 10M coins</div>
+              <div class="ex-input">spawn 13307 500</div>
+              <div class="ex-comment">Spawn 500 Blood Money for testing</div>
+              <div class="ex-input">spawn 4151-4160 1</div>
+              <div class="ex-comment">Spawn one of every item with IDs 4151 through 4160</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">giveitem</span>
+          <span class="cmd-syntax">[player] [item-id] [amount]</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Give items to another online player. Logged to <code>giveitem</code> logs and posted to Discord.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::giveitem &lt;player&gt; &lt;item-id&gt; &lt;amount&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Giveitem.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">giveitem testplayer 4151 1</div>
+              <div class="ex-comment">Give testplayer 1 Abyssal whip</div>
+              <div class="ex-input">giveitem testplayer 995 500000</div>
+              <div class="ex-comment">Give testplayer 500k coins</div>
+            </div>
+          </div>
+          <div class="tip">All give actions are automatically logged — <code>GiveItemLogger</code> writes to <code>C:/xampp/htdocs/logs/giveitem/</code> and posts to the Discord <em>#giveitem-logs</em> channel.</div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">takeitem</span>
+          <span class="cmd-syntax">[player] [item-id] [amount]</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Remove items from another online player's inventory.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::takeitem &lt;player&gt; &lt;item-id&gt; &lt;amount&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Takeitem.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">takeitem testplayer 13307 1000</div>
+              <div class="ex-comment">Remove 1000 Blood Money from testplayer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /items group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         NPC TOOLS
+    ═══════════════════════════════════════════ -->
+    <h2 id="npc">👾 NPC Tools <span class="h2-count">4 commands</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">npc</span>
+          <span class="cmd-syntax">[npc-id]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Spawn an NPC at your current location. Useful for checking appearances and testing interactions.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::npc &lt;id&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Npc.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">npc 4321</div>
+              <div class="ex-comment">Spawn the Renegade Knight (Blood Money NPC)</div>
+              <div class="ex-input">npc 2662</div>
+              <div class="ex-comment">Spawn the PVM Points NPC</div>
+              <div class="ex-input">npc 50</div>
+              <div class="ex-comment">Spawn NPC ID 50 to check its appearance</div>
+            </div>
+          </div>
+          <div class="limitation">Spawned NPCs are not persistent — they disappear on server restart. Use <code>npc_spawns.json</code> for permanent spawns.</div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">killnpc</span>
+          <span class="cmd-syntax">[npc-id or "all"]</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Kill nearby NPCs by ID, or kill all NPCs in the area at once.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::killnpc &lt;id&gt;</code> or <code>::killnpc all</code></td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Killnpc.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">killnpc 50</div>
+              <div class="ex-comment">Kill all nearby NPCs with ID 50</div>
+              <div class="ex-input">killnpc all</div>
+              <div class="ex-comment">Kill every NPC in the surrounding area</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">pnpc</span>
+          <span class="cmd-syntax">[npc-id]</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Change your player's appearance to look like an NPC — good for visual testing.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::pnpc &lt;id&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Pnpc.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">pnpc 3029</div>
+              <div class="ex-comment">Appear as Zulrah</div>
+              <div class="ex-input">pnpc 0</div>
+              <div class="ex-comment">Reset to default player appearance</div>
+            </div>
+          </div>
+          <div class="tip">Use <code>::unpc</code> (owner) to reset your appearance if <code>::pnpc 0</code> doesn't work.</div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">droptable</span>
+          <span class="cmd-syntax">[npc-id] [trials]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Simulate an NPC's drop table and fill your bank with the results — useful for verifying drop rates.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::droptable &lt;npc-id&gt; &lt;trials&gt;</code></td></tr>
+            <tr><td>Source</td><td>Inline in <code>Commands.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">droptable 239 1000</div>
+              <div class="ex-comment">Simulate 1000 kills of NPC 239, fill bank with results</div>
+              <div class="ex-warn">This clears your bank before filling it with results</div>
+            </div>
+          </div>
+          <div class="limitation">Clears your bank before running. Do not use on a character with items you need to keep.</div>
+        </div>
+      </div>
+
+    </div><!-- /npc group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         TESTING & MISC
+    ═══════════════════════════════════════════ -->
+    <h2 id="testing">🧪 Testing &amp; Misc <span class="h2-count">5 commands</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">test</span>
+          <span class="cmd-syntax">[subcommand]</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Multi-purpose test command with 20+ subcommands for interfaces, dialogues, locations, and features.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::test &lt;subcommand&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Test.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Useful subcommands</div>
+            <div class="example-lines">
+              <div class="ex-input">test comp</div>
+              <div class="ex-comment">Show completionist cape interface</div>
+              <div class="ex-input">test statement</div>
+              <div class="ex-comment">Test basic dialogue statement box</div>
+              <div class="ex-input">test tele</div>
+              <div class="ex-comment">Display the teleport menu interface</div>
+              <div class="ex-input">test walk</div>
+              <div class="ex-comment">Test NPC pathfinding</div>
+              <div class="ex-input">test corp</div>
+              <div class="ex-comment">Show Corporeal Beast interface</div>
+              <div class="ex-input">test pk</div>
+              <div class="ex-comment">Show kill streaks for online players</div>
+              <div class="ex-input">test tekton</div>
+              <div class="ex-comment">Teleport to Tekton test location in dungeon</div>
+              <div class="ex-input">test upgrade</div>
+              <div class="ex-comment">Test rank upgrade logic</div>
+              <div class="ex-input">test placeholder</div>
+              <div class="ex-comment">Toggle placeholder items on/off</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">hpray</span>
+          <span class="cmd-rank rank-admin">⚙ Admin</span>
+        </div>
+        <div class="cmd-summary">Toggle godmode — sets your HP to 9999, fills prayer, and restores special attack. Toggle again to disable.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::hpray</code></td></tr>
+            <tr><td>Source</td><td><code>commands/admin/Hpray.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">hpray</div>
+              <div class="ex-output">Godmode enabled. HP: 9999, Prayer full, Special: 100%</div>
+              <div class="ex-input">hpray</div>
+              <div class="ex-output">Godmode disabled.</div>
+            </div>
+          </div>
+          <div class="tip">Essential when testing boss mechanics or new content — prevents dying mid-test.</div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">anim</span>
+          <span class="cmd-syntax">[anim-id]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Play any animation on your character by its numeric ID.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::anim &lt;id&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Anim.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">anim 714</div>
+              <div class="ex-comment">Play the death animation</div>
+              <div class="ex-input">anim 1157</div>
+              <div class="ex-comment">Play the fishing animation</div>
+              <div class="ex-input">anim 2140</div>
+              <div class="ex-comment">Test a custom animation ID</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">interface</span>
+          <span class="cmd-syntax">[interface-id]</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Force-open any game interface by its numeric ID — useful for inspecting UI layouts.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::interface &lt;id&gt;</code></td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Interface.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Examples</div>
+            <div class="example-lines">
+              <div class="ex-input">interface 64100</div>
+              <div class="ex-comment">Open the tabbed shop interface</div>
+              <div class="ex-input">interface 3559</div>
+              <div class="ex-comment">Open the bank interface</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword">debug</span>
+          <span class="cmd-rank rank-owner">👑 Owner</span>
+        </div>
+        <div class="cmd-summary">Toggle the debug flag on your player session.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Syntax</td><td><code>::debug</code></td></tr>
+            <tr><td>Source</td><td><code>commands/owner/Debug.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Example</div>
+            <div class="example-lines">
+              <div class="ex-input">debug</div>
+              <div class="ex-output">Debug Messages Enabled.</div>
+              <div class="ex-input">debug</div>
+              <div class="ex-output">Debug Messages Disabled.</div>
+            </div>
+          </div>
+          <div class="limitation">Currently only affects the hiscores update path internally — does not produce visible debug output in most situations. The flag is available via <code>player.debugMessage</code> for use in custom code.</div>
+        </div>
+      </div>
+
+    </div><!-- /testing group -->
+
+
+    <!-- ═══════════════════════════════════════════
+         LOGGING
+    ═══════════════════════════════════════════ -->
+    <h2 id="logging">📋 Logging System <span class="h2-count">Reference</span></h2>
+    <div class="cmd-group">
+
+      <div class="cmd-card" onclick="toggleCard(this)">
+        <div class="cmd-card-header">
+          <span class="cmd-keyword" style="font-family:'Crimson Text',serif; font-size:15px; font-weight:600; letter-spacing:0;">PlayerLogging</span>
+          <span class="cmd-rank rank-admin">⚙ Automatic</span>
+        </div>
+        <div class="cmd-summary">Automatic per-player logging to disk. No command needed — runs in the background for all players.</div>
+        <div class="cmd-body">
+          <table class="detail-table">
+            <tr><td>Log path</td><td><code>./data/logs/[A-Z]/[PlayerName]/[LogType].txt</code></td></tr>
+            <tr><td>Source</td><td><code>util/log/PlayerLogging.java</code></td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Log types written automatically</div>
+            <div class="example-lines">
+              <div class="ex-output">COMMAND — every :: command typed</div>
+              <div class="ex-output">TRADE_LOG — all trades</div>
+              <div class="ex-output">SHOP_LOG — all shop purchases</div>
+              <div class="ex-output">DROP_ITEM — items dropped on ground</div>
+              <div class="ex-output">DEATH_LOG / DIED_LOG — deaths and kills</div>
+              <div class="ex-output">STAKE_LOG — duel arena stakes</div>
+              <div class="ex-output">CHANGE_PASSWORD — password changes</div>
+              <div class="ex-output">CHANGE_IP_ADDRESS — IP changes on login</div>
+              <div class="ex-output">DONATION_TRANSACTION — donation claims</div>
+              <div class="ex-output">ALCH — high-alch logs</div>
+            </div>
+          </div>
+          <div class="tip">All writes are async (threaded) — logging does not block the game tick.</div>
+        </div>
+      </div>
+
+    </div><!-- /logging group -->
+
+  </main>
+</div>
+
+<footer>
+  Valius Wiki — fan-made community reference for the Valius RSPS &nbsp;|&nbsp;
+  <a href="https://github.com/hadefuwa/valius-rsps" target="_blank">GitHub</a>
+</footer>
+
+<script>
+  var STORAGE_KEY = 'valius-wiki-section';
+
+  function switchSection(section) {
+    document.getElementById('btn-users').className = 'section-btn' + (section === 'users' ? ' active-users' : '');
+    document.getElementById('btn-dev').className   = 'section-btn' + (section === 'dev'   ? ' active-dev'   : '');
+    document.getElementById('nav-users').className = 'nav-panel users-nav' + (section === 'users' ? ' visible' : '');
+    document.getElementById('nav-dev').className   = 'nav-panel dev-nav'   + (section === 'dev'   ? ' visible' : '');
+    try { localStorage.setItem(STORAGE_KEY, section); } catch(e) {}
+  }
+
+  // This is a dev page — always open in dev section
+  (function() {
+    switchSection('dev');
+  })();
+
+  function toggleCard(card) {
+    card.classList.toggle('open');
+  }
+
+  function filterCards(query) {
+    query = query.toLowerCase().trim();
+    var cards = document.querySelectorAll('.cmd-card');
+    var visible = 0;
+    cards.forEach(function(card) {
+      var text = card.textContent.toLowerCase();
+      var match = !query || text.indexOf(query) !== -1;
+      card.classList.toggle('hidden', !match);
+      if (match) visible++;
+      if (match && query) card.classList.add('open');
+    });
+    var sc = document.getElementById('search-count');
+    if (sc) sc.textContent = query ? 'Showing ' + visible + ' matching command' + (visible !== 1 ? 's' : '') : '';
+  }
+</script>
+
+</body>
+</html>
